@@ -2,12 +2,14 @@
 
 namespace App\Http\Requests;
 
+use App\Http\Controllers\HelperTrait;
 use App\Models\User;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Validation\Rule;
 
 class ProfileUpdateRequest extends FormRequest
 {
+    use HelperTrait;
     /**
      * Get the validation rules that apply to the request.
      *
@@ -18,6 +20,7 @@ class ProfileUpdateRequest extends FormRequest
         return [
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'lowercase', 'email', 'max:255', Rule::unique(User::class)->ignore($this->user()->id)],
+            'phone' => ['required', 'string', $this->validationPhone],
         ];
     }
 }

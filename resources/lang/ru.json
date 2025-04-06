@@ -1,6 +1,7 @@
 {
     "Hello!": "Приветствуем!",
     "Name": "Ваше имя",
+    "Phone": "Ваш телефон",
     "Password": "Пароль",
     "Current Password": "Текущий пароль",
     "New Password": "Новый пароль",
@@ -12,6 +13,7 @@
     "Log out": "Выйти",
     "Log Out": "Выйти",
     "Save": "Сохранить",
+    "Saved.": "Сохранено.",
     "Profile": "Профиль",
     "Register": "Регистрация",
     "Main": "Главная",
@@ -40,5 +42,8 @@
     "You are receiving this email because we received a password reset request for your account.": "Вы получили это письмо, потому что мы получили запрос на сброс пароля для вашей учетной записи.",
     "This password reset link will expire in :count minutes.": "Срок действия ссылки для сброса пароля истекает через :count минут.",
     "If you did not request a password reset, no further action is required.": "Если вы не запрашивали сброс пароля, никаких дальнейших действий не требуется.",
-    "These credentials do not match our records.": "Эти учетные данные не соответствуют нашим записям."
+    "These credentials do not match our records.": "Эти учетные данные не соответствуют нашим записям.",
+    "Your email address is unverified.": "Ваш адрес электронной почты не проверен.",
+    "Click here to re-send the verification email.": "Нажмите здесь, чтобы повторно отправить письмо с подтверждением.",
+    "A new verification link has been sent to your email address.": "На ваш адрес электронной почты была отправлена новая ссылка для подтверждения."
 }
