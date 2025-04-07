@@ -15,7 +15,7 @@ class FilledProfile
      */
     public function handle(Request $request, Closure $next): Response
     {
-        if (!$request->user()->phone) return redirect('profile.edit');
+        if (!$request->user()->phone || $request->user()->user_type_id) return redirect('profile.edit');
         return $next($request);
     }
 }
