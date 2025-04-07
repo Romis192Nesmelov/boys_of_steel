@@ -16,8 +16,20 @@ class UserSeeder extends Seeder
     public function run()
     {
         $data = [
-            ['name' => 'Romis', 'email' => 'romis.nesmelov@gmail.com', 'password' => bcrypt('fuckingpassword192'), 'phone' => '+7(926)247-77-25', 'email_verified_at' => Carbon::now()],
-            ['name' => 'Парень из стали', 'email' => 'info@bos.ru', 'password' => bcrypt('boysofsteel'), 'email_verified_at' => Carbon::now()]
+            [
+                'name' => 'Romis',
+                'email' => 'romis.nesmelov@gmail.com',
+                'password' => bcrypt('fuckingpassword192'),
+                'phone' => '+7(926)247-77-25',
+                'email_verified_at' => Carbon::now(),
+                'user_type_id' => 2
+            ],
+            [
+                'name' => 'Парень из стали',
+                'email' => 'info@bos.ru',
+                'password' => bcrypt('boysofsteel'),
+                'email_verified_at' => Carbon::now()
+            ]
         ];
 
         foreach ($data as $user) {
