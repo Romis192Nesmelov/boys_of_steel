@@ -18,9 +18,9 @@ Route::get('/', function () {
     return view('home');
 });
 
-Route::get('/main', function () {
-    return view('main');
-})->middleware(['auth', 'verified', 'filled.profile'])->name('main');
+Route::get('/home', function () {
+    return view('home');
+})->middleware(['auth', 'verified', 'filled.profile'])->name('home');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');

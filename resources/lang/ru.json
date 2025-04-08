@@ -21,7 +21,7 @@
     "Resend Verification Email": "Повторно выслать письмо",
     "You're logged in!": "Вы успешно вошли!",
     "Profile Information": "Информация профиля",
-    "Update your account's profile information and email address.": "Обновите информацию профиля вашей учетной записи, адрес электронной почты и телефон.",
+    "Update your account's profile information and email address.": "Обновите информацию профиля вашей учетной записи.",
     "Update Password": "Сменить пароль",
     "Delete Account": "Удалить аккаунт",
     "Once your account is deleted, all of its resources and data will be permanently deleted. Before deleting your account, please download any data or information that you wish to retain.": "После удаления вашего аккаунта все его ресурсы и данные будут удалены навсегда. Перед удалением аккаунта загрузите любые данные или информацию, которые вы хотите сохранить.",
@@ -46,5 +46,7 @@
     "Your email address is unverified.": "Ваш адрес электронной почты не проверен.",
     "Click here to re-send the verification email.": "Нажмите здесь, чтобы повторно отправить письмо с подтверждением.",
     "A new verification link has been sent to your email address.": "На ваш адрес электронной почты была отправлена новая ссылка для подтверждения.",
-    "User type": "Тип пользователя"
+    "User type": "Тип пользователя",
+    "City": "Город",
+    "Team": "Команда"
 }

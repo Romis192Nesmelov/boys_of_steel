@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\City;
 use App\Models\UserType;
+use App\Models\Team;
 use App\Http\Requests\ProfileUpdateRequest;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
@@ -19,7 +21,9 @@ class ProfileController extends Controller
     {
         return view('profile.edit', [
             'user' => $request->user(),
-            'user_types' => UserType::query()->select(['id','name'])->get()
+            'user_types' => UserType::query()->select(['id','name'])->get(),
+            'cities' => City::query()->select(['id','name'])->get(),
+            'teams' => Team::query()->select(['id','name'])->get(),
         ]);
     }
 

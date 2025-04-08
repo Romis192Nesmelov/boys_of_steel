@@ -58,6 +58,16 @@
             <x-select id="user_type_id" name="user_type_id" class="mt-1 block w-full" :values="$user_types" :selected="old('user_type_id', $user->user_type_id)" autofocus />
         </div>
 
+        <div>
+            <x-input-label for="city_id" :value="__('City')" />
+            <x-select id="city_id" name="city_id" class="mt-1 block w-full" :values="$cities" :selected="old('city_id', $user->city_id)" autofocus />
+        </div>
+
+        <div>
+            <x-input-label for="team_id" :value="__('Team')" />
+            <x-select id="team_id" name="team_id" class="mt-1 block w-full" :values="$teams" :selected="old('team_id', $user->team_id)" autofocus />
+        </div>
+
         <div class="flex items-center gap-4">
             <x-primary-button>{{ __('Save') }}</x-primary-button>
 

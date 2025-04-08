@@ -22,7 +22,9 @@ class UserSeeder extends Seeder
                 'password' => bcrypt('fuckingpassword192'),
                 'phone' => '+7(926)247-77-25',
                 'email_verified_at' => Carbon::now(),
-                'user_type_id' => 2
+                'user_type_id' => 2,
+                'city_id' => 1,
+                'team_id' => 2
             ],
             [
                 'name' => 'Парень из стали',
@@ -33,7 +35,7 @@ class UserSeeder extends Seeder
         ];
 
         foreach ($data as $user) {
-            User::create($user);
+            User::query()->create($user);
         }
     }
 }

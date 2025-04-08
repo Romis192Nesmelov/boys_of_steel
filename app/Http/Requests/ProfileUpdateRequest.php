@@ -21,7 +21,9 @@ class ProfileUpdateRequest extends FormRequest
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'lowercase', 'email', 'max:255', Rule::unique(User::class)->ignore($this->user()->id)],
             'phone' => ['required', 'string', $this->validationPhone],
-            'user_type_id' => ['required', 'int', 'exists:user_types,id']
+            'user_type_id' => ['required', 'int', 'exists:user_types,id'],
+            'city_id' => ['required', 'int', 'exists:cities,id'],
+            'team_id' => ['required', 'int', 'exists:teams,id']
         ];
     }
 }

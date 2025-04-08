@@ -15,7 +15,12 @@ class FilledProfile
      */
     public function handle(Request $request, Closure $next): Response
     {
-        if (!$request->user()->phone || $request->user()->user_type_id) return redirect('profile.edit');
+        if (
+            !$request->user()->phone ||
+            !$request->user()->user_type_id ||
+            !$request->user()->city_id ||
+            !$request->user()->team_id
+        ) return redirect(route('profile.edit'));
         return $next($request);
     }
 }

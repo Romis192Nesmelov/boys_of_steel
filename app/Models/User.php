@@ -23,7 +23,9 @@ class User extends Authenticatable implements MustVerifyEmail
         'email',
         'phone',
         'password',
-        'user_type_id'
+        'user_type_id',
+        'city_id',
+        'team_id',
     ];
 
     /**
@@ -49,5 +51,15 @@ class User extends Authenticatable implements MustVerifyEmail
     public function userType(): BelongsTo
     {
         return $this->belongsTo(UserType::class);
+    }
+
+    public function city(): BelongsTo
+    {
+        return $this->belongsTo(City::class);
+    }
+
+    public function team(): BelongsTo
+    {
+        return $this->belongsTo(Team::class);
     }
 }
