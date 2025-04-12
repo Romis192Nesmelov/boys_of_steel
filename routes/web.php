@@ -1,6 +1,10 @@
 <?php
 
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\NewsController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\ScheduleController;
+use App\Http\Controllers\TeamsController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,13 +18,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('home');
+Route::get('/',HomeController::class)->name('home');
+Route::middleware(['auth', 'verified', 'filled.profile'])->group(function () {
+    Route::get('/news/{slug?}', NewsController::class)->name('news');
+    Route::get('/schedule', ScheduleController::class)->name('schedule');
+    Route::get('/teams/{slug?}', TeamsController::class)->name('teams');
 });
-
-Route::get('/', function () {
-    return view('home');
-})->middleware(['auth', 'verified', 'filled.profile'])->name('home');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');

@@ -14,4 +14,9 @@ class City extends Model
     {
         return $this->hasMany(User::class);
     }
+
+    public function clubs(): HasMany
+    {
+        return $this->hasMany(Club::class);
+    }
 }

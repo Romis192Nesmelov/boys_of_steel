@@ -1,41 +1,38 @@
 $(document).ready(function() {
-    // $('.fancybox').fancybox({
-    //     'autoScale': true,
-    //     'touch': false,
-    //     'transitionIn': 'elastic',
-    //     'transitionOut': 'elastic',
-    //     'speedIn': 500,
-    //     'speedOut': 300,
-    //     'autoDimensions': true,
-    //     'centerOnScroll': true
-    // });
+    $('.fancybox').fancybox({
+        'autoScale': true,
+        'touch': false,
+        'transitionIn': 'elastic',
+        'transitionOut': 'elastic',
+        'speedIn': 500,
+        'speedOut': 300,
+        'autoDimensions': true,
+        'centerOnScroll': true
+    });
 
     $('input[name=phone]').mask("+7(999)999-99-99");
 
-    // $('.owl-carousel.news').owlCarousel({
-    //     margin: 10,
-    //     loop: true,
-    //     nav: true,
-    //     autoplay: true,
-    //     autoplayTimeout:5000,
-    //     dots: false,
-    //     responsive: {
-    //         0: {
-    //             items: 1
-    //         },
-    //         768: {
-    //             items: 2
-    //         },
-    //         1000: {
-    //             items: 3
-    //         },
-    //         1200: {
-    //             items: 4
-    //         },
-    //     },
-    //     // navText:[navButtonBlack1,navButtonBlack2]
-    // });
-    //
+    $('.owl-carousel.teams').owlCarousel({
+        margin: 20,
+        loop: true,
+        nav: false,
+        autoplay: true,
+        autoplayTimeout:2000,
+        dots: false,
+        responsive: {
+            400: {
+                items: 2
+            },
+            768: {
+                items: 2
+            },
+            1200: {
+                items: 6
+            },
+        },
+        // navText:[navButtonBlack1,navButtonBlack2]
+    });
+
 });
 
 // const getQueryParams = (qs) => {

@@ -30,7 +30,11 @@ class UserSeeder extends Seeder
                 'name' => 'Парень из стали',
                 'email' => 'info@bos.ru',
                 'password' => bcrypt('boysofsteel'),
-                'email_verified_at' => Carbon::now()
+                'phone' => '+7(926)221-47-19',
+                'email_verified_at' => Carbon::now(),
+                'user_type_id' => 2,
+                'city_id' => 1,
+                'team_id' => 1
             ]
         ];
 
