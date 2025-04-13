@@ -1,7 +1,43 @@
 {
   "resources/css/app.css": {
-    "file": "assets/app-B_zrSJ4k.css",
+    "file": "assets/app-a5i47hdm.css",
     "src": "resources/css/app.css",
+    "isEntry": true
+  },
+  "resources/css/icons/icomoon/fonts/icomoon.eot": {
+    "file": "assets/icomoon-RabqmaB2.eot",
+    "src": "resources/css/icons/icomoon/fonts/icomoon.eot"
+  },
+  "resources/css/icons/icomoon/fonts/icomoon.svg": {
+    "file": "assets/icomoon-Bnm_VJcc.svg",
+    "src": "resources/css/icons/icomoon/fonts/icomoon.svg"
+  },
+  "resources/css/icons/icomoon/fonts/icomoon.ttf": {
+    "file": "assets/icomoon-B8MqBWp-.ttf",
+    "src": "resources/css/icons/icomoon/fonts/icomoon.ttf"
+  },
+  "resources/css/icons/icomoon/fonts/icomoon.woff": {
+    "file": "assets/icomoon-CPwfPeKl.woff",
+    "src": "resources/css/icons/icomoon/fonts/icomoon.woff"
+  },
+  "resources/css/icons/icomoon/styles.css": {
+    "file": "assets/styles-CQKQ4wnc.css",
+    "src": "resources/css/icons/icomoon/styles.css",
+    "isEntry": true
+  },
+  "resources/css/jquery.fancybox.min.css": {
+    "file": "assets/jquery.fancybox-ChG0URZt.css",
+    "src": "resources/css/jquery.fancybox.min.css",
+    "isEntry": true
+  },
+  "resources/css/owl.carousel.min.css": {
+    "file": "assets/owl.carousel-CDeijY_r.css",
+    "src": "resources/css/owl.carousel.min.css",
+    "isEntry": true
+  },
+  "resources/css/styles.css": {
+    "file": "assets/styles-CONRM6GC.css",
+    "src": "resources/css/styles.css",
     "isEntry": true
   },
   "resources/js/app.js": {
@@ -10,10 +46,26 @@
     "src": "resources/js/app.js",
     "isEntry": true
   },
+  "resources/js/jquery.fancybox.min.js": {
+    "file": "assets/jquery.fancybox.min-BUVd-hG9.js",
+    "name": "jquery.fancybox.min",
+    "src": "resources/js/jquery.fancybox.min.js",
+    "isEntry": true
+  },
   "resources/js/main.js": {
-    "file": "assets/main-DuOdfINf.js",
+    "file": "assets/main-B-jAd4Rs.js",
     "name": "main",
     "src": "resources/js/main.js",
     "isEntry": true
+  },
+  "resources/js/owl.carousel.js": {
+    "file": "assets/owl.carousel-neFFRnqI.js",
+    "name": "owl.carousel",
+    "src": "resources/js/owl.carousel.js",
+    "isEntry": true
+  },
+  "storage/app/public/images/main_art.jpg": {
+    "file": "assets/main_art-CgKX_qdH.jpg",
+    "src": "storage/app/public/images/main_art.jpg"
   }
 }
