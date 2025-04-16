@@ -67,7 +67,7 @@
 {{--                    <li><a href="#" x-data="" x-on:click.prevent="$dispatch('open-modal', 'our-mission')">{{ __('Our mission') }}</a></li>--}}
                 </ul>
                 <div class="text-right sm:text-left">
-                    <img class="w-20 md:w-40" src="{{ asset('storage/images/hockey_player.svg') }}">
+                    <img class="w-20 md:w-40" src="{{ asset('storage/images/qr.svg') }}">
                 </div>
             </div>
         </footer>
