@@ -3,17 +3,20 @@
 
     <div id="main-art"></div>
     <div class="max-w-7xl mx-auto">
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 pt-6 px-6">
-            <img class="hidden md:block relative -top-20" src="{{ asset('storage/images/logo_bos2.svg') }}" />
-            <div class="md:col-span-2">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 pt-6">
+            <img class="hidden md:block relative" src="{{ asset('storage/images/logo_bos2.svg') }}" />
+            <div class="px-4 md:px-0 md:col-span-2">
+                @include('partials.head1',['head' => 'Our mission'])
                 <p class="mt-2 mb-6 text-gray-300 text-sm">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed et magna eros. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Nulla tristique lacus ac nulla pellentesque, eu blandit erat ornare. Quisque molestie orci eu lectus mollis dictum. Vivamus scelerisque ante felis, in faucibus nulla mattis ac. Etiam eleifend nibh vitae tellus dictum, a luctus sem facilisis. Duis sed dolor eget neque rutrum facilisis. Nam pharetra aliquet suscipit.</p>
                 <p class="text-gray-300 text-sm mb-6">Phasellus facilisis urna sit amet vestibulum viverra. Proin faucibus tortor nec magna porta, in egestas metus congue. Sed euismod congue sapien. Etiam a quam enim. Sed id diam libero. Vivamus id pretium est. Fusce ultricies odio non tempor vehicula. Phasellus pulvinar, libero eget tempus posuere, nisl nulla pellentesque tortor, sit amet vestibulum odio nulla tristique ex. Vestibulum vestibulum aliquam sem, vitae congue orci blandit ac. Proin lobortis auctor odio eget eleifend. Nulla vehicula justo id ipsum interdum porttitor.</p>
-                <a href="{{ route('our_mission') }}">
-                    <x-primary-button>{{ __('Details') }}</x-primary-button>
-                </a>
             </div>
         </div>
-        <hr class="opacity-25 mb-6">
+        <div class="w-full text-center -top-20">
+            <a href="{{ route('our_mission') }}">
+                <x-primary-button>{{ __('Details') }}</x-primary-button>
+            </a>
+        </div>
+        <hr class="opacity-25 my-6">
     </div>
     <div class="max-w-7xl mx-auto">
         @include('partials.head1',['head' => 'News'])
