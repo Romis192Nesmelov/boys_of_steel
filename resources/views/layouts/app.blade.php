@@ -41,7 +41,7 @@
                         <x-top-p>{{ __('Hockey Championship for the Cup «Boys from Steel»') }}</x-top-p>
                         <p class="text-sm text-center text-white mt-1">*{{ __('With the support of the Charity Fund «Guys from Steel»') }}</p>
                     </div>
-                    <img class="w-20 ml-0 md:ml-2 mt-3 md:mt-0" src="{{ asset('storage/images/bos_cup.svg') }}" />
+                    <img class="w-40 ml-0 md:ml-2 mt-3 md:mt-0" src="{{ asset('storage/images/bos_cup.svg') }}" />
                 </div>
             </div>
             <hr class="opacity-25">
