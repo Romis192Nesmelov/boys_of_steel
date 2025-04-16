@@ -7,7 +7,7 @@
 
         <title>{{ config('app.name', 'Laravel') }}</title>
 
-        <x-favicons></x-favicons>
+        @include('partials.favicons')
 
         <!-- Fonts -->
         <link rel="preconnect" href="https://fonts.bunny.net">
