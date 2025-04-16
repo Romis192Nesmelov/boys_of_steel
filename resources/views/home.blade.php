@@ -34,30 +34,41 @@
             </div>
         @endif
         <hr class="opacity-25 mb-6">
-        @include('partials.head1',['head' => 'Schedule of games'])
 
-        <div class="py-8">
-            <div class="tabs">
-                <div class="block">
-                    <ul class="flex border-b border-gray-200 space-x-3 transition-all duration-300 -mb-px">
-                        @include('partials.tabs.tab',['activeTab' => true, 'tabData' => 'future_games', 'tabName' => __('Future games')])
-                        @include('partials.tabs.tab',['activeTab' => false, 'tabData' => 'past_games', 'tabName' => __('Past games')])
-                    </ul>
-                </div>
-                <div class="mt-3">
-                    <x-tab-panel id="future_games">
-                        @include('games.partials.games',['games' => $future_games])
-                    </x-tab-panel>
-                    <x-tab-panel id="past_games" class="hidden">
-                        @include('games.partials.games',['games' => $past_games])
-                    </x-tab-panel>
-                </div>
-            </div>
+        <div class='accordion-group' data-accordion="default-accordion">
+            <div class='accordion pb-4 border-b border-solid border-gray-200' id='basic-heading-one-default'>
+                <button class='accordion-toggle group accordion-active:text-indigo-600 inline-flex items-center justify-between leading-8 text-gray-600 w-full transition duration-500 hover:text-indigo-600 active:text-indigo-600' aria-controls='schedule-collapse'>
+                    @include('partials.head1',['head' => 'Schedule of games'])
+                    <svg class='text-white transition duration-500 group-hover:text-indigo-600 accordion-active:text-indigo-600 accordion-active:rotate-180' width='22' height='22' viewBox='0 0 22 22' fill='none' xmlns='http://www.w3.org/2000/svg'>
+                        <path d='M16.5 8.25L12.4142 12.3358C11.7475 13.0025 11.4142 13.3358 11 13.3358C10.5858 13.3358 10.2525 13.0025 9.58579 12.3358L5.5 8.25' stroke='currentColor' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'></path>
+                    </svg>
+                </button>
+                <div id='schedule-collapse' class='accordion-content w-full px-0 overflow-hidden pr-4 ' aria-labelledby='basic-heading-one-default'>
+                    <div class="py-8">
+                        <div class="tabs">
+                            <div class="block">
+                                <ul class="flex border-b border-gray-200 space-x-3 transition-all duration-300 -mb-px">
+                                    @include('partials.tabs.tab',['activeTab' => true, 'tabData' => 'future_games', 'tabName' => __('Future games')])
+                                    @include('partials.tabs.tab',['activeTab' => false, 'tabData' => 'past_games', 'tabName' => __('Past games')])
+                                </ul>
+                            </div>
+                            <div class="mt-3">
+                                <x-tab-panel id="future_games">
+                                    @include('games.partials.games',['games' => $future_games])
+                                </x-tab-panel>
+                                <x-tab-panel id="past_games" class="hidden">
+                                    @include('games.partials.games',['games' => $past_games])
+                                </x-tab-panel>
+                            </div>
+                        </div>
 
-            <div class="w-full text-center pt-6">
-                <a href="{{ route('schedule') }}">
-                    <x-primary-button>{{ __('All schedule') }}</x-primary-button>
-                </a>
+                        <div class="w-full text-center pt-6">
+                            <a href="{{ route('schedule') }}">
+                                <x-primary-button>{{ __('All schedule') }}</x-primary-button>
+                            </a>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
 

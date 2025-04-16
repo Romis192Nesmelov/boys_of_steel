@@ -15,3 +15,7 @@ function carbonToTimestamp($date): int {
 function futureOrPast($date): bool {
     return carbonToTimestamp($date) >= time();
 }
+
+function navLinkName($route): string {
+    return __(ucfirst(str_replace('_',' ',$route)));
+}
