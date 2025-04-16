@@ -1,15 +1,15 @@
 <nav x-data="{ open: false }" class="bg-white dark:bg-gray-900 border-b border-gray-100 dark:border-gray-700">
     <!-- Primary Navigation Menu -->
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6">
         <div class="flex justify-between h-16">
             <div class="flex">
                 <!-- Logo -->
-                <div class="shrink-0 flex items-center">
+                <div class="flex items-center mr-5">
                     <a href="{{ route('home') }}"><x-application-logo class="block h-9 w-auto fill-current text-gray-800 dark:text-gray-200" /></a>
                 </div>
 
                 <!-- Navigation Links -->
-                <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
+                <div class="hidden space-x-6 sm:-my-px sm:ms-3 sm:flex">
                     @foreach($nav_links as $route)
                         <x-nav-link :href="route($route)" :active="request()->routeIs($route)">{{ navLinkName($route) }}</x-nav-link>
                     @endforeach
@@ -45,9 +45,9 @@
                     </x-dropdown>
                 </div>
             @else
-                <div class="sm:fixed sm:top-0 sm:right-0 p-6 text-right z-10">
+                <div class="hidden sm:flex items-center text-xs ml-4">
                     <a href="{{ route('login') }}" class="font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">{{ __("Log in") }}</a>
-                    <a href="{{ route('register') }}" class="ml-4 font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">{{ __("Register") }}</a>
+                    <a href="{{ route('register') }}" class="ml-3 font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">{{ __("Register") }}</a>
                 </div>
             @endauth
 
@@ -72,8 +72,9 @@
         </div>
 
         <!-- Responsive Settings Options -->
-        @auth
-            <div class="pt-4 pb-1 border-t border-gray-200 dark:border-gray-600">
+
+        <div class="pt-2 pb-1 border-t border-gray-200 dark:border-gray-600">
+            @auth
                 <div class="px-4">
                     <div class="font-medium text-base text-gray-800 dark:text-gray-200">{{ Auth::user()->name }}</div>
                     <div class="font-medium text-sm text-gray-500">{{ Auth::user()->email }}</div>
@@ -88,7 +89,13 @@
                         <x-responsive-nav-link :href="route('logout')" onclick="event.preventDefault(); this.closest('form').submit();">{{ __('Log Out') }}</x-responsive-nav-link>
                     </form>
                 </div>
-            </div>
-        @endauth
+            @else
+                <div class="space-y-1">
+                    <x-responsive-nav-link :href="route('login')">{{ __('Log in') }}</x-responsive-nav-link>
+                    <x-responsive-nav-link :href="route('register')">{{ __('Register') }}</x-responsive-nav-link>
+                </div>
+            @endauth
+        </div>
+
     </div>
 </nav>

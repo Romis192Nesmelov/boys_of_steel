@@ -34,8 +34,18 @@
     <body class="font-sans antialiased">
         @php $nav_links = ['home','our_mission','news','schedule','teams'] @endphp
         <div class="min-h-screen bg-gray-100 dark:bg-gray-900">
+            <div class="max-w-7xl mx-auto py-4">
+                <div class="flex flex-col md:flex-row items-center justify-center">
+                    <div>
+                        <x-top-p>{{ __('Steel Hockey League') }}</x-top-p>
+                        <x-top-p>{{ __('Hockey Championship for the Cup «Boys from Steel»') }}</x-top-p>
+                        <p class="text-sm text-center text-white mt-1">*{{ __('With the support of the Charity Fund «Guys from Steel»') }}</p>
+                    </div>
+                    <img class="w-20 ml-0 md:ml-2 mt-3 md:mt-0" src="{{ asset('storage/images/bos_cup.svg') }}" />
+                </div>
+            </div>
+            <hr class="opacity-25">
             @include('partials.navigation.navigation')
-
             <!-- Page Heading -->
             @if (isset($header))
                 <header class="bg-white dark:bg-gray-900 shadow border-b border-gray-800">

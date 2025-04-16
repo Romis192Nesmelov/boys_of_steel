@@ -4,7 +4,7 @@
     <div id="main-art"></div>
     <div class="max-w-7xl mx-auto">
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6 pt-6">
-            <img class="hidden md:block relative" src="{{ asset('storage/images/logo_bos2.svg') }}" />
+            <img class="hidden md:block" src="{{ asset('storage/images/logo_bos2.svg') }}" />
             <div class="px-4 md:px-0 md:col-span-2">
                 @include('partials.head1',['head' => 'Our mission'])
                 <p class="mt-2 mb-6 text-gray-300 text-sm">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed et magna eros. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Nulla tristique lacus ac nulla pellentesque, eu blandit erat ornare. Quisque molestie orci eu lectus mollis dictum. Vivamus scelerisque ante felis, in faucibus nulla mattis ac. Etiam eleifend nibh vitae tellus dictum, a luctus sem facilisis. Duis sed dolor eget neque rutrum facilisis. Nam pharetra aliquet suscipit.</p>
