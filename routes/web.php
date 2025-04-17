@@ -21,11 +21,11 @@ use Illuminate\Support\Facades\Route;
 Route::get('/',[HomeController::class, 'home'])->name('home');
 Route::get('/our_mission',[HomeController::class, 'ourMission'])->name('our_mission');
 
-Route::middleware(['auth', 'verified', 'filled.profile'])->group(function () {
+//Route::middleware(['auth', 'verified', 'filled.profile'])->group(function () {
     Route::get('/news/{slug?}', NewsController::class)->name('news');
     Route::get('/schedule', ScheduleController::class)->name('schedule');
     Route::get('/teams/{slug?}', TeamsController::class)->name('teams');
-});
+//});
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');

@@ -66,8 +66,11 @@
                     @each('partials.navigation.footer_menu',$nav_links,'route')
 {{--                    <li><a href="#" x-data="" x-on:click.prevent="$dispatch('open-modal', 'our-mission')">{{ __('Our mission') }}</a></li>--}}
                 </ul>
-                <div class="text-right sm:text-left">
-                    <img class="w-20 md:w-40" src="{{ asset('storage/images/qr.svg') }}">
+                <div class="text-right sm:text-left motion-safe:hover:scale-[1.02] transition-all duration-250 focus:outline focus:outline-2 focus:outline-red-500">
+                    <a href="http://t.me/steelliga" target="_blank">
+                        <img class="w-20 md:w-40" src="{{ asset('storage/images/qr.svg') }}">
+                        <div class="text-center text-gray-500 text-sm mt-1">http://t.me/steelliga</div>
+                    </a>
                 </div>
             </div>
         </footer>
