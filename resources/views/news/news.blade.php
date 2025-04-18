@@ -17,7 +17,7 @@
 
         <hr class="opacity-25 mb-6">
         @include('partials.head1',['head' => 'Last news'])
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 px-6 mt-8">
+        <div class="grid grid-cols-1 gap-6 px-6 mt-8">
             @each('news.partials.news', $last_news, 'new')
         </div>
     </div>
