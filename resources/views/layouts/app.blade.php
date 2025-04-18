@@ -66,9 +66,11 @@
                     <ul class="mb-3 md:mb-0 mr-0 md:mr-20">
                         @each('partials.navigation.footer_menu',$nav_links,'route')
                     </ul>
-                    <ul class="mb-3 md:mb-0">
-                        @each('partials.navigation.footer_menu',['login','register','password.request'],'route')
-                    </ul>
+                    @guest
+                        <ul class="mb-3 md:mb-0">
+                            @each('partials.navigation.footer_menu',['login','register','password.request'],'route')
+                        </ul>
+                    @endguest
                 </div>
                 <div class="motion-safe:hover:scale-[1.02] transition-all duration-250 focus:outline focus:outline-2 focus:outline-red-500">
                     <a class="w-full px-4 text-center" href="http://t.me/steelliga" target="_blank">
