@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('image');
             $table->string('slug');
             $table->string('head',30);
-            $table->string('short_text');
+            $table->text('short_text');
             $table->longText('text');
             $table->timestamp('date');
             $table->timestamps();

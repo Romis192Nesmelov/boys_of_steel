@@ -19,3 +19,8 @@ function futureOrPast($date): bool {
 function navLinkName($route): string {
     return __(ucfirst(str_replace(['_','.'],' ',$route)));
 }
+
+function teamLogo(\App\Models\Team $team): string
+{
+    return asset($team->logo ?? 'storage/images/teams_logos/def_logo.png');
+}

@@ -13,28 +13,25 @@ class HomeController extends Controller
     /**
      * Display home page.
      */
-    public function home(): View
+    public function __invoke(): View
     {
-        $params = [];
-        foreach (['future_games','past_games'] as $k) {
-            $params[$k] =  Game::query()
+        return view('home', [
+            'breadcrumbs' => [],
+            'news' => News::query()
+                ->select(['id','image','slug','head','short_text','date'])
+                ->orderBy('date','desc')
+                ->limit(3)
+                ->get(),
+            'future_games' => Game::query()
                 ->with('teams')
-                ->where('date',($k == 'future_games' ? '>' : '<='), Carbon::now())
+                ->where('date','>', Carbon::now())
                 ->orderBy('date','desc')
                 ->limit(6)
-                ->get();
-        }
-        $params['news'] = News::query()->select(['id','image','slug','head','short_text','date'])->orderBy('date','desc')->limit(3)->get();
-        $params['teams'] = Team::query()->select(['logo','slug','name','city_id'])->with('city')->get();
-        $params['breadcrumbs'] = [];
-
-        return view('home', $params);
-    }
-
-    public function ourMission(): View
-    {
-        return view('our_mission', [
-            'breadcrumbs' => [['href' => 'our_mission', 'name' => 'Our mission']]
+                ->get(),
+            'teams' => Team::query()
+                ->select(['logo','slug','name','city_id'])
+                ->with('city')
+                ->get()
         ]);
     }
 }

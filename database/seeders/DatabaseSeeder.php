@@ -14,7 +14,8 @@ class DatabaseSeeder extends Seeder
     {
         $this->call(UserTypesSeeder::class);
         $this->call(CitiesSeeder::class);
-        \App\Models\Team::factory(8)->create();
+        $this->call(TeamsSeeder::class);
+//        \App\Models\Team::factory(8)->create();
         $this->call(UserSeeder::class);
         \App\Models\News::factory(18)->create();
         \App\Models\Game::factory(20)->create();

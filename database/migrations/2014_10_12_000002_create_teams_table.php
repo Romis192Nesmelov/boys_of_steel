@@ -14,11 +14,15 @@ return new class extends Migration
     {
         Schema::create('teams', function (Blueprint $table) {
             $table->id();
-            $table->string('logo');
+            $table->string('logo')->nullable();
             $table->string('slug');
-            $table->string('name',50);
-            $table->foreignIdFor(City::class)->constrained()->cascadeOnUpdate()->cascadeOnDelete();
+            $table->string('name');
+            $table->string('captain');
+            $table->string('email',50)->nullable();
+            $table->string('phone',16)->nullable();
+            $table->string('site')->nullable();
             $table->string('description')->nullable();
+            $table->foreignIdFor(City::class)->constrained()->cascadeOnUpdate()->cascadeOnDelete();
             $table->timestamps();
         });
     }

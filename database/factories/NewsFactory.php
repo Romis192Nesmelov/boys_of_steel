@@ -25,7 +25,7 @@ class NewsFactory extends Factory
         return [
             'image' => 'storage/images/placeholder.jpg',
             'head' => fake()->text(30),
-            'short_text' => fake()->text(200),
+            'short_text' => fake()->text(1000),
             'text' => $text,
             'date' => Carbon::now()
         ];

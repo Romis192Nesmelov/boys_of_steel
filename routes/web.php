@@ -18,12 +18,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/',[HomeController::class, 'home'])->name('home');
-Route::get('/our_mission',[HomeController::class, 'ourMission'])->name('our_mission');
+Route::get('/',HomeController::class)->name('home');
 
 //Route::middleware(['auth', 'verified', 'filled.profile'])->group(function () {
     Route::get('/news/{slug?}', NewsController::class)->name('news');
-    Route::get('/schedule', ScheduleController::class)->name('schedule');
+    Route::get('/games/future', [ScheduleController::class, 'futureGames'])->name('games.future');
+    Route::get('/games/past', [ScheduleController::class, 'pastGames'])->name('games.past');
     Route::get('/teams/{slug?}', TeamsController::class)->name('teams');
 //});
 
@@ -33,4 +33,4 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-require __DIR__.'/auth.php';
+//require __DIR__.'/auth.php';

@@ -32,16 +32,16 @@
         ])
     </head>
     <body class="font-sans antialiased">
-        @php $nav_links = ['home','our_mission','news','schedule','teams'] @endphp
+        @php $nav_links = ['home','news','games.future','games.past','teams'] @endphp
         <div class="min-h-screen bg-gray-100 dark:bg-gray-900">
             <div class="max-w-7xl mx-auto py-4">
                 <div class="flex flex-col md:flex-row items-center justify-center">
                     <div>
-                        <x-top-p>{{ __('Steel Hockey League') }}</x-top-p>
-                        <x-top-p>{{ __('Hockey Championship for the Cup «Boys from Steel»') }}</x-top-p>
-                        <p class="text-sm text-center text-white mt-1">*{{ __('With the support of the Charity Fund «Guys from Steel»') }}</p>
+                        <x-top-p :size="2">{{ __('Steel Hockey League') }}</x-top-p>
+                        <x-top-p :size="3">{{ __('Hockey Championship for the Cup «Boys from Steel»') }}</x-top-p>
+                        <p class="text-sm text-center text-white mt-1">*{{ __('With the support of the Government of St. Petersburg»') }}</p>
                     </div>
-                    <img class="w-40 ml-0 md:ml-2 mt-3 md:mt-0" src="{{ asset('storage/images/bos_cup.svg') }}" />
+                    <img class="w-20 ml-0 md:ml-4 mt-3 md:mt-0" src="{{ asset('storage/images/gerb-sankt-peterburga.png') }}" />
                 </div>
             </div>
             <hr class="opacity-25">
@@ -66,11 +66,11 @@
                     <ul class="mb-3 md:mb-0 mr-0 md:mr-20">
                         @each('partials.navigation.footer_menu',$nav_links,'route')
                     </ul>
-                    @guest
-                        <ul class="mb-3 md:mb-0">
-                            @each('partials.navigation.footer_menu',['login','register','password.request'],'route')
-                        </ul>
-                    @endguest
+{{--                    @guest--}}
+{{--                        <ul class="mb-3 md:mb-0">--}}
+{{--                            @each('partials.navigation.footer_menu',['login','register','password.request'],'route')--}}
+{{--                        </ul>--}}
+{{--                    @endguest--}}
                 </div>
                 <div class="motion-safe:hover:scale-[1.02] transition-all duration-250 focus:outline focus:outline-2 focus:outline-red-500">
                     <a class="w-full px-4 text-center" href="http://t.me/steelliga" target="_blank">
