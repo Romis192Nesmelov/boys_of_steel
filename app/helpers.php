@@ -17,5 +17,5 @@ function futureOrPast($date): bool {
 }
 
 function navLinkName($route): string {
-    return __(ucfirst(str_replace('_',' ',$route)));
+    return __(ucfirst(str_replace(['_','.'],' ',$route)));
 }

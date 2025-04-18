@@ -62,16 +62,24 @@
         </div>
         <footer class="py-8 dark:bg-gray-800">
             <div class="max-w-7xl mx-auto text-white flex flex-col md:flex-row items-center md:items-start justify-between">
-                <ul class="mb-3 md:mb-0">
-                    @each('partials.navigation.footer_menu',$nav_links,'route')
-{{--                    <li><a href="#" x-data="" x-on:click.prevent="$dispatch('open-modal', 'our-mission')">{{ __('Our mission') }}</a></li>--}}
-                </ul>
-                <div class="text-right sm:text-left motion-safe:hover:scale-[1.02] transition-all duration-250 focus:outline focus:outline-2 focus:outline-red-500">
-                    <a href="http://t.me/steelliga" target="_blank">
-                        <img class="w-20 md:w-40" src="{{ asset('storage/images/qr.svg') }}">
+                <div class="flex flex-col md:flex-row">
+                    <ul class="mb-3 md:mb-0 mr-0 md:mr-20">
+                        @each('partials.navigation.footer_menu',$nav_links,'route')
+                    </ul>
+                    <ul class="mb-3 md:mb-0">
+                        @each('partials.navigation.footer_menu',['login','register','password.request'],'route')
+                    </ul>
+                </div>
+                <div class="motion-safe:hover:scale-[1.02] transition-all duration-250 focus:outline focus:outline-2 focus:outline-red-500">
+                    <a class="w-full px-4 text-center" href="http://t.me/steelliga" target="_blank">
+                        <img class="w-full md:w-40" src="{{ asset('storage/images/qr.svg') }}">
                         <div class="text-center text-gray-500 text-sm mt-1">http://t.me/steelliga</div>
                     </a>
                 </div>
+            </div>
+            <hr class="opacity-25">
+            <div class="max-w-xl mx-auto text-gray-600 text-center text-sm pt-6">
+                ©{{ date('Y').', '.__('League of steel').'. '.__('All rights reserved.') }} <br> {{ __('Full or partial copying of materials is prohibited.') }}
             </div>
         </footer>
 
