@@ -36,6 +36,7 @@
         <div class="min-h-screen bg-gray-100 dark:bg-gray-900">
             <div class="max-w-7xl mx-auto py-4">
                 <div class="flex flex-col md:flex-row items-center justify-center">
+                    <img class="w-20 ml-0 md:ml-4 mt-3 md:mt-0" src="{{ asset('storage/images/logo_bos2.svg') }}" />
                     <div>
                         <x-top-p :size="2">{{ __('Steel Hockey League') }}</x-top-p>
                         <x-top-p :size="3">{{ __('Hockey Championship for the Cup «Boys from Steel»') }}</x-top-p>
