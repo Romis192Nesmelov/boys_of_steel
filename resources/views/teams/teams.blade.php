@@ -3,7 +3,7 @@
 
     <div class="max-w-7xl mx-auto p-6 lg:p-8">
         @include('partials.head1',['head' => 'Teams'])
-        <div class="grid grid-cols-1 md:grid-cols-6 gap-6 pt-6 px-6">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-6 pt-6 px-6">
             @each('teams.partials.team', $teams, 'team')
         </div>
         <div class="w-full text-center mt-6">

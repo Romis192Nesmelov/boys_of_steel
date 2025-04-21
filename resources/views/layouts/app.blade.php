@@ -32,24 +32,24 @@
         ])
     </head>
     <body class="font-sans antialiased">
-        @php $nav_links = ['home','news','games.future','games.past','teams'] @endphp
-        <div class="min-h-screen bg-gray-100 dark:bg-gray-900">
+        @php $nav_links = ['home','games.future','games.past','teams'] @endphp
+        <div class="min-h-screen bg-gray-900">
             <div class="max-w-7xl mx-auto py-4">
                 <div class="flex flex-col md:flex-row items-center justify-center">
-                    <img class="w-20 ml-0 md:ml-4 mt-3 md:mt-0" src="{{ asset('storage/images/logo_bos2.svg') }}" />
+                    <img class="w-40 ml-0 md:ml-4 mt-3 md:mt-0" src="{{ asset('storage/images/logo_bos2.svg') }}" />
                     <div>
-                        <x-top-p :size="2">{{ __('Steel Hockey League') }}</x-top-p>
-                        <x-top-p :size="3">{{ __('Hockey Championship for the Cup «Boys from Steel»') }}</x-top-p>
-                        <p class="text-sm text-center text-white mt-1">*{{ __('With the support of the Government of St. Petersburg»') }}</p>
+                        <p class="bg-white text-center text-7xl text-black font-semibold px-4 md:px-0 py-2">{{ __('Steel Hockey League') }}</p>
+                        <p class="bg-red-600 text-center text-5xl text-white font-semibold px-4 md:px-0 py-2">{{ __('Ice Hockey Championship for the Cup «Boys from Steel»') }}</p>
+                        <p class="bg-sky-700 text-4xl text-center text-white py-2">*{{ __('With the support of the Government of St. Petersburg»') }}</p>
                     </div>
-                    <img class="w-20 ml-0 md:ml-4 mt-3 md:mt-0" src="{{ asset('storage/images/gerb-sankt-peterburga.png') }}" />
+                    <img class="w-40 ml-0 md:ml-4 mt-3 md:mt-0" src="{{ asset('storage/images/gerb-sankt-peterburga.png') }}" />
                 </div>
             </div>
             <hr class="opacity-25">
             @include('partials.navigation.navigation')
             <!-- Page Heading -->
             @if (isset($header))
-                <header class="bg-white dark:bg-gray-900 shadow border-b border-gray-800">
+                <header class="bg-gray-900 shadow border-b border-gray-800">
                     <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
                         {{ $header }}
                     </div>
@@ -61,7 +61,7 @@
                 {{ $slot }}
             </main>
         </div>
-        <footer class="py-8 dark:bg-gray-800">
+        <footer class="py-8 bg-gray-800">
             <div class="max-w-7xl mx-auto text-white flex flex-col md:flex-row items-center md:items-start justify-between">
                 <div class="flex flex-col md:flex-row">
                     <ul class="mb-3 md:mb-0 mr-0 md:mr-20">

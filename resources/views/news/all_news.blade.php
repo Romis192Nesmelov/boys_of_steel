@@ -4,7 +4,7 @@
     <div class="max-w-7xl mx-auto p-6 lg:p-8">
         @include('partials.head1',['head' => 'News'])
         <div class="py-8">
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 px-6">
+            <div class="grid grid-cols-1 gap-6 px-6">
                 @each('news.partials.news', $news, 'new')
             </div>
         </div>
