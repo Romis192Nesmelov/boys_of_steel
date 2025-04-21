@@ -32,7 +32,7 @@
         ])
     </head>
     <body class="font-sans antialiased">
-        @php $nav_links = ['home','games.future','games.past','teams'] @endphp
+        @php $nav_links = ['home','news','games.future','games.past','teams'] @endphp
         <div class="min-h-screen bg-gray-900">
             <div class="max-w-7xl mx-auto py-4">
                 <div class="flex flex-col md:flex-row items-center justify-center">

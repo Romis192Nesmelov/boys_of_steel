@@ -4,7 +4,7 @@
     <div id="main-art"></div>
     <div class="max-w-7xl mx-auto pt-6">
         @include('partials.head1',['head' => 'Our mission'])
-        <div class="flex flex-col md:flex-row items-center md:items-center justify-start pt-6">
+        <div class="flex flex-col md:flex-row items-center justify-start pt-6">
             <img class="w-40 md:w-1/4 mr-0 mb-3 md:mr-4 md:mb-0" src="{{ asset('storage/images/bos_cup.svg') }}" />
             <div class="px-4 md:px-0 md:col-span-2">
                 <p class="mt-2 mb-6 text-gray-300 text-xl">Проект направлен на создание спортивного братства, вовлечение ветеранов боевых действий и членов их семей в коллективные спортивные соревнования, адаптацию и социализацию ветеранов в кругу общих интересов через физкультуру и спорт.</p>
@@ -23,19 +23,19 @@
         <hr class="opacity-25 my-6">
     </div>
     <div class="max-w-7xl mx-auto">
-{{--        @include('partials.head1',['head' => 'News'])--}}
-{{--        <div class="py-8">--}}
-{{--            <div class="grid grid-cols-1 gap-6 px-6">--}}
-{{--                @each('news.partials.news', $news, 'new')--}}
-{{--            </div>--}}
-{{--            <div class="w-full text-center pt-6">--}}
-{{--                <a href="{{ route('news') }}">--}}
-{{--                    <x-primary-button>{{ __('All news') }}</x-primary-button>--}}
-{{--                </a>--}}
-{{--            </div>--}}
-{{--        </div>--}}
+        @include('partials.head1',['head' => 'News'])
+        <div class="py-8">
+            <div class="grid grid-cols-1 gap-6 px-6">
+                @each('news.partials.news', $news, 'new')
+            </div>
+            <div class="w-full text-center pt-6">
+                <a href="{{ route('news') }}">
+                    <x-primary-button>{{ __('All news') }}</x-primary-button>
+                </a>
+            </div>
+        </div>
 
-{{--        <hr class="opacity-25 mb-6">--}}
+        <hr class="opacity-25 mb-6">
 
         @include('partials.head1',['head' => 'Schedule of games'])
         <div class='py-8'>
