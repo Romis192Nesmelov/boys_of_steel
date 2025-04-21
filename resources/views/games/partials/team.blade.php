@@ -1,4 +1,4 @@
-<div class="flex flex-col md:flex-row items-center justify-center md:justify-{{ $first ? 'end' : 'start' }}">
+<div class="flex flex-col md:flex-row items-center justify-center {{ $first ? 'md:justify-end' : 'md:justify-start' }}">
 {{--    @if (!$first)--}}
 {{--        <img class="w-20 mr-0 md:mr-4" src="{{ teamLogo($team) }}" />--}}
 {{--    @endif--}}
