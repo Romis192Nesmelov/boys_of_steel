@@ -1,0 +1,112 @@
+<?php
+
+declare(strict_types=1);
+
+namespace App\MoonShine\Resources;
+
+use Illuminate\Database\Eloquent\Model;
+use App\Models\News;
+
+use MoonShine\Decorations\Column;
+use MoonShine\Decorations\Divider;
+use MoonShine\Decorations\Grid;
+use MoonShine\Fields\Date;
+use MoonShine\Fields\Image;
+use MoonShine\Fields\Slug;
+use MoonShine\Fields\Text;
+use MoonShine\Fields\Textarea;
+use MoonShine\Fields\TinyMce;
+use MoonShine\Resources\ModelResource;
+use MoonShine\Decorations\Block;
+use MoonShine\Fields\ID;
+use MoonShine\Fields\Field;
+use MoonShine\Components\MoonShineComponent;
+
+/**
+ * @extends ModelResource<News>
+ */
+class NewsResource extends ModelResource
+{
+    protected string $model = News::class;
+
+    protected string $title = 'Новости';
+
+    protected string $column = 'head';
+
+    protected int $itemsPerPage = 10;
+
+    /**
+     * @return list<MoonShineComponent|Field>
+     */
+    public function fields(): array
+    {
+        return [
+            Grid::make([
+
+                Column::make([
+                    Block::make([
+                        ID::make()->sortable(),
+                        Image::make('Картинка','image')
+                            ->nullable()
+                            ->disk('public')
+                            ->dir('images/news'),
+                    ]),
+
+                    Divider::make(),
+
+                    Date::make('Дата','date')
+                        ->required()
+                        ->format('d.m.Y'),
+                ])->columnSpan(2),
+
+                Column::make([
+                    Text::make('Заголовок','head')
+                        ->required(),
+
+                    Textarea::make('Коротко','short_text')
+                        ->required()
+                        ->customAttributes([
+                            'rows' => 8,
+                        ])->hideOnIndex(),
+                ])->columnSpan(10),
+
+                Column::make([
+                    Divider::make(),
+
+                    TinyMce::make('Новость','text')
+                        ->required()
+                        ->customAttributes([
+                            'rows' => 10,
+                        ])->hideOnIndex(),
+
+                    Slug::make('Slug')
+                        ->from('head')
+                        ->separator('-')
+                        ->hideOnAll()
+                ])->columnSpan(12),
+            ])
+        ];
+    }
+
+    /**
+     * @param News $item
+     *
+     * @return array<string, string[]|string>
+     * @see https://laravel.com/docs/validation#available-validation-rules
+     */
+    public function rules(Model $item): array
+    {
+        return [
+            'image' => ['required_if:id,true','mimes:jpg','max:2000'],
+            'head' => ['required','min:3','max:255'],
+            'short_text' => ['required','min:5','max:2000'],
+            'text' => ['required','min:5','max:10000'],
+            'date' => ['required'],
+        ];
+    }
+
+    public function search(): array
+    {
+        return ['id', 'head', 'short_text', 'text'];
+    }
+}
