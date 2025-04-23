@@ -27,7 +27,7 @@ class Dashboard extends Page
 
     public function title(): string
     {
-        return $this->title ?: 'Главная страница';
+        return __('Home page');
     }
 
     /**
@@ -38,7 +38,7 @@ class Dashboard extends Page
 		return [
             Grid::make([
                 Column::make([
-                    ValueMetric::make(fn() => (string)Link::make(app(NewsResource::class)->indexPageUrl(),'Новости'))
+                    ValueMetric::make(fn() => (string)Link::make(app(NewsResource::class)->indexPageUrl(),__('News')))
                         ->value(fn() => News::count())
                         ->icon('heroicons.newspaper'),
 

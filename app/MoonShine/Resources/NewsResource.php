@@ -29,8 +29,6 @@ class NewsResource extends ModelResource
 {
     protected string $model = News::class;
 
-    protected string $title = 'Новости';
-
     protected string $column = 'head';
 
     protected int $itemsPerPage = 10;
@@ -38,42 +36,42 @@ class NewsResource extends ModelResource
     /**
      * @return list<MoonShineComponent|Field>
      */
+
+    public function title(): string
+    {
+        return __('News');
+    }
+
     public function fields(): array
     {
         return [
             Grid::make([
-
                 Column::make([
                     Block::make([
                         ID::make()->sortable(),
-                        Image::make('Картинка','image')
+                        Image::make(__('Picture'),'image')
                             ->nullable()
                             ->disk('public')
                             ->dir('images/news'),
                     ]),
-
                     Divider::make(),
-
-                    Date::make('Дата','date')
+                    Date::make(__('Date'),'date')
                         ->required()
                         ->format('d.m.Y'),
                 ])->columnSpan(2),
-
                 Column::make([
-                    Text::make('Заголовок','head')
+                    Text::make(__('Head'),'head')
                         ->required(),
 
-                    Textarea::make('Коротко','short_text')
+                    Textarea::make(__('Short'),'short_text')
                         ->required()
                         ->customAttributes([
                             'rows' => 8,
                         ])->hideOnIndex(),
                 ])->columnSpan(10),
-
                 Column::make([
                     Divider::make(),
-
-                    TinyMce::make('Новость','text')
+                    TinyMce::make(__('News'),'text')
                         ->required()
                         ->customAttributes([
                             'rows' => 10,
@@ -97,11 +95,11 @@ class NewsResource extends ModelResource
     public function rules(Model $item): array
     {
         return [
-            'image' => ['required_if:id,true','mimes:jpg','max:2000'],
+            'image' => ['required_without:id','mimes:jpg','max:2000'],
             'head' => ['required','min:3','max:255'],
             'short_text' => ['required','min:5','max:2000'],
             'text' => ['required','min:5','max:10000'],
-            'date' => ['required'],
+            'date' => ['required','date'],
         ];
     }
 

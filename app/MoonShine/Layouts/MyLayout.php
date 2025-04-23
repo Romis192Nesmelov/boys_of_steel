@@ -33,13 +33,7 @@ final class MyLayout implements MoonShineLayoutContract
                     Search::make(),
                 ]),
                 Content::make(),
-                Footer::make()
-                    ->copyright(fn (): string => sprintf(
-                        <<<'HTML'
-                            &copy; %d
-                        HTML,
-                        now()->year
-                    ))
+                Footer::make()->copyright(fn (): string => sprintf('&copy;'.now()->year))
             ])->customAttributes(['class' => 'layout-page']),
         ]);
     }

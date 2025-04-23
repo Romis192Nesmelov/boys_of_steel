@@ -4,7 +4,7 @@
     <div class="max-w-7xl mx-auto p-6 lg:p-8">
         <div class="w-full flex flex-col md:flex-row items-center justify-start mb-4">
             <a href="{{ asset($news->image)}}" class="w-80 mr-0 mb-4 md:mr-3 md:mb-0 fancybox">
-                <img class=" border-2 border-solid" src="{{ asset($news->image) }}" />
+                <img class=" border-2 border-solid" src="{{ newsImage($news) }}" />
             </a>
             <p class="w-full text-gray-400 text-xl"><i>{{ $news->short_text }}</i></p>
         </div>
