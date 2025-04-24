@@ -15,7 +15,7 @@ return new class extends Migration
         Schema::create('games', function (Blueprint $table) {
             $table->id();
             $table->timestamp('date');
-            $table->string('place');
+            $table->string('place',191);
             $table->tinyInteger('score1');
             $table->tinyInteger('score2');
             $table->text('description');
