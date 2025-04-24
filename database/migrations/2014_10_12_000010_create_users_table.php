@@ -14,19 +14,19 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('users', function (Blueprint $table) {
-            $table->id();
-            $table->string('name',255);
-            $table->string('email',255)->unique();
-            $table->string('phone',20)->nullable();
-            $table->timestamp('email_verified_at')->nullable();
-            $table->string('password',255);
-            $table->foreignIdFor(UserType::class)->nullable()->constrained()->cascadeOnUpdate()->cascadeOnDelete();
-            $table->foreignIdFor(City::class)->nullable()->constrained()->cascadeOnUpdate()->cascadeOnDelete();
-            $table->foreignIdFor(Team::class)->nullable()->constrained()->cascadeOnUpdate()->cascadeOnDelete();
-            $table->rememberToken();
-            $table->timestamps();
-        });
+//        Schema::create('users', function (Blueprint $table) {
+//            $table->id();
+//            $table->string('name',255);
+//            $table->string('email',255)->unique();
+//            $table->string('phone',20)->nullable();
+//            $table->timestamp('email_verified_at')->nullable();
+//            $table->string('password',255);
+//            $table->foreignIdFor(UserType::class)->nullable()->constrained()->cascadeOnUpdate()->cascadeOnDelete();
+//            $table->foreignIdFor(City::class)->nullable()->constrained()->cascadeOnUpdate()->cascadeOnDelete();
+//            $table->foreignIdFor(Team::class)->nullable()->constrained()->cascadeOnUpdate()->cascadeOnDelete();
+//            $table->rememberToken();
+//            $table->timestamps();
+//        });
     }
 
     /**
@@ -34,6 +34,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('users');
+//        Schema::dropIfExists('users');
     }
 };
