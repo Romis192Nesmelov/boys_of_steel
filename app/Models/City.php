@@ -10,13 +10,13 @@ class City extends Model
         'name'
     ];
 
-    public function items(): HasMany
+    public function users(): HasMany
     {
         return $this->hasMany(User::class);
     }
 
-    public function clubs(): HasMany
+    public function teams(): HasMany
     {
-        return $this->hasMany(Club::class);
+        return $this->hasMany(Team::class);
     }
 }

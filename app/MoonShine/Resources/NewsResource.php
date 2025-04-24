@@ -45,10 +45,15 @@ class NewsResource extends ModelResource
     public function fields(): array
     {
         return [
+            ID::make()->sortable(),
+            Slug::make('Slug')
+                ->from('head')
+                ->separator('-')
+                ->hideOnAll(),
+
             Grid::make([
                 Column::make([
                     Block::make([
-                        ID::make()->sortable(),
                         Image::make(__('Picture'),'image')
                             ->nullable()
                             ->disk('public')
@@ -76,11 +81,6 @@ class NewsResource extends ModelResource
                         ->customAttributes([
                             'rows' => 10,
                         ])->hideOnIndex(),
-
-                    Slug::make('Slug')
-                        ->from('head')
-                        ->separator('-')
-                        ->hideOnAll()
                 ])->columnSpan(12),
             ])
         ];
@@ -95,11 +95,11 @@ class NewsResource extends ModelResource
     public function rules(Model $item): array
     {
         return [
-            'image' => ['required_without:id','mimes:jpg','max:2000'],
-            'head' => ['required','min:3','max:191'],
+            'image' =>      ['required_without:id','mimes:jpg,png','max:2000'],
+            'head' =>       ['required','min:3','max:191'],
             'short_text' => ['required','min:5','max:2000'],
-            'text' => ['required','min:5','max:10000'],
-            'date' => ['required','date'],
+            'text' =>       ['required','min:5','max:50000'],
+            'date' =>       ['required','date'],
         ];
     }
 

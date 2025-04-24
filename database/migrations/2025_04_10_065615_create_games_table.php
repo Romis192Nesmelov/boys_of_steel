@@ -16,9 +16,9 @@ return new class extends Migration
             $table->id();
             $table->timestamp('date');
             $table->string('place');
-            $table->tinyInteger('score1');
-            $table->tinyInteger('score2');
-            $table->text('description');
+            $table->tinyInteger('score1')->nullable();
+            $table->tinyInteger('score2')->nullable();
+            $table->text('description')->nullable();
             $table->timestamps();
         });
     }

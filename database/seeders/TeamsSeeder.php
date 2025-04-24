@@ -64,7 +64,6 @@ class TeamsSeeder extends Seeder
                 'city_id' => 10,
             ],
             [
-                'logo' => 'storage/images/teams_logos/def_logo.png',
                 'name' => 'Бастион',
                 'captain' => 'Лютов Владимир Викторович',
                 'city_id' => 2,

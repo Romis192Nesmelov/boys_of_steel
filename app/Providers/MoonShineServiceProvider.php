@@ -4,7 +4,10 @@ declare(strict_types=1);
 
 namespace App\Providers;
 
+use App\MoonShine\Resources\CityResource;
+use App\MoonShine\Resources\GameResource;
 use App\MoonShine\Resources\NewsResource;
+use App\MoonShine\Resources\TeamResource;
 use MoonShine\Providers\MoonShineApplicationServiceProvider;
 use MoonShine\MoonShine;
 use MoonShine\Menu\MenuGroup;
@@ -54,6 +57,21 @@ class MoonShineServiceProvider extends MoonShineApplicationServiceProvider
             MenuItem::make(
                 static fn() => __('News'),
                 new NewsResource()
+            ),
+
+            MenuItem::make(
+                static fn() => __('Cities'),
+                new CityResource()
+            ),
+
+            MenuItem::make(
+                static fn() => __('Teams'),
+                new TeamResource()
+            ),
+
+            MenuItem::make(
+                static fn() => __('Games'),
+                new GameResource()
             ),
         ];
     }
