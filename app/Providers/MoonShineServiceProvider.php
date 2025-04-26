@@ -9,7 +9,6 @@ use App\MoonShine\Resources\GameResource;
 use App\MoonShine\Resources\NewsResource;
 use App\MoonShine\Resources\TeamResource;
 use MoonShine\Providers\MoonShineApplicationServiceProvider;
-use MoonShine\MoonShine;
 use MoonShine\Menu\MenuGroup;
 use MoonShine\Menu\MenuItem;
 use MoonShine\Resources\MoonShineUserResource;
