@@ -1,6 +1,6 @@
 {
   "resources/css/app.css": {
-    "file": "assets/app-BzMUdfUE.css",
+    "file": "assets/app-yMTpaAAp.css",
     "src": "resources/css/app.css",
     "isEntry": true
   },
@@ -36,7 +36,7 @@
     "isEntry": true
   },
   "resources/css/styles.css": {
-    "file": "assets/styles-Cx2vbali.css",
+    "file": "assets/styles-Dpnwnoxd.css",
     "src": "resources/css/styles.css",
     "isEntry": true
   },
@@ -63,9 +63,5 @@
     "name": "owl.carousel",
     "src": "resources/js/owl.carousel.js",
     "isEntry": true
-  },
-  "storage/app/public/images/main_art.jpg": {
-    "file": "assets/main_art-CAqozEjk.jpg",
-    "src": "storage/app/public/images/main_art.jpg"
   }
 }
