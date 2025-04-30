@@ -11,6 +11,7 @@ use MoonShine\Decorations\Column;
 use MoonShine\Decorations\Divider;
 use MoonShine\Decorations\Grid;
 use MoonShine\Fields\Date;
+use MoonShine\Fields\Image;
 use MoonShine\Fields\Number;
 use MoonShine\Fields\Relationships\BelongsToMany;
 use MoonShine\Fields\Text;
@@ -47,6 +48,13 @@ class GameResource extends ModelResource
                 ID::make()->sortable(),
                 Grid::make([
                     Column::make([
+                        Block::make([
+                            Image::make(__('Picture'),'image')
+                                ->nullable()
+                                ->disk('public')
+                                ->dir('images/games'),
+                        ]),
+                        Divider::make(),
                         Date::make(__('Date'),'date')
                             ->required()
                             ->format('d.m.Y'),

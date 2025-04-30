@@ -18,12 +18,16 @@ class GameFactory extends Factory
      */
     public function definition(): array
     {
+        $description = '';
+        for ($i=0;$i<4;$i++) {
+            $description .= '<p>'.fake()->text(500).'</p>';
+        }
         return [
-            'date' => Carbon::now()->addDay(rand(0,10)),
+            'date' => Carbon::now()->addDay(rand(-10,10)),
             'place' => '«'.fake()->text(15).'» Арена',
             'score1' => rand(0,10),
             'score2' => rand(0,10),
-            'description' => fake()->text(200),
+            'description' => $description,
         ];
     }
 }

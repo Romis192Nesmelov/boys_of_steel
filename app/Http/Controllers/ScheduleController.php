@@ -26,7 +26,7 @@ class ScheduleController extends Controller
 
     public function pastGames(): View
     {
-        return view('games.games', [
+        return view('games.past_games', [
             'games' => Game::query()
                 ->with('teams')
                 ->where('date','<', Carbon::now())

@@ -14,6 +14,7 @@ use MoonShine\Fields\Image;
 use MoonShine\Fields\Relationships\BelongsTo;
 use MoonShine\Fields\Slug;
 use MoonShine\Fields\Text;
+use MoonShine\Fields\TinyMce;
 use MoonShine\Resources\ModelResource;
 use MoonShine\Decorations\Block;
 use MoonShine\Fields\ID;
@@ -80,10 +81,10 @@ class TeamResource extends ModelResource
                     )->hideOnIndex()
                 ])->columnSpan(6),
                 Column::make([
-                    Text::make(__('Description'),'description')
-                        ->hideOnIndex(),
-                    Divider::make()
-
+                    TinyMce::make(__('Description'),'description')
+                        ->customAttributes([
+                            'rows' => 10,
+                        ])->hideOnIndex(),
                 ])->columnSpan(12),
             ])
         ];

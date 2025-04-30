@@ -14,6 +14,7 @@ return new class extends Migration
     {
         Schema::create('games', function (Blueprint $table) {
             $table->id();
+            $table->string('image')->nullable();
             $table->timestamp('date');
             $table->string('place');
             $table->tinyInteger('score1')->nullable();

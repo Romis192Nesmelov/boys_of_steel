@@ -26,10 +26,18 @@ function navLinkName($route): string {
 
 function newsImage(\App\Models\News $news): string
 {
-    return asset($news->image ?? 'storage/images/news/placeholder.jpg');
+    $imagePath = 'storage/images/news/';
+    return asset($news->image ? $imagePath.$news->image : $imagePath.'placeholder.jpg');
+}
+
+function gameImage(\App\Models\Game $game): string
+{
+    $imagePath = 'storage/images/games/';
+    return asset($game->image ? $imagePath.$game->image : $imagePath.'placeholder.jpg');
 }
 
 function teamLogo(\App\Models\Team $team): string
 {
-    return asset($team->logo ?? 'storage/images/teams_logos/def_logo.png');
+    $imagePath = 'storage/images/teams_logos/';
+    return asset($team->logo ? $imagePath.$team->logo : $imagePath.'def_logo.png');
 }

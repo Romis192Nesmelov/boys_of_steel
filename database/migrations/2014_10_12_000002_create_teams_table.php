@@ -21,7 +21,7 @@ return new class extends Migration
             $table->string('email',50)->nullable();
             $table->string('phone',16)->nullable();
             $table->string('site')->nullable();
-            $table->string('description')->nullable();
+            $table->text('description')->nullable();
             $table->foreignIdFor(City::class)->constrained()->cascadeOnUpdate()->cascadeOnDelete();
             $table->timestamps();
         });

@@ -4,12 +4,13 @@
     <div class="max-w-7xl mx-auto p-6 lg:p-8">
         @include('partials.head1',['head' => $team->name])
         <img src="{{ teamLogo($team) }}" class="max-w-2xl mx-auto" />
-        <p class="w-full text-gray-300 mb-6">{{ $team->description }}</p>
+        @include('partials.head2',['head' => 'Капитан команды: '.$team->captain])
+        <div class="w-full text-gray-300 mt-4">{!! $team->description !!}</div>
         <hr class="opacity-25 my-6">
         @if (!$team->games->count())
-            @include('partials.head2',['head' => 'Games not found'])
+            @include('partials.head2',['head' => 'Игр не найдено'])
         @else
-            @include('partials.head1',['head' => 'Games of the team'])
+            @include('partials.head1',['head' => 'Игры команды'])
         @endif
 
         @include('games.partials.future_or_past',['game' => $team->games[0]])

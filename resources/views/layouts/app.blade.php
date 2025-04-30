@@ -36,13 +36,13 @@
         <div class="min-h-screen bg-gray-900">
             <div class="max-w-7xl mx-auto py-4">
                 <div class="flex flex-col md:flex-row items-center justify-center">
-                    <img class="w-32 ml-0 md:ml-4 mt-3 md:mt-0" src="{{ asset('storage/images/logo_bos2.svg') }}" />
+                    <img class="w-20 ml-0 md:ml-4 mt-3 md:mt-0" src="{{ asset('storage/images/logo_bos2.svg') }}" />
                     <div>
-                        <p class="text-center text-7xl text-white font-semibold px-4 md:px-0">{{ __('Steel Hockey League') }}</p>
-                        <p class="text-center text-3xl text-white font-semibold px-4 md:px-0">{{ __('Ice Hockey Championship for the Cup «Boys from Steel»') }}</p>
-                        <p class="text-2xl text-center text-white py-2">*{{ __('With the support of the Government of St. Petersburg»') }}</p>
+                        <p class="text-center text-3xl md:text-5xl text-white font-semibold px-4 md:px-0">{{ __('Steel Hockey League') }}</p>
+                        <p class="text-center text-2xl md:text-2xl text-white font-semibold px-4 md:px-0">{{ __('Ice Hockey Championship for the Cup «Boys from Steel»') }}</p>
+                        <p class="text-center text-xl md:text-xl text-white">*{{ __('With the support of the Government of St. Petersburg»') }}</p>
                     </div>
-                    <img class="w-32 ml-0 md:ml-4 mt-3 md:mt-0" src="{{ asset('storage/images/gerb-sankt-peterburga.png') }}" />
+                    <img class="w-20 ml-0 md:ml-4 mt-3 md:mt-0" src="{{ asset('storage/images/gerb-sankt-peterburga.png') }}" />
                 </div>
             </div>
             <hr class="opacity-25">

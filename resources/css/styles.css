@@ -3,14 +3,6 @@
 /*    --second-color: #7EE068;*/
 /*}*/
 
-#main-art {
-    width: 100%;
-    height: 50vh;
-    background: url("../../storage/app/public/images/main_art.jpg") top center;
-    background-size: cover;
-    border-bottom: 1px solid gray;
-}
-
 footer li {
     margin-bottom: 7px;
 }

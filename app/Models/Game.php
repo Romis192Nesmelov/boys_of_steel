@@ -12,6 +12,7 @@ class Game extends Model
     use HasFactory;
 
     protected $fillable = [
+        'image',
         'date',
         'place',
         'team1_id',
