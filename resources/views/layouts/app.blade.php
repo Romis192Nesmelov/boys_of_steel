@@ -71,7 +71,7 @@
                         <div class="text-center md:text-left text-gray-600 font-bold text-xl mb-3">Контакты:</div>
                         <ul class="text-center md:text-left text-white text-sm">
                             <li class="border-gray-800 border-b-[1px] border-solid hover:border-indigo-500"><a href="tel:+79262214719" target="_blank">+7(926)221-47-19</a></li>
-                            <li class="border-gray-800 border-b-[1px] border-solid hover:border-indigo-500">E-mail: <a href="mailto:vnn@12.ru" target="_blank">vnn@12.ru</a></li>
+                            <li class="border-gray-800 border-b-[1px] border-solid hover:border-indigo-500">E-mail: <a href="mailto:info@dartcom.ru" target="_blank">info@dartcom.ru</a></li>
                         </ul>
                     </div>
 {{--                    @guest--}}
