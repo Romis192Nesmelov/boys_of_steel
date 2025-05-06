@@ -4,12 +4,12 @@
         <div class="flex justify-between h-16">
             <div class="flex">
                 <!-- Logo -->
-                <div class="flex items-center mr-1 lg:mr-5 shrink-0">
+                <div class="flex md:flex sm:hidden items-center mr-1 lg:mr-5 shrink-0">
                     <a href="{{ route('home') }}"><x-application-logo class="block h-9 w-auto fill-current text-gray-200" /></a>
                 </div>
 
                 <!-- Navigation Links -->
-                <div class="hidden space-x-1 lg:space-x-6 sm:-my-px sm:ms-3 sm:flex">
+                <div class="hidden space-x-1 lg:space-x-3 sm:-my-px sm:ms-3 sm:flex">
                     @foreach($nav_links as $route)
                         <x-nav-link :href="route($route)" :active="request()->routeIs($route)">{{ navLinkName($route) }}</x-nav-link>
                     @endforeach

@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\HockeyController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\LocationController;
 use App\Http\Controllers\NewsController;
 use App\Http\Controllers\ScheduleController;
 use App\Http\Controllers\TeamsController;
@@ -26,6 +27,7 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('/teams/{slug?}', TeamsController::class)->name('teams');
     Route::get('/sledge_hockey', [HockeyController::class, 'sledge'])->name('hockey.sledge');
     Route::get('/phygital_hockey', [HockeyController::class, 'phygital'])->name('hockey.phygital');
+    Route::get('/location', LocationController::class)->name('location');
 });
 
 //Route::middleware('auth')->group(function () {

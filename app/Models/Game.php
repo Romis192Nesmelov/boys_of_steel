@@ -14,7 +14,6 @@ class Game extends Model
     protected $fillable = [
         'image',
         'date',
-        'place',
         'team1_id',
         'team2_id',
         'score1',

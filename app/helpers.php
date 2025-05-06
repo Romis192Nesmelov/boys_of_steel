@@ -48,3 +48,17 @@ function hockeyImage(\App\Models\SledgeHockey|\App\Models\PhygitalHockey $model)
 {
     return asset($model->image ? 'storage/images/hockey/'.$model->image : 'storage/images/placeholder.jpg');
 }
+
+function contentImage(\App\Models\Content $model): string
+{
+    return asset($model->image ? 'storage/images/content/'.$model->image : 'storage/images/placeholder.jpg');
+}
+
+function generateFakeText(): string
+{
+    $text = '';
+    for($i=0;$i<rand(5,10);$i++) {
+        $text .= '<p>'.fake()->paragraph().'</p>';
+    }
+    return $text;
+}

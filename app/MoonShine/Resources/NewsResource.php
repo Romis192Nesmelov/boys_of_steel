@@ -58,7 +58,6 @@ class NewsResource extends ModelResource
                             ->disk('public')
                             ->dir('images/news'),
                     ]),
-                    Divider::make(),
                     Date::make(__('Date'),'date')
                         ->required()
                         ->format('d.m.Y'),
@@ -67,7 +66,7 @@ class NewsResource extends ModelResource
                     Text::make(__('Head'),'head')
                         ->required(),
 
-                    Textarea::make(__('Short'),'short_text')
+                    Text::make(__('Short'),'short_text')
                         ->required()
                         ->customAttributes([
                             'rows' => 8,
@@ -96,7 +95,7 @@ class NewsResource extends ModelResource
         return [
             'image' =>      ['required_without:id','mimes:jpg,png','max:2000'],
             'head' =>       ['required','min:3','max:191'],
-            'short_text' => ['required','min:5','max:2000'],
+            'short_text' => ['required','min:5','max:180'],
             'text' =>       ['required','min:5','max:50000'],
             'date' =>       ['required','date'],
         ];

@@ -60,8 +60,6 @@ class GameResource extends ModelResource
                         Date::make(__('Date'),'date')
                             ->required()
                             ->format('d.m.Y'),
-                        Text::make(__('Place'),'place')
-                            ->required(),
 //                        Grid::make([
 //                            Column::make([
 //                                Number::make(__('Score #1'),'score1'),

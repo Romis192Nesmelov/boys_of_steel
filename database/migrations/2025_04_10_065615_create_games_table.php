@@ -16,7 +16,6 @@ return new class extends Migration
             $table->id();
             $table->string('image')->nullable();
             $table->timestamp('date');
-            $table->string('place');
             $table->tinyInteger('score1')->nullable();
             $table->tinyInteger('score2')->nullable();
             $table->text('description')->nullable();

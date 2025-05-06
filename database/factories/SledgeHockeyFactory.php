@@ -17,14 +17,8 @@ class SledgeHockeyFactory extends Factory
      */
     public function definition(): array
     {
-        $text = '';
-        for($i=0;$i<rand(5,10);$i++) {
-            $text .= '<p>'.fake()->paragraph().'</p>';
-        }
-
         return [
-            'head' => fake()->text(30),
-            'text' => $text,
+            'text' => generateFakeText(),
             'date' => Carbon::now()
         ];
     }

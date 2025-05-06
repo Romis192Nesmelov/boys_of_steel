@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace App\Providers;
 
 use App\MoonShine\Resources\CityResource;
+use App\MoonShine\Resources\ContentResource;
 use App\MoonShine\Resources\GameResource;
 use App\MoonShine\Resources\NewsResource;
 use App\MoonShine\Resources\PhygitalHockeyResource;
@@ -83,6 +84,11 @@ class MoonShineServiceProvider extends MoonShineApplicationServiceProvider
             MenuItem::make(
                 static fn() => __('Hockey phygital'),
                 new PhygitalHockeyResource()
+            ),
+
+            MenuItem::make(
+                static fn() => __('Content'),
+                new ContentResource()
             ),
         ];
     }

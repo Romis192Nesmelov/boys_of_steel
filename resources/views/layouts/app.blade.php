@@ -16,6 +16,7 @@
         <!-- Scripts -->
         <script src="https://code.jquery.com/jquery-3.6.3.js" integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM=" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" type="text/javascript"></script>
+
         <script src="https://cdn.jsdelivr.net/npm/jquery.maskedinput@1.4.1/src/jquery.maskedinput.min.js" type="text/javascript"></script>
         <script src="https://cdn.jsdelivr.net/npm/pagedone@1.2.2/src/js/pagedone.js"></script>
         <link href="https://cdn.jsdelivr.net/npm/pagedone@1.2.2/src/css/pagedone.css " rel="stylesheet"/>
@@ -32,15 +33,15 @@
         ])
     </head>
     <body class="font-sans antialiased">
-        @php $nav_links = ['home','news','games.future','games.past','teams','hockey.sledge','hockey.phygital'] @endphp
+        @php $nav_links = ['home','news','games.future','games.past','teams','hockey.sledge','hockey.phygital','location'] @endphp
         <div class="min-h-screen bg-gray-900">
             <div class="max-w-7xl mx-auto py-4">
                 <div class="flex flex-col md:flex-row items-center justify-center">
                     <img class="w-20 ml-0 md:ml-4 mt-3 md:mt-0" src="{{ asset('storage/images/logo_bos2.svg') }}" />
                     <div>
-                        <p class="text-center text-3xl md:text-5xl text-white font-semibold px-4 md:px-0">Стальная хоккейная Лига</p>
-                        <p class="text-center text-2xl md:text-2xl text-white font-semibold px-4 md:px-0">Чемпионат по хоккею с шайбой на Кубок «Парни из Стали»</p>
-                        <p class="text-center text-xl md:text-xl text-white">При поддержке правительства Санкт-Петербурга</p>
+                        <p class="text-center text-xl md:text-3xl lg:text-5xl text-white font-semibold px-4 md:px-0">Стальная хоккейная Лига</p>
+                        <p class="text-center text-base md:text-xl lg:text-2xl text-white font-semibold px-4 md:px-0">Чемпионат по хоккею с шайбой на Кубок «Парни из Стали»</p>
+                        <p class="text-center text-xl md:text-base lg:text-xl text-white">При поддержке правительства Санкт-Петербурга</p>
                     </div>
                     <img class="w-20 ml-0 md:ml-4 mt-3 md:mt-0" src="{{ asset('storage/images/gerb-sankt-peterburga.png') }}" />
                 </div>
@@ -64,13 +65,12 @@
         <footer class="py-8 bg-gray-800">
             <div class="max-w-7xl mx-auto text-white flex flex-col md:flex-row items-center md:items-start justify-between">
                 <div class="flex flex-col md:flex-row">
-                    <ul class="mb-3 md:mb-0 mr-0 md:mr-20">
+                    <ul class="mb-3 md:mb-0 ml-4 mr-0 md:mr-20">
                         @each('partials.navigation.footer_menu',$nav_links,'route')
                     </ul>
                     <div class="ml-0 md:ml-8">
                         <div class="text-center md:text-left text-gray-600 font-bold text-xl mb-3">Контакты:</div>
                         <ul class="text-center md:text-left text-white text-sm">
-                            <li class="border-gray-800 border-b-[1px] border-solid hover:border-indigo-500"><a href="tel:+79262214719" target="_blank">+7(926)221-47-19</a></li>
                             <li class="border-gray-800 border-b-[1px] border-solid hover:border-indigo-500">E-mail: <a href="mailto:info@dartcom.ru" target="_blank">info@dartcom.ru</a></li>
                         </ul>
                     </div>
@@ -80,7 +80,7 @@
 {{--                        </ul>--}}
 {{--                    @endguest--}}
                 </div>
-                <div class="motion-safe:hover:scale-[1.02] transition-all duration-250 focus:outline focus:outline-2 focus:outline-red-500">
+                <div class="motion-safe:hover:scale-[1.02] transition-all duration-250 focus:outline focus:outline-2 focus:outline-red-500 pr-4">
                     <a class="w-full px-4 text-center" href="http://t.me/steelliga" target="_blank">
                         <img class="w-full md:w-40" src="{{ asset('storage/images/qr.svg') }}">
                         <div class="text-center text-gray-500 text-sm mt-1">http://t.me/steelliga</div>

@@ -17,15 +17,10 @@ class NewsFactory extends Factory
      */
     public function definition(): array
     {
-        $text = '';
-        for($i=0;$i<rand(5,10);$i++) {
-            $text .= '<p>'.fake()->paragraph().'</p>';
-        }
-
         return [
             'head' => fake()->text(30),
-            'short_text' => fake()->text(1000),
-            'text' => $text,
+            'short_text' => fake()->text(180),
+            'text' => generateFakeText(),
             'date' => Carbon::now()
         ];
     }
