@@ -17,14 +17,14 @@ class TeamsController extends Controller
             return view('teams.team', [
                 'team' => $team,
                 'breadcrumbs' => [
-                    ['href' => 'teams', 'name' => 'Teams'],
+                    ['href' => 'teams', 'name' => 'Команды'],
                     ['href' => 'teams', 'slug' => $slug, 'name' => $team->name]
                 ]
             ]);
         } else {
             return view('teams.teams', [
                 'teams' => Team::query()->select(['logo','slug','name','city_id'])->with('city')->paginate(10),
-                'breadcrumbs' => [['href' => 'teams', 'name' => 'Teams']]
+                'breadcrumbs' => [['href' => 'teams', 'name' => 'Команды']]
             ]);
         }
     }

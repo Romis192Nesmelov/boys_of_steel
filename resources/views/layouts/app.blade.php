@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="csrf-token" content="{{ csrf_token() }}">
 
-        <title>{{ config('app.name', __('League of steel')) }}</title>
+        <title>{{ config('app.name', 'Стальная лига') }}</title>
 
         @include('partials.favicons')
 
@@ -32,15 +32,15 @@
         ])
     </head>
     <body class="font-sans antialiased">
-        @php $nav_links = ['home','news','games.future','games.past','teams'] @endphp
+        @php $nav_links = ['home','news','games.future','games.past','teams','hockey.sledge','hockey.phygital'] @endphp
         <div class="min-h-screen bg-gray-900">
             <div class="max-w-7xl mx-auto py-4">
                 <div class="flex flex-col md:flex-row items-center justify-center">
                     <img class="w-20 ml-0 md:ml-4 mt-3 md:mt-0" src="{{ asset('storage/images/logo_bos2.svg') }}" />
                     <div>
-                        <p class="text-center text-3xl md:text-5xl text-white font-semibold px-4 md:px-0">{{ __('Steel Hockey League') }}</p>
-                        <p class="text-center text-2xl md:text-2xl text-white font-semibold px-4 md:px-0">{{ __('Ice Hockey Championship for the Cup «Boys from Steel»') }}</p>
-                        <p class="text-center text-xl md:text-xl text-white">*{{ __('With the support of the Government of St. Petersburg»') }}</p>
+                        <p class="text-center text-3xl md:text-5xl text-white font-semibold px-4 md:px-0">Стальная хоккейная Лига</p>
+                        <p class="text-center text-2xl md:text-2xl text-white font-semibold px-4 md:px-0">Чемпионат по хоккею с шайбой на Кубок «Парни из Стали»</p>
+                        <p class="text-center text-xl md:text-xl text-white">При поддержке правительства Санкт-Петербурга</p>
                     </div>
                     <img class="w-20 ml-0 md:ml-4 mt-3 md:mt-0" src="{{ asset('storage/images/gerb-sankt-peterburga.png') }}" />
                 </div>
@@ -67,6 +67,13 @@
                     <ul class="mb-3 md:mb-0 mr-0 md:mr-20">
                         @each('partials.navigation.footer_menu',$nav_links,'route')
                     </ul>
+                    <div class="ml-0 md:ml-8">
+                        <div class="text-center md:text-left text-gray-600 font-bold text-xl mb-3">Контакты:</div>
+                        <ul class="text-center md:text-left text-white text-sm">
+                            <li class="border-gray-800 border-b-[1px] border-solid hover:border-indigo-500"><a href="tel:+79262214719" target="_blank">+7(926)221-47-19</a></li>
+                            <li class="border-gray-800 border-b-[1px] border-solid hover:border-indigo-500">E-mail: <a href="mailto:vnn@12.ru" target="_blank">vnn@12.ru</a></li>
+                        </ul>
+                    </div>
 {{--                    @guest--}}
 {{--                        <ul class="mb-3 md:mb-0">--}}
 {{--                            @each('partials.navigation.footer_menu',['login','register','password.request'],'route')--}}
@@ -81,8 +88,11 @@
                 </div>
             </div>
             <hr class="opacity-25">
-            <div class="max-w-xl mx-auto text-gray-600 text-center text-sm pt-6">
-                ©{{ date('Y').', '.__('League of steel').'. '.__('All rights reserved.') }} <br> {{ __('Full or partial copying of materials is prohibited.') }}
+            <div class="max-w-xl mx-auto text-gray-500 text-center text-xl pt-6 pb-2">
+                Спонсор сайта компания ООО «Дартком»
+            </div>
+            <div class="max-w-xl mx-auto text-gray-600 text-center text-sm">
+                ©{{ date('Y') }}. Стальная лига. Все права защищены.<br>Полное или частичное копирование материалов запрещено.
             </div>
         </footer>
 

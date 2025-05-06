@@ -33,7 +33,7 @@ class NewsController extends Controller
                     ->select(['id','image','slug','head','short_text','date'])
                     ->orderBy('date','desc')
                     ->paginate(9),
-                'breadcrumbs' => [['href' => 'news', 'name' => 'News']]
+                'breadcrumbs' => [['href' => 'news', 'name' => 'Новости']]
             ]);
         }
     }

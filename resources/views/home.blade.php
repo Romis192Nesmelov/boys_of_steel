@@ -21,28 +21,32 @@
         <hr class="opacity-25 my-6">
     </div>
     <div class="max-w-7xl mx-auto">
-        @include('partials.head1',['head' => 'News'])
-        <div class="py-8">
+        @include('partials.head1',['head' => 'Новости'])
+        <div class="pb-8">
             <div class="grid grid-cols-1 gap-6 px-6">
                 @each('news.partials.news', $news, 'new')
             </div>
             <div class="w-full text-center pt-6">
                 <a href="{{ route('news') }}">
-                    <x-primary-button>{{ __('All news') }}</x-primary-button>
+                    <x-primary-button>Все новости</x-primary-button>
                 </a>
             </div>
         </div>
 
         <hr class="opacity-25 mb-6">
 
-        @include('partials.head1',['head' => 'Расписание 3го открытого чемпионата<br>по хоккею с шайбой на Кубок «Парни из Стали», г.Санкт-Петербург'])
-        <div class='py-8'>
-            @include('games.partials.games',['games' => $future_games])
-            <div class="w-full text-center pt-6">
-                <a href="{{ route('games.future') }}">
-                    <x-primary-button>{{ __('All schedule') }}</x-primary-button>
-                </a>
-            </div>
+        @include('partials.head1',['head' => 'Расписание 3-го открытого чемпионата<br>по хоккею с шайбой на Кубок «Парни из Стали», г.Санкт-Петербург'])
+        <div class='pb-8'>
+            @if (check28may())
+                @include('games.partials.games',['games' => $future_games])
+                <div class="w-full text-center pt-6">
+                    <a href="{{ route('games.future') }}">
+                        <x-primary-button>Все расписание</x-primary-button>
+                    </a>
+                </div>
+            @else
+                @include('partials.head2',['head' => 'Жеребьёвка пройдёт 27 мая'])
+            @endif
         </div>
 
 {{--        <hr class="opacity-25 mb-6">--}}
@@ -52,7 +56,7 @@
 {{--        </div>--}}
 {{--        <div class="w-full text-center pt-6 pb-8">--}}
 {{--            <a href="{{ route('teams') }}">--}}
-{{--                <x-primary-button>{{ __('All teams') }}</x-primary-button>--}}
+{{--                <x-primary-button>Все команды</x-primary-button>--}}
 {{--            </a>--}}
 {{--        </div>--}}
     </div>

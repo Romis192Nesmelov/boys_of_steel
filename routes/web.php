@@ -1,8 +1,8 @@
 <?php
 
+use App\Http\Controllers\HockeyController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\NewsController;
-use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ScheduleController;
 use App\Http\Controllers\TeamsController;
 use Illuminate\Support\Facades\Route;
@@ -24,6 +24,8 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('/games/future', [ScheduleController::class, 'futureGames'])->name('games.future');
     Route::get('/games/past', [ScheduleController::class, 'pastGames'])->name('games.past');
     Route::get('/teams/{slug?}', TeamsController::class)->name('teams');
+    Route::get('/sledge_hockey', [HockeyController::class, 'sledge'])->name('hockey.sledge');
+    Route::get('/phygital_hockey', [HockeyController::class, 'phygital'])->name('hockey.phygital');
 });
 
 //Route::middleware('auth')->group(function () {

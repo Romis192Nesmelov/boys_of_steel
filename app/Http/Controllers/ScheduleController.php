@@ -20,7 +20,7 @@ class ScheduleController extends Controller
                 ->orderBy('date','desc')
                 ->limit(6)
                 ->paginate(10),
-            'breadcrumbs' => [['href' => 'games.future', 'name' => 'Future games']]
+            'breadcrumbs' => [['href' => 'games.future', 'name' => 'Расписание']]
         ]);
     }
 
@@ -33,7 +33,7 @@ class ScheduleController extends Controller
                 ->orderBy('date','desc')
                 ->limit(6)
                 ->paginate(10),
-            'breadcrumbs' => [['href' => 'games.past', 'name' => 'Past games']]
+            'breadcrumbs' => [['href' => 'games.past', 'name' => 'Прошедшие игры']]
         ]);
     }
 }

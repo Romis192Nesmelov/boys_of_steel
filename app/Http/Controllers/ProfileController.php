@@ -24,7 +24,7 @@ class ProfileController extends Controller
             'user_types' => UserType::query()->select(['id','name'])->get(),
             'cities' => City::query()->select(['id','name'])->get(),
             'teams' => Team::query()->select(['id','name'])->get(),
-            'breadcrumbs' => [['href' => 'profile.edit', 'name' => 'Profile']]
+            'breadcrumbs' => [['href' => 'profile.edit', 'name' => 'Профиль']]
         ]);
     }
 

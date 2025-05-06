@@ -19,6 +19,8 @@ class DatabaseSeeder extends Seeder
         $this->call(UserSeeder::class);
         \App\Models\News::factory(18)->create();
         \App\Models\Game::factory(20)->create();
+        \App\Models\SledgeHockey::factory(20)->create();
+        \App\Models\PhygitalHockey::factory(20)->create();
         $this->call(GameTeamsSeeder::class);
     }
 }

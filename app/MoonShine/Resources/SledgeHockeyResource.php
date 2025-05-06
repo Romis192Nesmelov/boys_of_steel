@@ -5,16 +5,13 @@ declare(strict_types=1);
 namespace App\MoonShine\Resources;
 
 use Illuminate\Database\Eloquent\Model;
-use App\Models\News;
+use App\Models\SledgeHockey;
 
 use MoonShine\Decorations\Column;
 use MoonShine\Decorations\Divider;
 use MoonShine\Decorations\Grid;
 use MoonShine\Fields\Date;
 use MoonShine\Fields\Image;
-use MoonShine\Fields\Slug;
-use MoonShine\Fields\Text;
-use MoonShine\Fields\Textarea;
 use MoonShine\Fields\TinyMce;
 use MoonShine\Resources\ModelResource;
 use MoonShine\Decorations\Block;
@@ -23,11 +20,11 @@ use MoonShine\Fields\Field;
 use MoonShine\Components\MoonShineComponent;
 
 /**
- * @extends ModelResource<News>
+ * @extends ModelResource<SledgeHockey>
  */
-class NewsResource extends ModelResource
+class SledgeHockeyResource extends ModelResource
 {
-    protected string $model = News::class;
+    protected string $model = SledgeHockey::class;
 
     protected string $column = 'head';
 
@@ -35,47 +32,32 @@ class NewsResource extends ModelResource
 
     public function title(): string
     {
-        return __('News');
+        return __('Hockey sledge');
     }
 
     /**
      * @return list<MoonShineComponent|Field>
      */
+
     public function fields(): array
     {
         return [
             ID::make()->sortable(),
-            Slug::make('Slug')
-                ->from('head')
-                ->separator('-')
-                ->hideOnAll(),
-
             Grid::make([
                 Column::make([
-                    Block::make([
-                        Image::make(__('Picture'),'image')
-                            ->nullable()
-                            ->disk('public')
-                            ->dir('images/news'),
-                    ]),
-                    Divider::make(),
+                    Image::make(__('Picture'),'image')
+                        ->nullable()
+                        ->disk('public')
+                        ->dir('images/hockey'),
+                ])->columnSpan(6),
+                Column::make([
                     Date::make(__('Date'),'date')
                         ->required()
                         ->format('d.m.Y'),
-                ])->columnSpan(2),
-                Column::make([
-                    Text::make(__('Head'),'head')
-                        ->required(),
-
-                    Textarea::make(__('Short'),'short_text')
-                        ->required()
-                        ->customAttributes([
-                            'rows' => 8,
-                        ])->hideOnIndex(),
-                ])->columnSpan(10),
+                ])->columnSpan(6),
                 Column::make([
                     Divider::make(),
-                    TinyMce::make(__('News'),'text')
+                    TinyMce::make(__('Text'),'text')
                         ->required()
                         ->customAttributes([
                             'rows' => 10,
@@ -86,7 +68,7 @@ class NewsResource extends ModelResource
     }
 
     /**
-     * @param News $item
+     * @param SledgeHockey $item
      *
      * @return array<string, string[]|string>
      * @see https://laravel.com/docs/validation#available-validation-rules
@@ -95,8 +77,6 @@ class NewsResource extends ModelResource
     {
         return [
             'image' =>      ['required_without:id','mimes:jpg,png','max:2000'],
-            'head' =>       ['required','min:3','max:191'],
-            'short_text' => ['required','min:5','max:2000'],
             'text' =>       ['required','min:5','max:50000'],
             'date' =>       ['required','date'],
         ];
@@ -104,6 +84,6 @@ class NewsResource extends ModelResource
 
     public function search(): array
     {
-        return ['id', 'head', 'short_text', 'text'];
+        return ['id', 'text'];
     }
 }

@@ -20,24 +20,31 @@ function futureOrPast($date): bool
     return carbonToTimestamp($date) >= time();
 }
 
+function check28may(): bool
+{
+    return time() >= 1748379660;
+}
+
 function navLinkName($route): string {
     return __(ucfirst(str_replace(['_','.'],' ',$route)));
 }
 
 function newsImage(\App\Models\News $news): string
 {
-    $imagePath = 'storage/images/news/';
-    return asset($news->image ? $imagePath.$news->image : $imagePath.'placeholder.jpg');
+    return asset($news->image ? 'storage/images/news/'.$news->image : 'storage/images/placeholder.jpg');
 }
 
 function gameImage(\App\Models\Game $game): string
 {
-    $imagePath = 'storage/images/games/';
-    return asset($game->image ? $imagePath.$game->image : $imagePath.'placeholder.jpg');
+    return asset($game->image ? 'storage/images/games/'.$game->image : 'storage/images/placeholder.jpg');
 }
 
 function teamLogo(\App\Models\Team $team): string
 {
-    $imagePath = 'storage/images/teams_logos/';
-    return asset($team->logo ? $imagePath.$team->logo : $imagePath.'def_logo.png');
+    return asset($team->logo ? 'storage/images/teams_logos/'.$team->logo : 'storage/images/def_logo.png');
+}
+
+function hockeyImage(\App\Models\SledgeHockey|\App\Models\PhygitalHockey $model): string
+{
+    return asset($model->image ? 'storage/images/hockey/'.$model->image : 'storage/images/placeholder.jpg');
 }

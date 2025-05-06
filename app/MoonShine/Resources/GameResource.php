@@ -29,6 +29,8 @@ class GameResource extends ModelResource
 {
     protected string $model = Game::class;
 
+    protected string $column = 'place';
+
     protected array $with = ['teams'];
 
     protected int $itemsPerPage = 10;
@@ -60,14 +62,14 @@ class GameResource extends ModelResource
                             ->format('d.m.Y'),
                         Text::make(__('Place'),'place')
                             ->required(),
-                        Grid::make([
-                            Column::make([
-                                Number::make(__('Score #1'),'score1'),
-                            ])->columnSpan(6),
-                            Column::make([
-                                Number::make(__('Score #2'),'score2'),
-                            ])->columnSpan(6),
-                        ])
+//                        Grid::make([
+//                            Column::make([
+//                                Number::make(__('Score #1'),'score1'),
+//                            ])->columnSpan(6),
+//                            Column::make([
+//                                Number::make(__('Score #2'),'score2'),
+//                            ])->columnSpan(6),
+//                        ])
                     ])->columnSpan(4),
                     Column::make([
                         BelongsToMany::make(
@@ -111,12 +113,12 @@ class GameResource extends ModelResource
      */
     public function rules(Model $item): array
     {
-        $scoreRequired = futureOrPast(request()->date) ? 'nullable' : 'required';
+//        $scoreRequired = futureOrPast(request()->date) ? 'nullable' : 'required';
         return [
             'date' =>       ['required','date'],
             'place' =>      ['required','min:3','max:191'],
-            'score1' =>     [$scoreRequired,'integer','max:100'],
-            'score2' =>     [$scoreRequired,'integer','max:100'],
+//            'score1' =>     [$scoreRequired,'integer','max:100'],
+//            'score2' =>     [$scoreRequired,'integer','max:100'],
             'description' =>['nullable','max:50000']
         ];
     }
