@@ -27,7 +27,7 @@ function get28may(): int
 
 function check28may(): bool
 {
-    return time() >= get28may();
+    return time() >= 1748379660;
 }
 
 function navLinkName($route): string {
