@@ -13,7 +13,7 @@ class ScheduleController extends Controller
      */
     public function futureGames(): View
     {
-        if (!check28may()) abort(404);
+//        if (!check28may()) abort(404);
         return view('games.games', [
             'games' => Game::query()
                 ->with('teams')
