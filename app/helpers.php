@@ -20,9 +20,14 @@ function futureOrPast($date): bool
     return carbonToTimestamp($date) >= time();
 }
 
+function get28may(): int
+{
+    return 1748379660;
+}
+
 function check28may(): bool
 {
-    return time() >= 1748379660;
+    return time() >= get28may();
 }
 
 function navLinkName($route): string {

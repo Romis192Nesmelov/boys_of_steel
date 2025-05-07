@@ -5,8 +5,6 @@ namespace App\Http\Controllers;
 use App\Models\Content;
 use App\Models\Game;
 use App\Models\News;
-use App\Models\Team;
-use Carbon\Carbon;
 use Illuminate\View\View;
 
 class HomeController extends Controller
@@ -18,6 +16,7 @@ class HomeController extends Controller
     {
         return view('home', [
             'breadcrumbs' => [],
+            'home' => Content::query()->where('id',3)->select(['image','text'])->first(),
             'news' => News::query()
                 ->select(['id','image','slug','head','short_text','date'])
                 ->orderBy('date','desc')
@@ -25,7 +24,7 @@ class HomeController extends Controller
                 ->get(),
             'future_games' => Game::query()
                 ->with('teams')
-                ->where('date','>', Carbon::now())
+                ->where('date','>', get28may())
                 ->orderBy('date','desc')
                 ->limit(6)
                 ->get(),

@@ -114,7 +114,6 @@ class GameResource extends ModelResource
 //        $scoreRequired = futureOrPast(request()->date) ? 'nullable' : 'required';
         return [
             'date' =>       ['required','date'],
-            'place' =>      ['required','min:3','max:191'],
 //            'score1' =>     [$scoreRequired,'integer','max:100'],
 //            'score2' =>     [$scoreRequired,'integer','max:100'],
             'description' =>['nullable','max:50000']
