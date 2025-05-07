@@ -24,6 +24,7 @@
             'resources/css/app.css',
             'resources/css/owl.carousel.min.css',
             'resources/css/jquery.fancybox.min.css',
+            'resources/css/styles.css',
             'resources/css/icons/icomoon/styles.css',
             'resources/js/app.js',
             'resources/js/owl.carousel.js',

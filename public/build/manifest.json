@@ -35,6 +35,11 @@
     "src": "resources/css/owl.carousel.min.css",
     "isEntry": true
   },
+  "resources/css/styles.css": {
+    "file": "assets/styles-UiOnUvyH.css",
+    "src": "resources/css/styles.css",
+    "isEntry": true
+  },
   "resources/js/app.js": {
     "file": "assets/app-Bo-u61x1.js",
     "name": "app",

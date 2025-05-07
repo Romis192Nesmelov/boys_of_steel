@@ -1,0 +1,9 @@
+table th {
+    width: 30%;
+    background: grey;
+    border: 1px solid gray;
+}
+
+table td {
+    border: 1px solid gray;
+}
