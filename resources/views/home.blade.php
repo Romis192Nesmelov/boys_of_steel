@@ -53,11 +53,11 @@
             <div class="w-full text-center p-2 overflow-x-auto">
                 {!! $timing->text !!}
 
-                <div class="mt-8">
-                    <a href="{{ asset('storage/timinng.docx') }}">
-                        <x-primary-button>Скачать</x-primary-button>
-                    </a>
-                </div>
+{{--                <div class="mt-8">--}}
+{{--                    <a href="{{ asset('storage/timinng.docx') }}">--}}
+{{--                        <x-primary-button>Скачать</x-primary-button>--}}
+{{--                    </a>--}}
+{{--                </div>--}}
             </div>
         </div>
 
