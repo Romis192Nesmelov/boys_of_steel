@@ -22,7 +22,6 @@
         <link href="https://cdn.jsdelivr.net/npm/pagedone@1.2.2/src/css/pagedone.css " rel="stylesheet"/>
         @vite([
             'resources/css/app.css',
-            'resources/css/styles.css',
             'resources/css/owl.carousel.min.css',
             'resources/css/jquery.fancybox.min.css',
             'resources/css/icons/icomoon/styles.css',

@@ -50,10 +50,14 @@
 
             <hr class="opacity-25 my-6">
             @include('partials.head1',['head' => 'Тайминг проведения игр<br>третьего открытого турнира «ПАРНИ ИЗ СТАЛИ»'])
-            <div class="w-full text-center pt-2">
-                <a href="{{ asset('storage/timinng.docx') }}">
-                    <x-primary-button>Скачать</x-primary-button>
-                </a>
+            <div class="w-full text-center p-2 overflow-x-auto">
+                {!! $timing->text !!}
+
+                <div class="mt-8">
+                    <a href="{{ asset('storage/timinng.docx') }}">
+                        <x-primary-button>Скачать</x-primary-button>
+                    </a>
+                </div>
             </div>
         </div>
 

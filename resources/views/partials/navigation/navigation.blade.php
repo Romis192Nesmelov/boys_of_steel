@@ -4,14 +4,16 @@
         <div class="flex justify-between h-16">
             <div class="flex">
                 <!-- Logo -->
-                <div class="flex md:flex sm:hidden items-center mr-1 lg:mr-5 shrink-0">
-                    <a href="{{ route('home') }}"><x-application-logo class="block h-9 w-auto fill-current text-gray-200" /></a>
+                <div class="flex md:flex sm:hidden items-center mr-1 lg:mr-3 shrink-0">
+                    <a href="{{ route('home') }}">
+                        <img width="100" src="{{ asset('storage/images/logo.svg') }}" alt="Стальная лига" />
+                    </a>
                 </div>
 
                 <!-- Navigation Links -->
                 <div class="hidden space-x-1 lg:space-x-3 sm:-my-px sm:ms-3 sm:flex">
                     @foreach($nav_links as $route)
-                        <x-nav-link :href="route($route)" :active="request()->routeIs($route)">{{ navLinkName($route) }}</x-nav-link>
+                        <a href="{{ route($route) }}" class="inline-flex items-center px-1 pt-1 border-b-2 hover:border-indigo-700 text-xs lg:text-sm font-medium leading-5 focus:outline-none transition duration-150 ease-in-out {{ request()->routeIs($route) ? 'border-indigo-600  text-gray-100' : 'border-transparent text-gray-400 focus:border-gray-700 hover:text-gray-300 focus:text-gray-300' }}">{{ navLinkName($route) }}</a>
                     @endforeach
 {{--                    <a class="cursor-pointer inline-flex items-center px-1 pt-1 text-sm font-medium leading-5 text-gray-400 hover:text-gray-300 hover:border-gray-700 focus:outline-none focus:text-gray-300 focus:border-gray-700 transition duration-150 ease-in-out" x-on:click.prevent="$dispatch('open-modal', 'our-mission')">{{ __('Our mission') }}</a>--}}
                 </div>
@@ -67,7 +69,8 @@
     <div :class="{'block': open, 'hidden': ! open}" class="hidden sm:hidden">
         <div class="pt-2 pb-3 space-y-1">
             @foreach($nav_links as $route)
-                <x-responsive-nav-link :href="route($route)" :active="request()->routeIs($route)">{{ navLinkName($route) }}</x-responsive-nav-link>
+                <a href="{{ route($route) }}" class="block w-full ps-3 pe-4 py-2 border-l-4 text-start text-base font-medium transition duration-150 ease-in-out focus:outline-none {{ request()->routeIs($route) ? 'text-indigo-300 focus:text-indigo-200 bg-indigo-900/50 focus:bg-indigo-900 focus:border-indigo-300' : 'text-gray-400 focus:text-gray-200 focus:bg-gray-700 border-l-4 focus:border-gray-600 border-transparent hover:text-gray-200 hover:bg-gray-700 hover:border-gray-600' }}">{{ navLinkName($route) }}</a>
+{{--                <x-responsive-nav-link :href="route($route)" :active="request()->routeIs($route)">{{ navLinkName($route) }}</x-responsive-nav-link>--}}
             @endforeach
         </div>
 
