@@ -31,13 +31,8 @@
     "isEntry": true
   },
   "resources/css/main.css": {
-    "file": "assets/main-UiOnUvyH.css",
+    "file": "assets/main-BKhJPSeu.css",
     "src": "resources/css/main.css",
-    "isEntry": true
-  },
-  "resources/css/owl.carousel.min.css": {
-    "file": "assets/owl.carousel-CDeijY_r.css",
-    "src": "resources/css/owl.carousel.min.css",
     "isEntry": true
   },
   "resources/js/app.js": {

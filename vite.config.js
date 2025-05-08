@@ -6,7 +6,7 @@ export default defineConfig({
         laravel({
             input: [
                 'resources/css/app.css',
-                'resources/css/owl.carousel.min.css',
+                // 'resources/css/owl.carousel.min.css',
                 'resources/css/jquery.fancybox.min.css',
                 'resources/css/icons/icomoon/styles.css',
                 'resources/css/main.css',
