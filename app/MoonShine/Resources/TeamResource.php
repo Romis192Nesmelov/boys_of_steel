@@ -105,7 +105,7 @@ class TeamResource extends ModelResource
             'email' =>          ['nullable','max:191'],
             'phone' =>          ['nullable','max:191'],
             'site' =>           ['nullable','max:191'],
-            'description' =>    ['nullable','max:191'],
+            'description' =>    ['nullable','max:5000'],
         ];
     }
 

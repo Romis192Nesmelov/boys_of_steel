@@ -41,22 +41,22 @@ function newsImage(\App\Models\News $news): string
 
 function gameImage(\App\Models\Game $game): string
 {
-    return asset($game->image ? 'storage/images/games/'.$game->image : 'storage/images/placeholder.jpg');
+    return asset($game->image ? 'storage/'.$game->image : 'storage/images/placeholder.jpg');
 }
 
 function teamLogo(\App\Models\Team $team): string
 {
-    return asset($team->logo ? 'storage/images/teams_logos/'.$team->logo : 'storage/images/def_logo.png');
+    return asset($team->logo ? 'storage/'.$team->logo : 'storage/images/def_logo.png');
 }
 
 function hockeyImage(\App\Models\SledgeHockey|\App\Models\PhygitalHockey $model): string
 {
-    return asset($model->image ? 'storage/images/hockey/'.$model->image : 'storage/images/placeholder.jpg');
+    return asset($model->image ? 'storage/'.$model->image : 'storage/images/placeholder.jpg');
 }
 
 function contentImage(\App\Models\Content $model): string
 {
-    return asset($model->image ? 'storage/images/content/'.$model->image : 'storage/images/placeholder.jpg');
+    return asset($model->image ? 'storage/'.$model->image : 'storage/images/placeholder.jpg');
 }
 
 function generateFakeText(): string
