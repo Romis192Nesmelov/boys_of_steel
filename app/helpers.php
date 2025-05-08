@@ -36,7 +36,7 @@ function navLinkName($route): string {
 
 function newsImage(\App\Models\News $news): string
 {
-    return asset($news->image ? 'storage/images/news/'.$news->image : 'storage/images/placeholder.jpg');
+    return asset($news->image ? 'storage/'.$news->image : 'storage/images/placeholder.jpg');
 }
 
 function gameImage(\App\Models\Game $game): string
