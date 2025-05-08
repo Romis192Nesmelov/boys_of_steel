@@ -4,8 +4,8 @@
     <div class="max-w-7xl mx-auto p-6 lg:p-8">
         <div class="max-w-7xl mx-auto py-3">
             <div class="w-full flex flex-col md:flex-row items-center md:items-start justify-start mb-4">
-                <a href="{{ newsImage($news) }}" class="w-80 mr-0 mb-4 md:mr-5 md:mb-0 fancybox">
-                    <img class="border-2 border-solid" src="{{ newsImage($news) }}" />
+                <a href="{{ getImage($news) }}" class="w-80 mr-0 mb-4 md:mr-5 md:mb-0 fancybox">
+                    <img class="border-2 border-solid" src="{{ getImage($news) }}" />
                 </a>
                 <div class="w-full">
                     <div class="flex flex-col md:flex-row items-center md:items-start justify-center md:justify-between">

@@ -34,29 +34,10 @@ function navLinkName($route): string {
     return __(ucfirst(str_replace(['_','.'],' ',$route)));
 }
 
-function newsImage(\App\Models\News $news): string
+function getImage(\Illuminate\Database\Eloquent\Model $model): string
 {
-    return asset($news->image ? 'storage/'.$news->image : 'storage/images/placeholder.jpg');
-}
-
-function gameImage(\App\Models\Game $game): string
-{
-    return asset($game->image ? 'storage/'.$game->image : 'storage/images/placeholder.jpg');
-}
-
-function teamLogo(\App\Models\Team $team): string
-{
-    return asset($team->logo ? 'storage/'.$team->logo : 'storage/images/def_logo.png');
-}
-
-function hockeyImage(\App\Models\SledgeHockey|\App\Models\PhygitalHockey $model): string
-{
-    return asset($model->image ? 'storage/'.$model->image : 'storage/images/placeholder.jpg');
-}
-
-function contentImage(\App\Models\Content $model): string
-{
-    return asset($model->image ? 'storage/'.$model->image : 'storage/images/placeholder.jpg');
+    $field = $model->logo ?? $model->image;
+    return asset($field ? 'storage/'.$field : 'storage/images/placeholder.jpg');
 }
 
 function generateFakeText(): string

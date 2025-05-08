@@ -2,7 +2,7 @@
     <div>
         <h2 class="mb-3 text-xl xl:text-2xl font-semibold text-white">{{ $new->head }}</h2>
         <div class="flex flex-col md:flex-row items-start justify-start">
-            <img class="w-20 xl:w-20 mr-0 mb-3 md:mr-4 md:mb-0 border-2 border-solid" src="{{ newsImage($new) }}" />
+            <img class="w-20 xl:w-20 mr-0 mb-3 md:mr-4 md:mb-0 border-2 border-solid" src="{{ getImage($new) }}" />
             <p class="text-gray-400 text-sm leading-relaxed md:col-span-2">{{ $new->short_text }}</p>
         </div>
     </div>
