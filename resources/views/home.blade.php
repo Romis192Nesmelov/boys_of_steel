@@ -40,7 +40,7 @@
 
             <hr class="opacity-25 my-6">
             @include('partials.head1',['head' => 'Тайминг проведения игр<br>третьего открытого турнира «ПАРНИ ИЗ СТАЛИ»'])
-            <div class="w-full text-center p-2 overflow-x-auto">
+            <div class="w-full p-2">
                 {!! $timing->text !!}
 
 {{--                <div class="mt-8">--}}
