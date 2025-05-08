@@ -65,12 +65,12 @@
         <footer class="py-8 bg-gray-800">
             <div class="max-w-7xl mx-auto text-white flex flex-col md:flex-row items-center md:items-start justify-between">
                 <div class="flex flex-col md:flex-row">
-                    <ul class="mb-3 md:mb-0 ml-4 mr-0 md:mr-20">
+                    <ul class="mb-3 md:mb-0 ml-4 mr-0 md:mr-20 list-none">
                         @each('partials.navigation.footer_menu',$nav_links,'route')
                     </ul>
                     <div class="ml-0 md:ml-8">
                         <div class="text-center md:text-left text-gray-600 font-bold text-xl mb-3">Контакты:</div>
-                        <ul class="text-center md:text-left text-white text-sm">
+                        <ul class="text-center md:text-left text-white text-sm list-none pl-0">
                             <li class="border-gray-800 border-b-[1px] border-solid hover:border-indigo-500">E-mail: <a href="mailto:info@dartcom.ru" target="_blank">info@dartcom.ru</a></li>
                         </ul>
                     </div>
