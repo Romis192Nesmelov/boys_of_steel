@@ -3,7 +3,7 @@
 
     <div class="max-w-7xl mx-auto px-6 lg:px-8 py-12">
         @include('partials.head1',['head' => $team->name])
-        <img src="{{ getImage($team) }}" class="max-w-2xl mx-auto" />
+        <img src="{{ getLogo($team) }}" class="max-w-2xl mx-auto" />
         @include('partials.head2',['head' => 'Капитан команды: '.$team->captain])
         <div class="w-full text-gray-300 mt-4">{!! $team->description !!}</div>
 {{--        <hr class="opacity-25 my-6">--}}
