@@ -3,7 +3,7 @@
 
     <div class="max-w-7xl mx-auto pt-6">
         <div class="flex flex-col lg:flex-row items-center justify-start">
-            <img class="w-40 md:w-1/4 ml-2 mr-0 md:mr-4 md:mb-0" src="{{ asset('storage/images/content/'.$home->image) }}" />
+            <img class="w-40 md:w-1/4 ml-2 mr-0 md:mr-4 md:mb-0" src="{{ contentImage($home) }}" />
             <div class="px-4 md:px-0 md:col-span-2">
                 {!! $home->text !!}
             </div>
