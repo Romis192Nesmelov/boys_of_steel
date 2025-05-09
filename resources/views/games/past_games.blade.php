@@ -7,8 +7,8 @@
         @foreach($games as $game)
             <div class="max-w-7xl mx-auto p-6 lg:p-8">
                 <div class="w-full flex flex-col md:flex-row items-center md:items-start justify-start mb-4">
-                    <a href="{{ gameImage($game) }}" class="w-80 mt-0 md:mt-12 mr-0 mb-4 md:mr-5 md:mb-0 fancybox">
-                        <img class="border-2 border-solid" src="{{ gameImage($game) }}" />
+                    <a href="{{ getImage($game) }}" class="w-80 mt-0 md:mt-12 mr-0 mb-4 md:mr-5 md:mb-0 fancybox">
+                        <img class="border-2 border-solid" src="{{ getImage($game) }}" />
                     </a>
                     <div class="w-full">
                         <div class="flex flex-col md:flex-row items-center md:items-start justify-center md:justify-end mb-4">
