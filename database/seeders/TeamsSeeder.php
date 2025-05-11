@@ -24,7 +24,7 @@ class TeamsSeeder extends Seeder
                 'city_id' => 4,
             ],
             [
-                'logo' => 'ratnik_club.png',
+                'logo' => 'images/teams_logos/ratnik_club.png',
                 'name' => 'Динамо-Ратник',
                 'captain' => 'Кудинов Андрей',
                 'email' => 'prezident@fh74.ru',
@@ -33,7 +33,7 @@ class TeamsSeeder extends Seeder
                 'city_id' => 8,
             ],
             [
-                'logo' => 'patriot_club.png',
+                'logo' => 'images/teams_logos/patriot_club.png',
                 'name' => 'Патриот',
                 'captain' => 'Кобозев Сергей',
                 'email' => 'ksm.77@bk.ru',

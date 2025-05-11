@@ -116,7 +116,7 @@ class GameResource extends ModelResource
             'date' =>       ['required','date'],
 //            'score1' =>     [$scoreRequired,'integer','max:100'],
 //            'score2' =>     [$scoreRequired,'integer','max:100'],
-            'description' =>['nullable','max:50000']
+            'description' =>['nullable','max:66000']
         ];
     }
 

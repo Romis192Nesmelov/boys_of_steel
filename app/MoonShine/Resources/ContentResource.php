@@ -74,7 +74,7 @@ class ContentResource extends ModelResource
     {
         return [
             'image' =>      ['required_without:id','mimes:jpg,png','max:2000'],
-            'text' =>       ['required','min:5','max:50000']
+            'text' =>       ['required','min:5','max:66000']
         ];
     }
 
