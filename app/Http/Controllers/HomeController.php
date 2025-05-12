@@ -16,7 +16,7 @@ class HomeController extends Controller
     {
         return view('home', [
             'breadcrumbs' => [],
-            'home' => Content::query()->where('id',3)->select(['image','text'])->first(),
+            'content' => Content::query()->whereIn('id',[2,3])->first(),
             'news' => News::query()
                 ->select(['id','image','slug','head','short_text','date'])
                 ->orderBy('date','desc')
@@ -28,7 +28,6 @@ class HomeController extends Controller
                 ->orderBy('date','desc')
                 ->limit(6)
                 ->get(),
-            'timing' => Content::query()->where('id',2)->select('text')->first()
 //            'teams' => Team::query()
 //                ->select(['logo','slug','name','city_id'])
 //                ->with('city')

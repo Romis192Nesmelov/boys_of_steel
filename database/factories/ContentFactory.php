@@ -17,6 +17,7 @@ class ContentFactory extends Factory
     public function definition(): array
     {
         return [
+            'head' => 'Место проведения',
             'text' => generateFakeText()
         ];
     }

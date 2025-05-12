@@ -12,9 +12,10 @@ class LocationController extends Controller
      */
     public function __invoke(): View
     {
+        $content = Content::query()->where('id',1)->first();
         return view('content', [
-            'content' => Content::query()->where('id',1)->first(),
-            'breadcrumbs' => [['href' => 'location', 'name' => 'Место проведения']]
+            'content' => $content,
+            'breadcrumbs' => [['href' => 'location', 'name' => strip_tags($content->head)]]
         ]);
     }
 }

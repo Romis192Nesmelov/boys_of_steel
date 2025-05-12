@@ -3,9 +3,9 @@
 
     <div class="max-w-7xl mx-auto pt-6">
         <div class="flex flex-col lg:flex-row items-center justify-start">
-            <img class="w-40 md:w-1/4 ml-2 mr-0 md:mr-4 md:mb-0" src="{{ getImage($home) }}" />
+            <img class="w-40 md:w-1/4 ml-2 mr-0 md:mr-4 md:mb-0" src="{{ getImage($content[1]) }}" />
             <div class="px-4 md:px-0 md:col-span-2">
-                {!! $home->text !!}
+                {!! $content[1]->text !!}
             </div>
         </div>
         <hr class="opacity-25 my-6">
@@ -39,9 +39,9 @@
             @endif
 
             <hr class="opacity-25 my-6">
-            @include('partials.head1',['head' => 'Тайминг проведения игр<br>третьего открытого турнира «ПАРНИ ИЗ СТАЛИ»'])
+            @include('partials.head1',['head' => $content[0]->head])
             <div class="w-full p-2">
-                {!! $timing->text !!}
+                {!! $content[0]->text !!}
 
 {{--                <div class="mt-8">--}}
 {{--                    <a href="{{ asset('storage/timinng.docx') }}">--}}
