@@ -23,7 +23,7 @@ class TeamsController extends Controller
             ]);
         } else {
             return view('teams.teams', [
-                'teams' => Team::query()->select(['logo','slug','name','city_id'])->with('city')->paginate(10),
+                'teams' => Team::query()->select(['logo','slug','name','city_id'])->with(['city','gallery'])->paginate(10),
                 'breadcrumbs' => [['href' => 'teams', 'name' => 'Команды']]
             ]);
         }

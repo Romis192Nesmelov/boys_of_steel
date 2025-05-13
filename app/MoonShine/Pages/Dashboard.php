@@ -5,12 +5,14 @@ declare(strict_types=1);
 namespace App\MoonShine\Pages;
 
 use App\Models\City;
+use App\Models\Content;
 use App\Models\Game;
 use App\Models\News;
 use App\Models\PhygitalHockey;
 use App\Models\SledgeHockey;
 use App\Models\Team;
 use App\MoonShine\Resources\CityResource;
+use App\MoonShine\Resources\ContentResource;
 use App\MoonShine\Resources\GameResource;
 use App\MoonShine\Resources\NewsResource;
 use App\MoonShine\Resources\PhygitalHockeyResource;
@@ -20,8 +22,10 @@ use MoonShine\Components\Link;
 use MoonShine\Decorations\Column;
 use MoonShine\Decorations\Grid;
 use MoonShine\Metrics\ValueMetric;
+use MoonShine\Models\MoonshineUser;
 use MoonShine\Pages\Page;
 use MoonShine\Components\MoonShineComponent;
+use MoonShine\Resources\MoonShineUserResource;
 
 class Dashboard extends Page
 {
@@ -47,6 +51,11 @@ class Dashboard extends Page
 	{
 		return [
             Grid::make([
+                Column::make([
+                    ValueMetric::make(fn() => (string)Link::make(app(MoonShineUserResource::class)->indexPageUrl(),__('Users')))
+                        ->value(fn() => MoonshineUser::count())
+                        ->icon('heroicons.users'),
+                ])->columnSpan(2),
                 Column::make([
                     ValueMetric::make(fn() => (string)Link::make(app(NewsResource::class)->indexPageUrl(),__('News')))
                         ->value(fn() => News::count())
@@ -76,6 +85,11 @@ class Dashboard extends Page
                     ValueMetric::make(fn() => (string)Link::make(app(PhygitalHockeyResource::class)->indexPageUrl(),__('Hockey phygital')))
                         ->value(fn() => PhygitalHockey::count())
                         ->icon('heroicons.power'),
+                ])->columnSpan(2),
+                Column::make([
+                    ValueMetric::make(fn() => (string)Link::make(app(ContentResource::class)->indexPageUrl(),__('Content')))
+                        ->value(fn() => Content::count())
+                        ->icon('heroicons.book-open'),
                 ])->columnSpan(2),
             ])
         ];

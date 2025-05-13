@@ -6,6 +6,16 @@
         <img src="{{ getLogo($team) }}" class="max-w-2xl mx-auto" />
         @include('partials.head2',['head' => 'Капитан команды: '.$team->captain])
         <div class="w-full text-gray-300 mt-4">{!! $team->description !!}</div>
+
+        @if ($team->gallery->count())
+            <div class="grid grid-cols-1 lg:grid-cols-4 md:grid-cols-2 sm:grid-cols-2 gap-6 mt-6 px-2">
+                @foreach($team->gallery as $item)
+                    <a href="{{ getImage($item) }}" class="fancybox" {{ $item->description ? 'title='.$item->description : '' }}>
+                        <div class="w-full h-52 border-2 border-solid bg-center bg-cover" style="background-image: url({{ getImage($item) }})"></div>
+                    </a>
+                @endforeach
+            </div>
+        @endif
 {{--        <hr class="opacity-25 my-6">--}}
 {{--        @if (!$team->games->count())--}}
 {{--            @include('partials.head2',['head' => 'Игр не найдено'])--}}

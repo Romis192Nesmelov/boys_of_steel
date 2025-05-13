@@ -44,6 +44,11 @@ class Team extends Model
         return $this->hasMany(User::class);
     }
 
+    public function gallery(): HasMany
+    {
+        return $this->hasMany(Gallery::class);
+    }
+
     public function games(): BelongsToMany
     {
         return $this->belongsToMany(Game::class)->orderBy('date','desc');

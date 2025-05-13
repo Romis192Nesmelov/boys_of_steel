@@ -91,6 +91,6 @@ class ContentResource extends ModelResource
 
     public function search(): array
     {
-        return ['text'];
+        return ['head','text'];
     }
 }
