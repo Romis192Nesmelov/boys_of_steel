@@ -9,8 +9,7 @@
             </div>
         </div>
         <hr class="opacity-25 my-6">
-    </div>
-    <div class="max-w-7xl mx-auto">
+
         @include('partials.head1',['head' => 'Новости'])
         <div class="pb-8">
             <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 px-6">

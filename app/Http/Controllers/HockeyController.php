@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Content;
 use App\Models\SledgeHockey;
 use App\Models\PhygitalHockey;
 use Illuminate\View\View;
@@ -13,21 +14,23 @@ class HockeyController extends Controller
      */
     public function sledge(): View
     {
-        return $this->getHockey(new SledgeHockey(), 'sledge', 'Следж-хоккей');
+        return $this->getHockey(new SledgeHockey(), 'sledge', 4);
     }
 
     public function phygital(): View
     {
-        return $this->getHockey(new SledgeHockey(), 'phygital', 'Фиджитал-хоккей');
+        return $this->getHockey(new SledgeHockey(), 'phygital', 5);
     }
 
-    private function getHockey(SledgeHockey|PhygitalHockey $model, string $route, string $name): view
+    private function getHockey(SledgeHockey|PhygitalHockey $model, string $route, int $contentId): view
     {
+        $content = Content::query()->where('id',$contentId)->first();
         return view('hockey.hockey', [
+            'content' => $content,
             'items' => $model->query()
                 ->orderBy('date','desc')
                 ->paginate(10),
-            'breadcrumbs' => [['href' => 'hockey.'.$route, 'name' => $name]]
+            'breadcrumbs' => [['href' => 'hockey.'.$route, 'name' => $content->head]]
         ]);
     }
 }

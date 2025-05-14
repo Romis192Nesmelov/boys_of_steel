@@ -13,5 +13,11 @@
         @else
             @include('partials.head2',['head' => 'Жеребьёвка пройдёт 27 мая'])
         @endif
+
+        <hr class="opacity-25 my-6">
+        @include('partials.head2',['head' => $content->head])
+        <div class="w-full p-2 mt-5">
+            {!! $content->text !!}
+        </div>
     </div>
 </x-app-layout>
