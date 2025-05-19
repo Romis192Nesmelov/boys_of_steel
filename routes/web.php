@@ -19,7 +19,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware(['auth', 'verified'])->group(function () {
+//Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('/',HomeController::class)->name('home');
     Route::get('/news/{slug?}', NewsController::class)->name('news');
     Route::get('/games/future', [ScheduleController::class, 'futureGames'])->name('games.future');
@@ -28,7 +28,7 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('/sledge_hockey', [HockeyController::class, 'sledge'])->name('hockey.sledge');
     Route::get('/phygital_hockey', [HockeyController::class, 'phygital'])->name('hockey.phygital');
     Route::get('/location', LocationController::class)->name('location');
-});
+//});
 
 //Route::middleware('auth')->group(function () {
 //    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
@@ -36,4 +36,4 @@ Route::middleware(['auth', 'verified'])->group(function () {
 //    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 //});
 
-require __DIR__.'/auth.php';
+//require __DIR__.'/auth.php';
