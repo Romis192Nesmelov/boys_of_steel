@@ -95,7 +95,7 @@ class NewsResource extends ModelResource
         return [
             'image' =>      ['required_without:id','mimes:jpg,png','max:2000'],
             'head' =>       ['required','min:3','max:191'],
-            'short_text' => ['required','min:5','max:180'],
+            'short_text' => ['required','min:3','max:191'],
             'text' =>       ['required','min:5','max:66000'],
             'date' =>       ['required','date'],
         ];
