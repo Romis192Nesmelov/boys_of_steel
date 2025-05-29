@@ -15,9 +15,20 @@
         @endif
 
         <hr class="opacity-25 my-6">
-        @include('partials.head2',['head' => $content->head])
+
+        @include('partials.head2',['head' => $contents[1]->head])
+        <div class="w-full my-6">
+            {!! $contents[1]->text !!}
+        </div>
+
+        @include('partials.head2',['head' => $contents[2]->head])
+        <div class="w-full my-6">
+            {!! $contents[2]->text !!}
+        </div>
+
+        @include('partials.head2',['head' => $contents[0]->head])
         <div class="w-full p-2 mt-5">
-            {!! $content->text !!}
+            {!! $contents[0]->text !!}
         </div>
     </div>
 </x-app-layout>

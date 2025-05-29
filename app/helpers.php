@@ -36,12 +36,12 @@ function navLinkName($route): string {
 
 function getImage(\Illuminate\Database\Eloquent\Model $model): string
 {
-    return asset($model->image ? 'storage/'.$model->image : 'storage/images/placeholder.jpg');
+    return asset($model->image && file_exists('storage/'.$model->image) ? 'storage/'.$model->image : 'storage/images/placeholder.jpg');
 }
 
 function getLogo(\App\Models\Team $team): string
 {
-    return asset($team->logo ? 'storage/'.$team->logo : 'storage/images/def_logo.png');
+    return asset($team->logo &&  file_exists('storage/'.$team->logo) ? 'storage/'.$team->logo : 'storage/images/def_logo.png');
 }
 
 function generateFakeText(): string
