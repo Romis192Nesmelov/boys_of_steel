@@ -16,7 +16,7 @@ class OurHeroesController extends Controller
         $content = Content::query()->where('id',7)->first();
         return view('content', [
             'content' => $content,
-            'items' => OurHero::query()->orderBy('date','desc')->paginate(10),
+            'items' => OurHero::query()->orderBy('id','desc')->paginate(10),
             'breadcrumbs' => [['href' => 'our_heroes', 'name' => strip_tags($content->head)]]
         ]);
     }
