@@ -1,11 +1,10 @@
 <x-app-layout>
     <x-slot name="header">@include('partials.breadcrumbs.breadcrumbs')</x-slot>
-
     <div class="max-w-7xl mx-auto pt-6">
         <div class="flex flex-col lg:flex-row items-center justify-start">
-            <img class="w-40 md:w-1/4 ml-2 mr-0 md:mr-4 md:mb-0" src="{{ getImage($contents[1]) }}" />
+            <img class="w-40 md:w-1/4 ml-2 mr-0 md:mr-4 md:mb-0" src="{{ getImage($contents[0]) }}" />
             <div class="px-4 md:px-0 md:col-span-2">
-                {!! $contents[1]->text !!}
+                {!! $contents[0]->text !!}
             </div>
         </div>
         <hr class="opacity-25 my-6">
@@ -38,15 +37,15 @@
             @endif
 
             <hr class="opacity-25 my-6">
-            @include('partials.head1',['head' => $contents[2]->head])
+            @include('partials.head1',['head' => $contents[1]->head])
             <div class="w-full p-2">
-                {!! $contents[2]->text !!}
+                {!! $contents[1]->text !!}
             </div>
 
             <hr class="opacity-25 my-6">
-            @include('partials.head1',['head' => $contents[0]->head])
+            @include('partials.head1',['head' => $contents[2]->head])
             <div class="w-full p-2">
-                {!! $contents[0]->text !!}
+                {!! $contents[2]->text !!}
             </div>
         </div>
 

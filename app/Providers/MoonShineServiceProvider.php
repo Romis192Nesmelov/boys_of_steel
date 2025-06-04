@@ -9,6 +9,7 @@ use App\MoonShine\Resources\ContentResource;
 use App\MoonShine\Resources\GalleryResource;
 use App\MoonShine\Resources\GameResource;
 use App\MoonShine\Resources\NewsResource;
+use App\MoonShine\Resources\OurHeroResource;
 use App\MoonShine\Resources\PhygitalHockeyResource;
 use App\MoonShine\Resources\SledgeHockeyResource;
 use App\MoonShine\Resources\TeamResource;
@@ -78,13 +79,19 @@ class MoonShineServiceProvider extends MoonShineApplicationServiceProvider
                 static fn() => __('Games'),
                 new GameResource()
             ),
+            MenuGroup::make(static fn() => __('Hockey'), [
+                MenuItem::make(
+                    static fn() => __('Hockey sledge'),
+                    new SledgeHockeyResource()
+                ),
+                MenuItem::make(
+                    static fn() => __('Hockey phygital'),
+                    new PhygitalHockeyResource()
+                ),
+            ]),
             MenuItem::make(
-                static fn() => __('Hockey sledge'),
-                new SledgeHockeyResource()
-            ),
-            MenuItem::make(
-                static fn() => __('Hockey phygital'),
-                new PhygitalHockeyResource()
+                static fn() => __('Our heroes'),
+                new OurHeroResource()
             ),
             MenuItem::make(
                 static fn() => __('Content'),

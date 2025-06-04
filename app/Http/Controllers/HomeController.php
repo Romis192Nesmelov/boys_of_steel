@@ -16,7 +16,7 @@ class HomeController extends Controller
     {
         return view('home', [
             'breadcrumbs' => [],
-            'contents' => Content::query()->whereIn('id',[2,3,6])->get(),
+            'contents' => Content::query()->whereIn('id',[1,2,3])->get(),
             'news' => News::query()
                 ->select(['id','image','slug','head','short_text','date'])
                 ->orderBy('date','desc')

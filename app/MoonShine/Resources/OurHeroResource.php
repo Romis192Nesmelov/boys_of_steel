@@ -4,14 +4,12 @@ declare(strict_types=1);
 
 namespace App\MoonShine\Resources;
 
-use App\Models\SledgeHockey;
 use Illuminate\Database\Eloquent\Model;
-use App\Models\PhygitalHockey;
+use App\Models\OurHero;
 
 use MoonShine\Decorations\Column;
 use MoonShine\Decorations\Divider;
 use MoonShine\Decorations\Grid;
-use MoonShine\Fields\Date;
 use MoonShine\Fields\Image;
 use MoonShine\Fields\TinyMce;
 use MoonShine\Resources\ModelResource;
@@ -20,11 +18,11 @@ use MoonShine\Fields\Field;
 use MoonShine\Components\MoonShineComponent;
 
 /**
- * @extends ModelResource<PhygitalHockey>
+ * @extends ModelResource<OurHero>
  */
-class PhygitalHockeyResource extends ModelResource
+class OurHeroResource extends ModelResource
 {
-    protected string $model = PhygitalHockey::class;
+    protected string $model = OurHero::class;
 
     protected string $column = 'head';
 
@@ -32,13 +30,12 @@ class PhygitalHockeyResource extends ModelResource
 
     public function title(): string
     {
-        return __('Hockey phygital');
+        return __('Our heroes');
     }
 
     /**
      * @return list<MoonShineComponent|Field>
      */
-
     public function fields(): array
     {
         return [
@@ -49,12 +46,7 @@ class PhygitalHockeyResource extends ModelResource
                         ->nullable()
                         ->disk('public')
                         ->dir('images/hockey'),
-                ])->columnSpan(6),
-                Column::make([
-                    Date::make(__('Date'),'date')
-                        ->required()
-                        ->format('d.m.Y'),
-                ])->columnSpan(6),
+                ]),
                 Column::make([
                     Divider::make(),
                     TinyMce::make(__('Text'),'text')
@@ -62,13 +54,13 @@ class PhygitalHockeyResource extends ModelResource
                         ->customAttributes([
                             'rows' => 10,
                         ])->hideOnIndex(),
-                ])->columnSpan(12),
+                ]),
             ])
         ];
     }
 
     /**
-     * @param SledgeHockey $item
+     * @param OurHero $item
      *
      * @return array<string, string[]|string>
      * @see https://laravel.com/docs/validation#available-validation-rules
@@ -77,8 +69,7 @@ class PhygitalHockeyResource extends ModelResource
     {
         return [
             'image' =>      ['required_without:id','mimes:jpg,png','max:2000'],
-            'text' =>       ['required','min:5','max:66000'],
-            'date' =>       ['required','date'],
+            'text' =>       ['required','min:5','max:66000']
         ];
     }
 

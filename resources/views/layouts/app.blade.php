@@ -33,11 +33,13 @@
         ])
     </head>
     <body class="font-sans antialiased">
-        @php $nav_links = ['home','news','games.future','games.past','teams','hockey.sledge','hockey.phygital','location'] @endphp
+        @php $nav_links = ['about_us','news','games.future','games.past','teams','hockey.sledge','hockey.phygital','our_heroes'] @endphp
         <div class="min-h-screen bg-gray-900">
             <div class="max-w-7xl mx-auto py-4">
                 <div class="flex flex-col md:flex-row items-center justify-center">
-                    <img class="w-20 ml-0 md:ml-4 mt-3 md:mt-0" src="{{ asset('storage/images/logo_bos2.svg') }}" />
+                    <a class="hover:opacity-50" href="{{ route('home') }}">
+                        <img class="w-20 ml-0 md:ml-4 mt-3 md:mt-0" src="{{ asset('storage/images/logo_bos2.svg') }}" />
+                    </a>
                     <div>
                         <p class="text-center text-xl md:text-3xl lg:text-5xl text-white font-semibold px-4 md:px-0">Стальная хоккейная Лига</p>
                         <p class="text-center text-base md:text-xl lg:text-2xl text-white font-semibold px-4 md:px-0">Чемпионат по хоккею с шайбой на Кубок «Парни из Стали»</p>
@@ -66,7 +68,10 @@
             <div class="max-w-7xl mx-auto text-white flex flex-col md:flex-row items-center md:items-start justify-between">
                 <div class="flex flex-col md:flex-row">
                     <ul class="mb-3 md:mb-0 ml-4 mr-0 md:mr-20 list-none">
-                        @each('partials.navigation.footer_menu',$nav_links,'route')
+                        @each('partials.navigation.footer_menu',array_slice($nav_links,0,4),'route')
+                    </ul>
+                    <ul class="mb-3 md:mb-0 ml-4 mr-0 md:mr-20 list-none">
+                        @each('partials.navigation.footer_menu',array_slice($nav_links,-4),'route')
                     </ul>
                     <div class="ml-0 md:ml-8">
                         <div class="text-center md:text-left text-gray-600 font-bold text-xl mb-3">Контакты:</div>
@@ -80,8 +85,8 @@
 {{--                        </ul>--}}
 {{--                    @endguest--}}
                 </div>
-                <div class="motion-safe:hover:scale-[1.02] transition-all duration-250 focus:outline focus:outline-2 focus:outline-red-500 pr-4">
-                    <a class="w-full px-4 text-center" href="http://t.me/steelliga" target="_blank">
+                <div class="motion-safe:hover:scale-[1.02] transition-all duration-250 focus:outline focus:outline-2 focus:outline-red-500 pr-4 pb-2">
+                    <a class="w-full text-center" href="http://t.me/steelliga" target="_blank">
                         <img class="w-full md:w-40" src="{{ asset('storage/images/qr.svg') }}">
                         <div class="text-center text-gray-500 text-sm mt-1">http://t.me/steelliga</div>
                     </a>

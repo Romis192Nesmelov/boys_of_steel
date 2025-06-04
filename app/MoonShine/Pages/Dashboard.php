@@ -8,6 +8,7 @@ use App\Models\City;
 use App\Models\Content;
 use App\Models\Game;
 use App\Models\News;
+use App\Models\OurHero;
 use App\Models\PhygitalHockey;
 use App\Models\SledgeHockey;
 use App\Models\Team;
@@ -15,6 +16,7 @@ use App\MoonShine\Resources\CityResource;
 use App\MoonShine\Resources\ContentResource;
 use App\MoonShine\Resources\GameResource;
 use App\MoonShine\Resources\NewsResource;
+use App\MoonShine\Resources\OurHeroResource;
 use App\MoonShine\Resources\PhygitalHockeyResource;
 use App\MoonShine\Resources\SledgeHockeyResource;
 use App\MoonShine\Resources\TeamResource;
@@ -54,7 +56,7 @@ class Dashboard extends Page
                 Column::make([
                     ValueMetric::make(fn() => (string)Link::make(app(MoonShineUserResource::class)->indexPageUrl(),__('Users')))
                         ->value(fn() => MoonshineUser::count())
-                        ->icon('heroicons.users'),
+                        ->icon('heroicons.user-group'),
                 ])->columnSpan(2),
                 Column::make([
                     ValueMetric::make(fn() => (string)Link::make(app(NewsResource::class)->indexPageUrl(),__('News')))
@@ -85,6 +87,11 @@ class Dashboard extends Page
                     ValueMetric::make(fn() => (string)Link::make(app(PhygitalHockeyResource::class)->indexPageUrl(),__('Hockey phygital')))
                         ->value(fn() => PhygitalHockey::count())
                         ->icon('heroicons.power'),
+                ])->columnSpan(2),
+                Column::make([
+                    ValueMetric::make(fn() => (string)Link::make(app(OurHeroResource::class)->indexPageUrl(),__('Our heroes')))
+                        ->value(fn() => OurHero::count())
+                        ->icon('heroicons.users'),
                 ])->columnSpan(2),
                 Column::make([
                     ValueMetric::make(fn() => (string)Link::make(app(ContentResource::class)->indexPageUrl(),__('Content')))

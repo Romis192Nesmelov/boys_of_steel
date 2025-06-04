@@ -15,7 +15,7 @@ class ScheduleController extends Controller
     public function futureGames(): View
     {
         return view('games.games', [
-            'content' => Content::query()->where('id',6)->first(),
+            'content' => Content::query()->where('id',2)->first(),
             'games' => Game::query()
                 ->with('teams')
                 ->where('date','>', Carbon::now()->setDate(2025,5,28))

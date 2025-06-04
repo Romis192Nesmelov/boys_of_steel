@@ -14,12 +14,12 @@ class HockeyController extends Controller
      */
     public function sledge(): View
     {
-        return $this->getHockey(new SledgeHockey(), 'sledge', 4);
+        return $this->getHockey(new SledgeHockey(), 'sledge', 5);
     }
 
     public function phygital(): View
     {
-        return $this->getHockey(new PhygitalHockey(), 'phygital', 5);
+        return $this->getHockey(new PhygitalHockey(), 'phygital', 6);
     }
 
     private function getHockey(SledgeHockey|PhygitalHockey $model, string $route, int $contentId): view
