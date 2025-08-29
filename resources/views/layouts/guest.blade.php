@@ -20,7 +20,7 @@
         <div class="min-h-screen flex flex-col sm:justify-center items-center pt-6 sm:pt-0 bg-gray-900">
             <div>
                 <a href="/">
-                    <img class="h-20" src="{{ asset('storage/images/logo.svg') }}" alt="Стальная лига" />
+                    <img class="h-20" src="{{ asset('storage/images/logo_shl.svg') }}" alt="Стальная лига" />
                 </a>
             </div>
 

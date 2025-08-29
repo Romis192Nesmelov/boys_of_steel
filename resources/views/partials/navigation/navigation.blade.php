@@ -6,7 +6,7 @@
                 <!-- Logo -->
 {{--                <div class="flex md:flex sm:hidden items-center mr-1 lg:mr-3 shrink-0">--}}
 {{--                    <a class="hover:opacity-50" href="{{ route('home') }}">--}}
-{{--                        <img width="100" src="{{ asset('storage/images/logo.svg') }}" alt="Стальная лига" />--}}
+{{--                        <img width="100" src="{{ asset('storage/images/logo_shl.svg') }}" alt="Стальная лига" />--}}
 {{--                    </a>--}}
 {{--                </div>--}}
 
