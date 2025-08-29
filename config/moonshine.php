@@ -13,7 +13,7 @@ return [
     'namespace' => 'App\MoonShine',
 
     'title' => env('MOONSHINE_TITLE', 'Админ-панель'),
-    'logo' => '/storage/images/logo.svg',
+    'logo' => '/storage/images/logo_shl.png',
     'logo_small' => env('MOONSHINE_LOGO_SMALL'),
 
     'route' => [
