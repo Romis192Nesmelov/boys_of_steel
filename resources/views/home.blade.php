@@ -23,7 +23,7 @@
 
         <hr class="opacity-25 mb-6">
 
-        @include('partials.head1',['head' => 'Расписание 3-го открытого чемпионата<br>по хоккею с шайбой на Кубок «Парни из Стали», г.Санкт-Петербург'])
+        @include('partials.head1',['head' => 'Расписание 3-го открытого чемпионата<br>по хоккею с шайбой на Кубок «Стальная Хоккейная Лига», г.Санкт-Петербург'])
         <div class='pb-8'>
             @if (check28may())
                 @include('games.partials.games',['games' => $future_games])

@@ -2,13 +2,13 @@
     <!-- Primary Navigation Menu -->
     <div class="max-w-7xl mx-auto px-2 sm:px-6">
         <div class="flex justify-between h-16">
-            <div class="flex">
+            <div class="w-full flex justify-center">
                 <!-- Logo -->
-                <div class="flex md:flex sm:hidden items-center mr-1 lg:mr-3 shrink-0">
-                    <a class="hover:opacity-50" href="{{ route('home') }}">
-                        <img width="100" src="{{ asset('storage/images/logo.svg') }}" alt="Стальная лига" />
-                    </a>
-                </div>
+{{--                <div class="flex md:flex sm:hidden items-center mr-1 lg:mr-3 shrink-0">--}}
+{{--                    <a class="hover:opacity-50" href="{{ route('home') }}">--}}
+{{--                        <img width="100" src="{{ asset('storage/images/logo.svg') }}" alt="Стальная лига" />--}}
+{{--                    </a>--}}
+{{--                </div>--}}
 
                 <!-- Navigation Links -->
                 <div class="hidden space-x-1 lg:space-x-3 sm:-my-px sm:ms-3 sm:flex">

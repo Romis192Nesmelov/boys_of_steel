@@ -12,3 +12,8 @@ ul {
     list-style: disc;
     padding-left: 1.5rem;
 }
+
+.icon-file-pdf {
+    font-size: 25px;
+    margin-top: 10px;
+}
