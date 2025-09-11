@@ -2,7 +2,7 @@
     <x-slot name="header">@include('partials.breadcrumbs.breadcrumbs')</x-slot>
 
     <div class="max-w-7xl mx-auto p-6 lg:p-8">
-        @include('partials.head1',['head' => 'Итоги 2-го открытого чемпионата по хоккею с шайбой<br>на Кубок «Стальная Хоккейная Лига», г.Самара'])
+        @include('partials.head1',['head' => 'Итоги 3-го открытого чемпионата по хоккею с шайбой<br>на Кубок «Стальная Хоккейная Лига», г.Самара'])
 
         @foreach($games as $game)
             <div class="max-w-7xl mx-auto p-6 lg:p-8">
