@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AboutUsController;
+use App\Http\Controllers\DocumentsController;
 use App\Http\Controllers\HockeyController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\OurHeroesController;
@@ -30,6 +31,7 @@ use Illuminate\Support\Facades\Route;
     Route::get('/sledge_hockey', [HockeyController::class, 'sledge'])->name('hockey.sledge');
     Route::get('/phygital_hockey', [HockeyController::class, 'phygital'])->name('hockey.phygital');
     Route::get('/our_heroes', OurHeroesController::class)->name('our_heroes');
+    Route::get('/documents', DocumentsController::class)->name('documents');
 //});
 
 //Route::middleware('auth')->group(function () {

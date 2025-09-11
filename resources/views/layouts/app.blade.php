@@ -33,7 +33,7 @@
         ])
     </head>
     <body class="font-sans antialiased">
-        @php $nav_links = ['about_us','news','games.future','games.past','teams','hockey.sledge','hockey.phygital','our_heroes'] @endphp
+        @php $nav_links = ['about_us','news','games.future','games.past','teams','hockey.sledge','hockey.phygital','our_heroes','documents'] @endphp
         <div class="min-h-screen bg-gray-900">
             <div class="max-w-7xl mx-auto py-4">
                 <div class="flex flex-col md:flex-row items-center justify-center">
@@ -77,7 +77,7 @@
                         <ul class="mb-3 md:mb-0 ml-4 mr-0 lg:mr-20 md:mr-5 list-none">
                             <li class="flex flex-row">
                                 <div><i class="icon-file-pdf mr-2 text-gray-400"></i></div>
-                                <a href="{{ asset('storage/docs/сertificate.pdf') }}" target="_blank" class="border-gray-800 border-b-2 border-solid focus:border-indigo-700 focus:outline-none transition duration-150 ease-in-out hover:border-indigo-500 border-transparent text-gray-400 hover:text-gray-300 hover:border-gray-700 focus:text-gray-300">Свидетельство<br>о гос.регистраци СХЛ 07.08.2025</a>
+                                <a href="{{ asset('storage/docs/certificate_of_state_registration.pdf') }}" target="_blank" class="border-gray-800 border-b-2 border-solid focus:border-indigo-700 focus:outline-none transition duration-150 ease-in-out hover:border-indigo-500 border-transparent text-gray-400 hover:text-gray-300 hover:border-gray-700 focus:text-gray-300">Свидетельство<br>о гос.регистраци СХЛ 07.08.2025</a>
                             </li>
                         </ul>
                     </div>

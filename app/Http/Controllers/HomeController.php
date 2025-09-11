@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Content;
-use App\Models\Game;
+//use App\Models\Game;
 use App\Models\News;
 use Illuminate\View\View;
 
@@ -22,12 +22,12 @@ class HomeController extends Controller
                 ->orderBy('date','desc')
                 ->limit(3)
                 ->get(),
-            'future_games' => Game::query()
-                ->with('teams')
-                ->where('date','>', get28may())
-                ->orderBy('date','desc')
-                ->limit(6)
-                ->get(),
+//            'future_games' => Game::query()
+//                ->with('teams')
+//                ->where('date','>', get28may())
+//                ->orderBy('date','desc')
+//                ->limit(6)
+//                ->get(),
 //            'teams' => Team::query()
 //                ->select(['logo','slug','name','city_id'])
 //                ->with('city')

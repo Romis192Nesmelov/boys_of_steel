@@ -34,12 +34,14 @@
     "Hockey sledge": "Следж-хоккей",
     "Hockey phygital": "Фиджитал-хоккей",
     "Our heroes": "Наши герои",
+    "Documents": "Документы",
     "Location": "Место проведения",
     "Content": "Контент",
     "Gallery": "Галерея",
     "Text": "Текст",
     "Cancel": "Отмена",
     "Details": "Подробнее",
+    "Download": "Скачать",
     "Please click the button below to verify your email address.": "Нажмите кнопку ниже, чтобы подтвердить свой адрес электронной почты.",
     "Resend Verification Email": "Повторно выслать письмо",
     "You're logged in!": "Вы успешно вошли!",
@@ -96,5 +98,8 @@
     "Picture": "Изображение",
     "Date": "Дата",
     "Score #1": "Счет №1",
-    "Score #2": "Счет №2"
+    "Score #2": "Счет №2",
+    "Certificate of state registration": "Свидетельство о гос. регистрации",
+    "Extract from the USRLE": "Выписка из ЕГРЮЛ",
+    "SHL position": "Положение СХЛ"
 }

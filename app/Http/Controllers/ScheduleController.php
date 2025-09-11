@@ -31,7 +31,7 @@ class ScheduleController extends Controller
         return view('games.past_games', [
             'games' => Game::query()
                 ->with('teams')
-                ->where('date','<', Carbon::now()->setDate(2025,5,28))
+                ->where('date','<', Carbon::now())
                 ->orderBy('date','desc')
                 ->limit(6)
                 ->paginate(10),
