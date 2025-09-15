@@ -1,4 +1,4 @@
-<div class="flex flex-col items-center justify-start">
+<div class="flex flex-col items-center justify-start px-2">
     <h2 class="mb-3 text-md lg:text-xl font-semibold text-center text-white">{{ __(ucfirst(str_replace('_',' ',$doc))) }}</h2>
     <img class="w-30 xs:w-full mr-0 border-2 border-gray-100 border-solid mb-3" src="{{ asset('storage/images/docs/'.$doc.'.jpg') }}" />
     <a href="{{ asset('storage/docs/'.$doc.'.pdf') }}" target="_blank">
