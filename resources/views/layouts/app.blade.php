@@ -33,7 +33,7 @@
         ])
     </head>
     <body class="font-sans antialiased">
-        @php $nav_links = ['about_us','news','games.future','games.past','teams','hockey.sledge','hockey.phygital','our_heroes','documents'] @endphp
+        @php $nav_links = [/*'about_us',*/'news','games.future','games.past','teams','hockey.sledge','hockey.phygital','our_heroes','documents'] @endphp
         <div class="min-h-screen bg-gray-900">
             <div class="max-w-7xl mx-auto py-4">
                 <div class="flex flex-col md:flex-row items-center justify-center">

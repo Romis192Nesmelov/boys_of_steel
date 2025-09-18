@@ -23,7 +23,7 @@ use Illuminate\Support\Facades\Route;
 
 //Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('/',HomeController::class)->name('home');
-    Route::get('/about_us', AboutUsController::class)->name('about_us');
+//    Route::get('/about_us', AboutUsController::class)->name('about_us');
     Route::get('/news/{slug?}', NewsController::class)->name('news');
     Route::get('/games/future', [ScheduleController::class, 'futureGames'])->name('games.future');
     Route::get('/games/past', [ScheduleController::class, 'pastGames'])->name('games.past');
