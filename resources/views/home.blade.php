@@ -5,13 +5,15 @@
     <x-slot name="footer_menu2">@include('partials.navigation.footer_menu', ['navs' => array_slice($nav_links,4)])</x-slot>
 
     <div class="max-w-7xl mx-auto pt-6">
-        <div class="flex flex-col lg:flex-row items-center justify-start">
-            <img class="w-40 md:w-1/4 ml-2 mr-0 md:mr-4 md:mb-0" src="{{ getImage($contents[0]) }}" />
-            <div class="px-4 md:col-span-2">
-                {!! $contents[0]->text !!}
+        @if ($contents[0]->active)
+            <div class="flex flex-col lg:flex-row items-center justify-start">
+                <img class="w-40 md:w-1/4 ml-2 mr-0 md:mr-4 md:mb-0" src="{{ getImage($contents[0]) }}" />
+                <div class="px-4 md:col-span-2">
+                    {!! $contents[0]->text !!}
+                </div>
             </div>
-        </div>
-        <hr class="opacity-25 my-6">
+            <hr class="opacity-25 my-6">
+        @endif
 
         @include('partials.head1',['head' => 'Новости'])
         <div class="pb-8">
@@ -24,7 +26,8 @@
                 </a>
             </div>
         </div>
-        @if (isset($contents[2]))
+
+        @if ($contents[2]->active)
             <hr class="opacity-25 mb-6">
 
             @include('partials.head1',['head' => 'Расписание 3-го открытого чемпионата<br>по хоккею с шайбой на Кубок «Стальная Хоккейная Лига», г.Санкт-Петербург'])
@@ -40,11 +43,13 @@
                     @include('partials.head2',['head' => 'Жеребьёвка пройдёт 27 мая'])
                 @endif
 
-                <hr class="opacity-25 my-6">
-                @include('partials.head1',['head' => $contents[1]->head])
-                <div class="w-full p-2">
-                    {!! $contents[1]->text !!}
-                </div>
+                @if ($contents[1]->active)
+                    <hr class="opacity-25 my-6">
+                    @include('partials.head1',['head' => $contents[1]->head])
+                    <div class="w-full p-2">
+                        {!! $contents[1]->text !!}
+                    </div>
+                @endif
 
                 <hr class="opacity-25 my-6">
                 @include('partials.head1',['head' => $contents[2]->head])

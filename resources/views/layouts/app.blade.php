@@ -68,18 +68,19 @@
                 <div class="flex flex-col md:flex-row">
                     {{ $footer_menu1 }}
                     {{ $footer_menu2 }}
-                    <div class="mr-0 lg:mr-2">
-                        <ul class="mb-3 md:mb-0 ml-4 mr-0 lg:mr-20 md:mr-5 list-none">
-                            <li class="flex flex-row">
-                                <div><i class="icon-file-pdf mr-2 text-gray-400"></i></div>
-                                <a href="{{ asset('storage/docs/certificate_of_state_registration.pdf') }}" target="_blank" class="border-gray-800 border-b-2 border-solid focus:border-indigo-700 focus:outline-none transition duration-150 ease-in-out hover:border-indigo-500 border-transparent text-gray-400 hover:text-gray-300 hover:border-gray-700 focus:text-gray-300">Свидетельство<br>о гос.регистраци СХЛ 07.08.2025</a>
-                            </li>
-                        </ul>
-                    </div>
+{{--                    <div class="mr-0 lg:mr-2">--}}
+{{--                        <ul class="mb-3 md:mb-0 ml-4 mr-0 lg:mr-20 md:mr-5 list-none">--}}
+{{--                            <li class="flex flex-row">--}}
+{{--                                <div><i class="icon-file-pdf mr-2 text-gray-400"></i></div>--}}
+{{--                                <a href="{{ asset('storage/docs/certificate_of_state_registration.pdf') }}" target="_blank" class="border-gray-800 border-b-2 border-solid focus:border-indigo-700 focus:outline-none transition duration-150 ease-in-out hover:border-indigo-500 border-transparent text-gray-400 hover:text-gray-300 hover:border-gray-700 focus:text-gray-300">Свидетельство<br>о гос.регистраци СХЛ 07.08.2025</a>--}}
+{{--                            </li>--}}
+{{--                        </ul>--}}
+{{--                    </div>--}}
                     <div class="mb-3 md:mb-0 mr-10">
                         <div class="text-center md:text-left text-gray-600 font-bold text-xl mb-3">Контакты:</div>
                         <ul class="text-center md:text-left text-white text-sm list-none pl-0">
                             <li class="border-gray-500 border-b-[1px] border-solid hover:border-indigo-500 mb-3">E-mail: <a href="mailto:info@dartcom.ru" target="_blank">info@dartcom.ru</a></li>
+                            <li class="border-gray-500 border-b-[1px] border-solid hover:border-indigo-500 mb-3">VK: <a href="https://vk.com/club232101440" target="_blank">https://vk.com/club232101440</a></li>
                         </ul>
                     </div>
 {{--                    @guest--}}
@@ -88,11 +89,12 @@
 {{--                        </ul>--}}
 {{--                    @endguest--}}
                 </div>
-                <div class="motion-safe:hover:scale-[1.02] transition-all duration-250 focus:outline focus:outline-2 focus:outline-red-500 pr-4 pb-2">
+                <div class="motion-safe:hover:scale-[1.02] transition-all duration-250 focus:outline focus:outline-2 focus:outline-red-500 text-center pr-4 pb-2">
                     <a class="w-full text-center" href="http://t.me/steelliga" target="_blank">
-                        <img class="w-full md:w-40" src="{{ asset('storage/images/qr.svg') }}">
+                        <img class="w-full md:w-40 mx-auto" src="{{ asset('storage/images/qr.svg') }}">
                         <div class="text-center text-gray-500 text-sm mt-1">http://t.me/steelliga</div>
                     </a>
+                    <a class="text-center text-gray-500 text-sm mt-1" href="https://t.me/+-3DTt9EapgdlYjA6" target="_blank">https://t.me/+-3DTt9EapgdlYjA6</a>
                 </div>
             </div>
             <hr class="opacity-25">

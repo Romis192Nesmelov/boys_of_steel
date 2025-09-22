@@ -17,7 +17,7 @@ class HomeController extends BaseController
         return view('home', [
             'breadcrumbs' => [],
             'nav_links' => $this->mainMenu,
-            'contents' => Content::query()->whereIn('id',[1,2,3])->where('active',1)->get(),
+            'contents' => Content::query()->whereIn('id',[1,2,3])->get(),
             'news' => News::query()
                 ->select(['id','image','slug','head','short_text','date'])
                 ->orderBy('date','desc')
