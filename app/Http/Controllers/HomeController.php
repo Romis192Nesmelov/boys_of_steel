@@ -7,7 +7,7 @@ use App\Models\Content;
 use App\Models\News;
 use Illuminate\View\View;
 
-class HomeController extends Controller
+class HomeController extends BaseController
 {
     /**
      * Display home page.
@@ -16,7 +16,8 @@ class HomeController extends Controller
     {
         return view('home', [
             'breadcrumbs' => [],
-            'contents' => Content::query()->whereIn('id',[1,2,3])->get(),
+            'nav_links' => $this->mainMenu,
+            'contents' => Content::query()->whereIn('id',[1,2,3])->where('active',1)->get(),
             'news' => News::query()
                 ->select(['id','image','slug','head','short_text','date'])
                 ->orderBy('date','desc')

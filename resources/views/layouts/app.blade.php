@@ -33,7 +33,6 @@
         ])
     </head>
     <body class="font-sans antialiased">
-        @php $nav_links = [/*'about_us',*/'news','games.future','games.past','teams','hockey.sledge','hockey.phygital','our_heroes','documents'] @endphp
         <div class="min-h-screen bg-gray-900">
             <div class="max-w-7xl mx-auto py-4">
                 <div class="flex flex-col md:flex-row items-center justify-center">
@@ -49,15 +48,15 @@
                 </div>
             </div>
             <hr class="opacity-25">
-            @include('partials.navigation.navigation')
+            {{ $main_nav }}
             <!-- Page Heading -->
-            @if (isset($header))
+{{--            @if (isset($header))--}}
                 <header class="bg-gray-900 shadow border-b border-gray-800">
                     <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
                         {{ $header }}
                     </div>
                 </header>
-            @endif
+{{--            @endif--}}
 
             <!-- Page Content -->
             <main>
@@ -67,12 +66,8 @@
         <footer class="py-8 bg-gray-800">
             <div class="max-w-7xl mx-auto text-white flex flex-col md:flex-row items-center md:items-start justify-between">
                 <div class="flex flex-col md:flex-row">
-                    <ul class="mb-3 md:mb-0 ml-4 mr-0 lg:mr-20 md:mr-5 list-none">
-                        @each('partials.navigation.footer_menu',array_slice($nav_links,0,4),'route')
-                    </ul>
-                    <ul class="mb-3 md:mb-0 ml-4 mr-0 lg:mr-20 md:mr-5 list-none">
-                        @each('partials.navigation.footer_menu',array_slice($nav_links,-4),'route')
-                    </ul>
+                    {{ $footer_menu1 }}
+                    {{ $footer_menu2 }}
                     <div class="mr-0 lg:mr-2">
                         <ul class="mb-3 md:mb-0 ml-4 mr-0 lg:mr-20 md:mr-5 list-none">
                             <li class="flex flex-row">

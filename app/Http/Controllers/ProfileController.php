@@ -12,7 +12,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\View\View;
 
-class ProfileController extends Controller
+class ProfileController extends BaseController
 {
     /**
      * Display the user's profile form.
@@ -20,11 +20,12 @@ class ProfileController extends Controller
     public function edit(Request $request): View
     {
         return view('profile.edit', [
+            'breadcrumbs' => [['href' => 'profile.edit', 'name' => 'Профиль']],
+            'nav_links' => $this->mainMenu,
             'user' => $request->user(),
             'user_types' => UserType::query()->select(['id','name'])->get(),
             'cities' => City::query()->select(['id','name'])->get(),
             'teams' => Team::query()->select(['id','name'])->get(),
-            'breadcrumbs' => [['href' => 'profile.edit', 'name' => 'Профиль']]
         ]);
     }
 

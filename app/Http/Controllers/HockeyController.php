@@ -7,7 +7,7 @@ use App\Models\SledgeHockey;
 use App\Models\PhygitalHockey;
 use Illuminate\View\View;
 
-class HockeyController extends Controller
+class HockeyController extends BaseController
 {
     /**
      * Display home page.
@@ -26,11 +26,12 @@ class HockeyController extends Controller
     {
         $content = Content::query()->where('id',$contentId)->first();
         return view('hockey.hockey', [
+            'breadcrumbs' => [['href' => 'hockey.'.$route, 'name' => $content->head]],
+            'nav_links' => $this->mainMenu,
             'content' => $content,
             'items' => $model->query()
                 ->orderBy('date','desc')
                 ->paginate(10),
-            'breadcrumbs' => [['href' => 'hockey.'.$route, 'name' => $content->head]]
         ]);
     }
 }

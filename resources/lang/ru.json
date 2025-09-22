@@ -1,6 +1,7 @@
 {
     "Hello!": "Приветствуем!",
     "Name": "Ваше имя",
+    "Doc name": "Название",
     "Phone": "Телефон",
     "Password": "Пароль",
     "Current Password": "Текущий пароль",
@@ -96,10 +97,10 @@
     "Head": "Заголовок",
     "Home page": "Главная страница",
     "Picture": "Изображение",
+    "Document": "Документ",
     "Date": "Дата",
     "Score #1": "Счет №1",
     "Score #2": "Счет №2",
-    "Certificate of state registration": "Свидетельство о гос. регистрации",
-    "Extract from the USRLE": "Выписка из ЕГРЮЛ",
-    "SHL position": "Положение СХЛ"
+    "Active": "Активно",
+    "Not active": "Не активно"
 }

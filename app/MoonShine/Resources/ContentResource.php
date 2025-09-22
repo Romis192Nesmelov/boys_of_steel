@@ -18,6 +18,7 @@ use MoonShine\Resources\ModelResource;
 use MoonShine\Decorations\Block;
 use MoonShine\Fields\ID;
 use MoonShine\Fields\Field;
+use MoonShine\Fields\Checkbox;
 use MoonShine\Components\MoonShineComponent;
 
 /**
@@ -69,7 +70,11 @@ class ContentResource extends ModelResource
                     ->required()
                     ->customAttributes([
                         'rows' => 50,
-                    ])->hideOnIndex()
+                    ])->hideOnIndex(),
+                Divider::make(),
+                Checkbox::make(__('Active'), 'active')
+                    ->nullable()
+                    ->updateOnPreview()
             ]),
         ];
     }

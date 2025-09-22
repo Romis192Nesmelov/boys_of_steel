@@ -13,6 +13,7 @@ use App\MoonShine\Resources\OurHeroResource;
 use App\MoonShine\Resources\PhygitalHockeyResource;
 use App\MoonShine\Resources\SledgeHockeyResource;
 use App\MoonShine\Resources\TeamResource;
+use App\MoonShine\Resources\DocumentsResource;
 use MoonShine\Providers\MoonShineApplicationServiceProvider;
 use MoonShine\Menu\MenuGroup;
 use MoonShine\Menu\MenuItem;
@@ -96,6 +97,10 @@ class MoonShineServiceProvider extends MoonShineApplicationServiceProvider
             MenuItem::make(
                 static fn() => __('Content'),
                 new ContentResource()
+            ),
+            MenuItem::make(
+                static fn() => __('Documents'),
+                new DocumentsResource()
             ),
         ];
     }

@@ -6,7 +6,7 @@ use App\Models\Content;
 use App\Models\OurHero;
 use Illuminate\View\View;
 
-class OurHeroesController extends Controller
+class OurHeroesController extends BaseController
 {
     /**
      * Display home page.
@@ -15,9 +15,10 @@ class OurHeroesController extends Controller
     {
         $content = Content::query()->where('id',7)->first();
         return view('content', [
+            'breadcrumbs' => [['href' => 'our_heroes', 'name' => strip_tags($content->head)]],
+            'nav_links' => $this->mainMenu,
             'content' => $content,
             'items' => OurHero::query()->orderBy('id','desc')->paginate(10),
-            'breadcrumbs' => [['href' => 'our_heroes', 'name' => strip_tags($content->head)]]
         ]);
     }
 }
