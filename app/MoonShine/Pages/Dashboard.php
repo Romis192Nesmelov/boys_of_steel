@@ -12,6 +12,7 @@ use App\Models\OurHero;
 use App\Models\PhygitalHockey;
 use App\Models\SledgeHockey;
 use App\Models\Team;
+use App\Models\Document;
 use App\MoonShine\Resources\CityResource;
 use App\MoonShine\Resources\ContentResource;
 use App\MoonShine\Resources\GameResource;
@@ -20,6 +21,7 @@ use App\MoonShine\Resources\OurHeroResource;
 use App\MoonShine\Resources\PhygitalHockeyResource;
 use App\MoonShine\Resources\SledgeHockeyResource;
 use App\MoonShine\Resources\TeamResource;
+use App\MoonShine\Resources\DocumentsResource;
 use MoonShine\Components\Link;
 use MoonShine\Decorations\Column;
 use MoonShine\Decorations\Grid;
@@ -97,6 +99,11 @@ class Dashboard extends Page
                     ValueMetric::make(fn() => (string)Link::make(app(ContentResource::class)->indexPageUrl(),__('Content')))
                         ->value(fn() => Content::count())
                         ->icon('heroicons.book-open'),
+                ])->columnSpan(2),
+                Column::make([
+                    ValueMetric::make(fn() => (string)Link::make(app(DocumentsResource::class)->indexPageUrl(),__('Documents')))
+                        ->value(fn() => Document::count())
+                        ->icon('heroicons.document-duplicate'),
                 ])->columnSpan(2),
             ])
         ];

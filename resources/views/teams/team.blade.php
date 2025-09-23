@@ -1,8 +1,5 @@
 <x-app-layout>
-    <x-slot name="header">@include('partials.breadcrumbs.breadcrumbs')</x-slot>
-    <x-slot name="main_nav">@include('partials.navigation.navigation')</x-slot>
-    <x-slot name="footer_menu1">@include('partials.navigation.footer_menu', ['navs' => array_slice($nav_links,0,4)])</x-slot>
-    <x-slot name="footer_menu2">@include('partials.navigation.footer_menu', ['navs' => array_slice($nav_links,4)])</x-slot>
+    @include('partials.slots')
 
     <div class="max-w-7xl mx-auto px-6 lg:px-8 py-12">
         @include('partials.head1',['head' => $team->name])
