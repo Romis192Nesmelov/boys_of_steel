@@ -105,6 +105,9 @@
             <div class="max-w-xl mx-auto text-gray-600 text-center text-sm">
                 ©{{ date('Y') }}. Стальная лига. Все права защищены.<br>Полное или частичное копирование материалов запрещено.
             </div>
+            <div class="w-full mt-1 text-center text-2xl">
+                <a class="hover:opacity-50" href="https://vk.com/club232101440" target="_blank"><i class="text-gray-600 fa fa-vk"></i></a>
+            </div>
         </footer>
 
 {{--        <x-modal name="our-mission" focusable>--}}

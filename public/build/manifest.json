@@ -1,7 +1,32 @@
 {
   "resources/css/app.css": {
-    "file": "assets/app-NrJMjQdz.css",
+    "file": "assets/app-CC18wbps.css",
     "src": "resources/css/app.css",
+    "isEntry": true
+  },
+  "resources/css/icons/fontawesome/fonts/fontawesome-webfont.eot": {
+    "file": "assets/fontawesome-webfont-CbmmmOzQ.eot",
+    "src": "resources/css/icons/fontawesome/fonts/fontawesome-webfont.eot"
+  },
+  "resources/css/icons/fontawesome/fonts/fontawesome-webfont.svg": {
+    "file": "assets/fontawesome-webfont-CHL21eTs.svg",
+    "src": "resources/css/icons/fontawesome/fonts/fontawesome-webfont.svg"
+  },
+  "resources/css/icons/fontawesome/fonts/fontawesome-webfont.ttf": {
+    "file": "assets/fontawesome-webfont-mKfd17r0.ttf",
+    "src": "resources/css/icons/fontawesome/fonts/fontawesome-webfont.ttf"
+  },
+  "resources/css/icons/fontawesome/fonts/fontawesome-webfont.woff": {
+    "file": "assets/fontawesome-webfont-uQ-Tw6Lp.woff",
+    "src": "resources/css/icons/fontawesome/fonts/fontawesome-webfont.woff"
+  },
+  "resources/css/icons/fontawesome/fonts/fontawesome-webfont.woff2": {
+    "file": "assets/fontawesome-webfont-DLEgfzzi.woff2",
+    "src": "resources/css/icons/fontawesome/fonts/fontawesome-webfont.woff2"
+  },
+  "resources/css/icons/fontawesome/styles.min.css": {
+    "file": "assets/styles-CjLCp9ks.css",
+    "src": "resources/css/icons/fontawesome/styles.min.css",
     "isEntry": true
   },
   "resources/css/icons/icomoon/fonts/icomoon.eot": {
