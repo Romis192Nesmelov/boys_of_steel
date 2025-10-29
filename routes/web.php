@@ -4,7 +4,7 @@ use App\Http\Controllers\AboutUsController;
 use App\Http\Controllers\DocumentsController;
 use App\Http\Controllers\HockeyController;
 use App\Http\Controllers\HomeController;
-use App\Http\Controllers\OurHeroesController;
+use App\Http\Controllers\OurLeadersController;
 use App\Http\Controllers\NewsController;
 use App\Http\Controllers\ScheduleController;
 use App\Http\Controllers\TeamsController;
@@ -31,7 +31,7 @@ use App\Models\Content;
     Route::get('/teams/{slug?}', TeamsController::class)->name('teams');
     if (Content::query()->where('id',5)->pluck('active')[0]) Route::get('/sledge_hockey', [HockeyController::class, 'sledge'])->name('hockey.sledge');
     if (Content::query()->where('id',6)->pluck('active')[0]) Route::get('/phygital_hockey', [HockeyController::class, 'phygital'])->name('hockey.phygital');
-    if (Content::query()->where('id',7)->pluck('active')[0]) Route::get('/our_heroes', OurHeroesController::class)->name('our_heroes');
+    if (Content::query()->where('id',7)->pluck('active')[0]) Route::get('/our_leaders', OurLeadersController::class)->name('our_leaders');
     Route::get('/documents', DocumentsController::class)->name('documents');
 //});
 

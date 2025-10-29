@@ -20,7 +20,7 @@ class BaseController extends Controller
             ->whereIn('id',[4,5,6,7])
             ->get();
 
-        $additionalMenuItems = ['about_us', 'hockey.sledge', 'hockey.phygital', 'our_heroes'];
+        $additionalMenuItems = ['about_us', 'hockey.sledge', 'hockey.phygital', 'our_leaders'];
         $count = 0;
 
         foreach ($contentMenu as $item) {
