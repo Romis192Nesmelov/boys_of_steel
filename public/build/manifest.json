@@ -60,6 +60,11 @@
     "src": "resources/css/main.css",
     "isEntry": true
   },
+  "resources/css/owl.carousel.min.css": {
+    "file": "assets/owl.carousel-CDeijY_r.css",
+    "src": "resources/css/owl.carousel.min.css",
+    "isEntry": true
+  },
   "resources/js/app.js": {
     "file": "assets/app-Bo-u61x1.js",
     "name": "app",
