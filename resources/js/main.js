@@ -12,27 +12,47 @@ $(document).ready(function() {
 
     // $('input[name=phone]').mask("+7(999)999-99-99");
 
-    // $('.owl-carousel.teams').owlCarousel({
-    //     margin: 20,
-    //     loop: true,
-    //     nav: false,
-    //     autoplay: true,
-    //     autoplayTimeout:2000,
-    //     dots: false,
-    //     responsive: {
-    //         400: {
-    //             items: 2
-    //         },
-    //         768: {
-    //             items: 2
-    //         },
-    //         1200: {
-    //             items: 6
-    //         },
-    //     },
-    //     // navText:[navButtonBlack1,navButtonBlack2]
-    // });
+    $('.owl-carousel.teams').owlCarousel({
+        margin: 20,
+        loop: true,
+        nav: false,
+        autoplay: true,
+        autoplayTimeout: 2000,
+        dots: false,
+        responsive: {
+            400: {
+                items: 2
+            },
+            768: {
+                items: 2
+            },
+            1200: {
+                items: 6
+            },
+        },
+        // navText:[navButtonBlack1,navButtonBlack2]
+    });
 
+    $('.owl-carousel.home-carousel').owlCarousel({
+        margin: 10,
+        loop: true,
+        nav: false,
+        autoplay: true,
+        autoplayTimeout: 2000,
+        dots: false,
+        responsive: {
+            400: {
+                items: 1
+            },
+            768: {
+                items: 2
+            },
+            1200: {
+                items: 4
+            },
+        },
+        // navText:[navButtonBlack1,navButtonBlack2]
+    });
 });
 
 // const getQueryParams = (qs) => {

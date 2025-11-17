@@ -5,7 +5,7 @@
         @if ($contents[0]->active)
             <div class="flex flex-col lg:flex-row items-center justify-start">
                 <img class="w-40 md:w-1/4 ml-2 mr-0 md:mr-4 md:mb-0" src="{{ getImage($contents[0]) }}" />
-                <div class="px-4 md:col-span-2">
+                <div class="w-3/4 px-4 md:col-span-2 overflow-hidden">
                     {!! $contents[0]->text !!}
                 </div>
             </div>
