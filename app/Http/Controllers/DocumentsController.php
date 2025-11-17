@@ -12,7 +12,7 @@ class DocumentsController extends BaseController
     public function __invoke(): View
     {
         return view('documents', [
-            'breadcrumbs' => [['href' => 'our_heroes', 'name' => __('Documents')]],
+            'breadcrumbs' => [['href' => 'documents', 'name' => __('Documents')]],
             'nav_links' => $this->mainMenu,
             'docs' => Document::query()->where('active',1)->get()
         ]);
