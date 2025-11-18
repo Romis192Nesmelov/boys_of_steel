@@ -6,8 +6,5 @@
         <div class="grid grid-cols-1 md:grid-cols-4 gap-6 pt-6 px-6">
             @each('teams.partials.team', $teams, 'team')
         </div>
-        <div class="w-full text-center mt-6">
-            {{ $teams->links() }}
-        </div>
     </div>
 </x-app-layout>

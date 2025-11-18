@@ -91,7 +91,7 @@ class MoonShineServiceProvider extends MoonShineApplicationServiceProvider
                 ),
             ]),
             MenuItem::make(
-                static fn() => __('Our heroes'),
+                static fn() => __('Our leaders'),
                 new OurHeroResource()
             ),
             MenuItem::make(

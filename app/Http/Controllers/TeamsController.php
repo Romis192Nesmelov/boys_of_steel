@@ -26,7 +26,7 @@ class TeamsController extends BaseController
             return view('teams.teams', [
                 'breadcrumbs' => [['href' => 'teams', 'name' => 'Команды']],
                 'nav_links' => $this->mainMenu,
-                'teams' => Team::query()->select(['logo','slug','name','city_id'])->with(['city','gallery'])->paginate(10),
+                'teams' => Team::query()->select(['logo','slug','name','city_id'])->with(['city','gallery'])->get(),
             ]);
         }
     }

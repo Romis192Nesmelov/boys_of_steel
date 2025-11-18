@@ -30,7 +30,7 @@ class OurHeroResource extends ModelResource
 
     public function title(): string
     {
-        return __('Our heroes');
+        return __('Our leaders');
     }
 
     /**

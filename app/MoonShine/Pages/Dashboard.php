@@ -91,7 +91,7 @@ class Dashboard extends Page
                         ->icon('heroicons.power'),
                 ])->columnSpan(2),
                 Column::make([
-                    ValueMetric::make(fn() => (string)Link::make(app(OurHeroResource::class)->indexPageUrl(),__('Our heroes')))
+                    ValueMetric::make(fn() => (string)Link::make(app(OurHeroResource::class)->indexPageUrl(),__('Our leaders')))
                         ->value(fn() => OurHero::count())
                         ->icon('heroicons.users'),
                 ])->columnSpan(2),
