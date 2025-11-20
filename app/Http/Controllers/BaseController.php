@@ -7,7 +7,7 @@ class BaseController extends Controller
 {
     protected array $mainMenu = [
         'news'          => 'Новости',
-        'games.future'  => 'Расписание',
+//        'games.future'  => 'Расписание',
         'games.past'    => 'Прошедшие игры',
         'teams'         => 'Команды',
         'documents'     => 'Документы'

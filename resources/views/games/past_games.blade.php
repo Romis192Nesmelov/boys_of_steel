@@ -2,7 +2,7 @@
     @include('partials.slots')
 
     <div class="max-w-7xl mx-auto p-6 lg:p-8">
-        @include('partials.head1',['head' => 'Итоги 3-го открытого чемпионата по хоккею с шайбой<br>на Кубок «Стальная Хоккейная Лига», г.Санкт-Петербург'])
+        @include('partials.head1',['head' => 'Итоги встреч'])
 
         @foreach($games as $game)
             <div class="max-w-7xl mx-auto p-6 lg:p-8">
