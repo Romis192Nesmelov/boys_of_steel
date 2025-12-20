@@ -14,7 +14,7 @@ class UserTypesSeeder extends Seeder
      */
     public function run()
     {
-        $data = ['Организатор', 'Игрок', 'Болельщик', 'СМИ', 'Тренер', 'Волонтёр'];
+        $data = ['Организатор', 'Игрок', 'Болельщик', 'СМИ', 'Тренер', 'Волонтёр', 'Судья'];
 
         foreach ($data as $type) {
             UserType::query()->create(['name' => $type]);

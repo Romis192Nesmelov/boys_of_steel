@@ -20,7 +20,7 @@ class ProfileController extends BaseController
     public function edit(Request $request): View
     {
         return view('profile.edit', [
-            'breadcrumbs' => [['href' => 'profile.edit', 'name' => 'Профиль']],
+            'breadcrumbs' => [['href' => 'profile.edit', 'name' => __('Profile')]],
             'nav_links' => $this->mainMenu,
             'user' => $request->user(),
             'user_types' => UserType::query()->select(['id','name'])->get(),

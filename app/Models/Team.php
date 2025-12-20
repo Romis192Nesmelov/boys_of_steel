@@ -39,9 +39,14 @@ class Team extends Model
         return $this->belongsTo(City::class);
     }
 
-    public function users(): HasMany
+//    public function users(): HasMany
+//    {
+//        return $this->hasMany(User::class);
+//    }
+
+    public function participants(): HasMany
     {
-        return $this->hasMany(User::class);
+        return $this->hasMany(Participant::class);
     }
 
     public function gallery(): HasMany

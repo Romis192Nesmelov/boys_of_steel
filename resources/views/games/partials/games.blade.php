@@ -14,14 +14,14 @@
 {{--                @endif--}}
             </div>
             @include('games.partials.team',['first' => false, 'team' => $game->teams[1]])
-            <div class="flex items-center justify-center md:justify-end">
-                @if (!futureOrPast($game->date))
-                    <x-secondary-button
-                        x-data=""
-                        x-on:click.prevent="$dispatch('open-modal', 'game-details-{{ $game->id }}')"
-                    >{{ __('Details') }}</x-secondary-button>
-                @endif
-            </div>
+{{--            <div class="flex items-center justify-center md:justify-end">--}}
+{{--                @if (!futureOrPast($game->date))--}}
+{{--                    <x-secondary-button--}}
+{{--                        x-data=""--}}
+{{--                        x-on:click.prevent="$dispatch('open-modal', 'game-details-{{ $game->id }}')"--}}
+{{--                    >{{ __('Details') }}</x-secondary-button>--}}
+{{--                @endif--}}
+{{--            </div>--}}
         </div>
 
 {{--        @if (!futureOrPast($game->date))--}}

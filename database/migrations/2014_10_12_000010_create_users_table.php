@@ -3,9 +3,9 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
-use \App\Models\UserType;
-use \App\Models\City;
-use \App\Models\Team;
+//use \App\Models\ParticipantType;
+//use \App\Models\City;
+//use \App\Models\Team;
 
 return new class extends Migration
 {
@@ -21,9 +21,9 @@ return new class extends Migration
             $table->string('phone',20)->nullable();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
-            $table->foreignIdFor(UserType::class)->nullable()->constrained()->cascadeOnUpdate()->cascadeOnDelete();
-            $table->foreignIdFor(City::class)->nullable()->constrained()->cascadeOnUpdate()->cascadeOnDelete();
-            $table->foreignIdFor(Team::class)->nullable()->constrained()->cascadeOnUpdate()->cascadeOnDelete();
+//            $table->foreignIdFor(UserType::class)->nullable()->constrained()->cascadeOnUpdate()->cascadeOnDelete();
+//            $table->foreignIdFor(City::class)->nullable()->constrained()->cascadeOnUpdate()->cascadeOnDelete();
+//            $table->foreignIdFor(Team::class)->nullable()->constrained()->cascadeOnUpdate()->cascadeOnDelete();
             $table->rememberToken();
             $table->timestamps();
         });

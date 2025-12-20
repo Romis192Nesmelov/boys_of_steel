@@ -77,7 +77,7 @@ class TeamResource extends ModelResource
                         __('City'),
                         'city',
                         fn($item) => $item->name,
-                        resource: new CityResource()
+                        new CityResource()
                     )->hideOnIndex()
                 ])->columnSpan(6),
                 Column::make([

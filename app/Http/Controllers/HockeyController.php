@@ -26,7 +26,7 @@ class HockeyController extends BaseController
     {
         $content = Content::query()->where('id',$contentId)->first();
         return view('hockey.hockey', [
-            'breadcrumbs' => [['href' => 'hockey.'.$route, 'name' => $content->head]],
+            'breadcrumbs' => [['href' => 'hockey.'.$route, 'name' => __('Hockey '.$route)]],
             'nav_links' => $this->mainMenu,
             'content' => $content,
             'items' => $model->query()

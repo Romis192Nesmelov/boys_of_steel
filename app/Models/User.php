@@ -48,18 +48,18 @@ class User extends Authenticatable implements MustVerifyEmail
         'password' => 'hashed',
     ];
 
-    public function userType(): BelongsTo
-    {
-        return $this->belongsTo(UserType::class);
-    }
+//    public function participantType(): BelongsTo
+//    {
+//        return $this->belongsTo(ParticipantType::class);
+//    }
 
-    public function city(): BelongsTo
-    {
-        return $this->belongsTo(City::class);
-    }
+//    public function city(): BelongsTo
+//    {
+//        return $this->belongsTo(City::class);
+//    }
 
-    public function team(): BelongsTo
-    {
-        return $this->belongsTo(Team::class);
-    }
+//    public function team(): BelongsTo
+//    {
+//        return $this->belongsTo(Team::class);
+//    }
 }

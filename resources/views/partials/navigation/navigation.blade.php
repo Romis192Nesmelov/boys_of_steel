@@ -11,47 +11,35 @@
 {{--                </div>--}}
 
                 <!-- Navigation Links -->
-                <div class="hidden space-x-1 lg:space-x-3 sm:-my-px sm:ms-3 sm:flex">
-                    @foreach($nav_links as $route => $name)
-                        <a href="{{ route($route) }}" class="inline-flex items-center px-1 pt-1 border-b-2 hover:border-indigo-700 text-xs lg:text-sm font-medium leading-5 focus:outline-none transition duration-150 ease-in-out {{ request()->routeIs($route) ? 'border-indigo-600  text-gray-100' : 'border-transparent text-gray-400 focus:border-gray-700 hover:text-gray-300 focus:text-gray-300' }}">{{ $name }}</a>
+                <div class="h-full hidden space-x-1 lg:space-x-3 sm:-my-px sm:ms-3 sm:flex">
+                    @php $dropMenuCount = 0; @endphp
+                    @foreach($nav_links as $key => $item)
+                        @if (is_array($item))
+                            @php $dropMenuCount++; @endphp
+                            <div class="hidden sm:flex sm:items-center sm:ms-6">
+                                <x-dropdown align="right">
+                                    <x-slot name="trigger">
+                                        <a id="drop-button-{{ $dropMenuCount }}" x-on:click="$('#drop{{ $dropMenuCount }}').toggleClass('icon-arrow-down12 icon-arrow-up12')" class="cursor-pointer inline-flex items-center px-1 pt-1 border-b-2 hover:border-indigo-700 text-xs lg:text-sm font-medium leading-5 focus:outline-none transition duration-150 ease-in-out border-transparent text-gray-400 focus:border-gray-700 hover:text-gray-300 focus:text-gray-300">{{ $key }}<i id="drop{{ $dropMenuCount }}" class="icon-arrow-down12 ml-1"></i></a>
+                                    </x-slot>
+
+                                    <x-slot name="content">
+                                        @foreach($item as $href => $name)
+                                            <x-dropdown-link :href="route($href)" class="{{ request()->routeIs($href) ? 'bg-gray-800' : '' }}">{{ $name }}</x-dropdown-link>
+                                            @if (request()->routeIs($href))
+                                                <script>
+                                                    $('#drop-button-{{ $dropMenuCount }}').addClass('border-indigo-600  text-gray-100').removeClass('border-transparent');
+                                                </script>
+                                            @endif
+                                        @endforeach
+                                    </x-slot>
+                                </x-dropdown>
+                            </div>
+                        @else
+                            <a href="{{ route($key) }}" class="inline-flex items-center px-1 pt-1 border-b-2 hover:border-indigo-700 text-xs lg:text-sm font-medium leading-5 focus:outline-none transition duration-150 ease-in-out {{ request()->routeIs($key) ? 'border-indigo-600  text-gray-100' : 'border-transparent text-gray-400 focus:border-gray-700 hover:text-gray-300 focus:text-gray-300' }}">{{ $item }}</a>
+                        @endif
                     @endforeach
-{{--                    <a class="cursor-pointer inline-flex items-center px-1 pt-1 text-sm font-medium leading-5 text-gray-400 hover:text-gray-300 hover:border-gray-700 focus:outline-none focus:text-gray-300 focus:border-gray-700 transition duration-150 ease-in-out" x-on:click.prevent="$dispatch('open-modal', 'our-mission')">{{ __('Our mission') }}</a>--}}
                 </div>
             </div>
-
-            <!-- Settings Dropdown -->
-{{--            @auth--}}
-{{--                <div class="hidden sm:flex sm:items-center sm:ms-6">--}}
-{{--                    <x-dropdown align="right" width="48">--}}
-{{--                        <x-slot name="trigger">--}}
-{{--                            <button class="inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-gray-400 bg-gray-900 hover:text-gray-300 focus:outline-none transition ease-in-out duration-150">--}}
-{{--                                <div>{{ Auth::user()->name }}</div>--}}
-
-{{--                                <div class="ms-1">--}}
-{{--                                    <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">--}}
-{{--                                        <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />--}}
-{{--                                    </svg>--}}
-{{--                                </div>--}}
-{{--                            </button>--}}
-{{--                        </x-slot>--}}
-
-{{--                        <x-slot name="content">--}}
-{{--                            <x-dropdown-link :href="route('profile.edit')">{{ __('Profile') }}</x-dropdown-link>--}}
-
-{{--                            <!-- Authentication -->--}}
-{{--                            <form method="POST" action="{{ route('logout') }}">--}}
-{{--                                @csrf--}}
-{{--                                <x-dropdown-link :href="route('logout')" onclick="event.preventDefault(); this.closest('form').submit();">{{ __('Log Out') }}</x-dropdown-link>--}}
-{{--                            </form>--}}
-{{--                        </x-slot>--}}
-{{--                    </x-dropdown>--}}
-{{--                </div>--}}
-{{--            @else--}}
-{{--                <div class="hidden sm:flex items-center text-xs ml-4">--}}
-{{--                    <a href="{{ route('login') }}" class="font-semibold text-gray-400 hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">{{ __("Log in") }}</a>--}}
-{{--                    <a href="{{ route('register') }}" class="ml-3 font-semibold text-gray-400 hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">{{ __("Register") }}</a>--}}
-{{--                </div>--}}
-{{--            @endauth--}}
 
             <!-- Hamburger -->
             <div class="-me-2 flex items-center sm:hidden">
@@ -68,36 +56,16 @@
     <!-- Responsive Navigation Menu -->
     <div :class="{'block': open, 'hidden': ! open}" class="hidden sm:hidden">
         <div class="pt-2 pb-3 space-y-1">
-            @foreach($nav_links as $route => $name)
-                <a href="{{ route($route) }}" class="block w-full ps-3 pe-4 py-2 border-l-4 text-start text-base font-medium transition duration-150 ease-in-out focus:outline-none {{ request()->routeIs($route) ? 'text-indigo-300 focus:text-indigo-200 bg-indigo-900/50 focus:bg-indigo-900 focus:border-indigo-300' : 'text-gray-400 focus:text-gray-200 focus:bg-gray-700 border-l-4 focus:border-gray-600 border-transparent hover:text-gray-200 hover:bg-gray-700 hover:border-gray-600' }}">{{ $name }}</a>
-{{--                <x-responsive-nav-link :href="route($route)" :active="request()->routeIs($route)">{{ navLinkName($route) }}</x-responsive-nav-link>--}}
+            @foreach($nav_links as $key => $item)
+                @if (is_array($item))
+                    @foreach($item as $href => $name)
+                        @include('partials.navigation.responsive_nav_link', ['key' => $href, 'item' => $name])
+                    @endforeach
+                @else
+                    @include('partials.navigation.responsive_nav_link')
+                @endif
+
             @endforeach
         </div>
-
-        <!-- Responsive Settings Options -->
-{{--        <div class="pt-2 pb-1 border-t border-gray-600">--}}
-{{--            @auth--}}
-{{--                <div class="px-4">--}}
-{{--                    <div class="font-medium text-base text-gray-200">{{ Auth::user()->name }}</div>--}}
-{{--                    <div class="font-medium text-sm text-gray-500">{{ Auth::user()->email }}</div>--}}
-{{--                </div>--}}
-
-{{--                <div class="mt-3 space-y-1">--}}
-{{--                    <x-responsive-nav-link :href="route('profile.edit')">{{ __('Profile') }}</x-responsive-nav-link>--}}
-
-{{--                    <!-- Authentication -->--}}
-{{--                    <form method="POST" action="{{ route('logout') }}">--}}
-{{--                        @csrf--}}
-{{--                        <x-responsive-nav-link :href="route('logout')" onclick="event.preventDefault(); this.closest('form').submit();">{{ __('Log Out') }}</x-responsive-nav-link>--}}
-{{--                    </form>--}}
-{{--                </div>--}}
-{{--            @else--}}
-{{--                <div class="space-y-1">--}}
-{{--                    <x-responsive-nav-link :href="route('login')">{{ __('Log in') }}</x-responsive-nav-link>--}}
-{{--                    <x-responsive-nav-link :href="route('register')">{{ __('Register') }}</x-responsive-nav-link>--}}
-{{--                </div>--}}
-{{--            @endauth--}}
-{{--        </div>--}}
-
     </div>
 </nav>

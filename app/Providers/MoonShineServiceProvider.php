@@ -9,9 +9,11 @@ use App\MoonShine\Resources\ContentResource;
 use App\MoonShine\Resources\GalleryResource;
 use App\MoonShine\Resources\GameResource;
 use App\MoonShine\Resources\NewsResource;
+use App\MoonShine\Resources\ParticipantResource;
 use App\MoonShine\Resources\OurHeroResource;
 use App\MoonShine\Resources\PhygitalHockeyResource;
 use App\MoonShine\Resources\SledgeHockeyResource;
+use App\MoonShine\Resources\SlidesResource;
 use App\MoonShine\Resources\TeamResource;
 use App\MoonShine\Resources\DocumentsResource;
 use MoonShine\Providers\MoonShineApplicationServiceProvider;
@@ -48,6 +50,10 @@ class MoonShineServiceProvider extends MoonShineApplicationServiceProvider
     protected function menu(): array
     {
         return [
+            MenuItem::make(
+                static fn() => __('Slides'),
+                new SlidesResource()
+            ),
             MenuGroup::make(static fn() => __('moonshine::ui.resource.system'), [
                 MenuItem::make(
                     static fn() => __('moonshine::ui.resource.admins_title'),
@@ -90,6 +96,10 @@ class MoonShineServiceProvider extends MoonShineApplicationServiceProvider
                     new PhygitalHockeyResource()
                 ),
             ]),
+            MenuItem::make(
+                static fn() => __('Participants'),
+                new ParticipantResource()
+            ),
             MenuItem::make(
                 static fn() => __('Our leaders'),
                 new OurHeroResource()

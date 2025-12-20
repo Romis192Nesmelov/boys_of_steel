@@ -16,7 +16,7 @@ class NewsController extends BaseController
             if (!$news = News::query()->where('slug',$slug)->first()) abort(404);
             return view('news.news', [
                 'breadcrumbs' => [
-                    ['href' => 'news', 'name' => 'News'],
+                    ['href' => 'news', 'name' => __('News')],
                     ['href' => 'news', 'slug' => $slug, 'name' => $news->head]
                 ],
                 'nav_links' => $this->mainMenu,
@@ -30,7 +30,7 @@ class NewsController extends BaseController
             ]);
         } else {
             return view('news.all_news', [
-                'breadcrumbs' => [['href' => 'news', 'name' => 'Новости']],
+                'breadcrumbs' => [['href' => 'news', 'name' => __('News')]],
                 'nav_links' => $this->mainMenu,
                 'news' => News::query()
                     ->select(['id','image','slug','head','short_text','date'])

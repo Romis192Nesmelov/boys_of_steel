@@ -2,7 +2,7 @@
     @include('partials.slots')
 
     <div class="max-w-7xl mx-auto p-6 lg:p-8">
-        @include('partials.head1',['head' => 'Итоги встреч'])
+        @include('partials.head1',['head' => __('Results of the games')])
 
         @foreach($games as $game)
             <div class="max-w-7xl mx-auto p-6 lg:p-8">

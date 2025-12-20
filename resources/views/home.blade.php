@@ -2,6 +2,12 @@
     @include('partials.slots')
 
     <div class="max-w-7xl mx-auto pt-6">
+        @if ($slides->count())
+            <div class="owl-carousel slider mb-8 pb-8">
+                @each('partials.slide', $slides, 'slide')
+            </div>
+        @endif
+
         @if ($contents[0]->active)
             <div class="flex flex-col lg:flex-row items-center justify-start">
                 <img class="w-40 md:w-1/4 ml-2 mr-0 md:mr-4 md:mb-0" src="{{ getImage($contents[0]) }}" />

@@ -53,6 +53,27 @@ $(document).ready(function() {
         },
         // navText:[navButtonBlack1,navButtonBlack2]
     });
+
+    $('.owl-carousel.slider').owlCarousel({
+        margin: 20,
+        loop: true,
+        nav: true,
+        autoplay: true,
+        autoplayTimeout: 5000,
+        dots: true,
+        responsive: {
+            400: {
+                items: 1
+            },
+            768: {
+                items: 1
+            },
+            1200: {
+                items: 1
+            },
+        },
+        // navText:[navButtonBlack1,navButtonBlack2]
+    });
 });
 
 // const getQueryParams = (qs) => {

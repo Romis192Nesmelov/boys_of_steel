@@ -4,6 +4,8 @@ declare(strict_types=1);
 
 namespace App\MoonShine\Pages;
 
+use App\Models\Participant;
+use App\Models\Slide;
 use App\Models\City;
 use App\Models\Content;
 use App\Models\Game;
@@ -18,8 +20,10 @@ use App\MoonShine\Resources\ContentResource;
 use App\MoonShine\Resources\GameResource;
 use App\MoonShine\Resources\NewsResource;
 use App\MoonShine\Resources\OurHeroResource;
+use App\MoonShine\Resources\ParticipantResource;
 use App\MoonShine\Resources\PhygitalHockeyResource;
 use App\MoonShine\Resources\SledgeHockeyResource;
+use App\MoonShine\Resources\SlidesResource;
 use App\MoonShine\Resources\TeamResource;
 use App\MoonShine\Resources\DocumentsResource;
 use MoonShine\Components\Link;
@@ -56,6 +60,12 @@ class Dashboard extends Page
 		return [
             Grid::make([
                 Column::make([
+                    ValueMetric::make(fn() => (string)Link::make(app(SlidesResource::class)->indexPageUrl(),__('Slides')))
+                        ->value(fn() => Slide::count())
+                        ->icon('heroicons.photo'),
+                ])->columnSpan(2),
+
+                Column::make([
                     ValueMetric::make(fn() => (string)Link::make(app(MoonShineUserResource::class)->indexPageUrl(),__('Users')))
                         ->value(fn() => MoonshineUser::count())
                         ->icon('heroicons.user-group'),
@@ -90,6 +100,13 @@ class Dashboard extends Page
                         ->value(fn() => PhygitalHockey::count())
                         ->icon('heroicons.power'),
                 ])->columnSpan(2),
+
+                Column::make([
+                    ValueMetric::make(fn() => (string)Link::make(app(ParticipantResource::class)->indexPageUrl(),__('Participants')))
+                        ->value(fn() => Participant::count())
+                        ->icon('heroicons.user-group'),
+                ])->columnSpan(2),
+
                 Column::make([
                     ValueMetric::make(fn() => (string)Link::make(app(OurHeroResource::class)->indexPageUrl(),__('Our leaders')))
                         ->value(fn() => OurHero::count())
