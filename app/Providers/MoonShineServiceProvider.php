@@ -4,18 +4,20 @@ declare(strict_types=1);
 
 namespace App\Providers;
 
+use App\MoonShine\Resources\ArbitersResource;
 use App\MoonShine\Resources\CityResource;
 use App\MoonShine\Resources\ContentResource;
 use App\MoonShine\Resources\GalleryResource;
 use App\MoonShine\Resources\GameResource;
 use App\MoonShine\Resources\NewsResource;
-use App\MoonShine\Resources\ParticipantResource;
+use App\MoonShine\Resources\PlayersResource;
 use App\MoonShine\Resources\OurHeroResource;
 use App\MoonShine\Resources\PhygitalHockeyResource;
 use App\MoonShine\Resources\SledgeHockeyResource;
 use App\MoonShine\Resources\SlidesResource;
 use App\MoonShine\Resources\TeamResource;
 use App\MoonShine\Resources\DocumentsResource;
+use App\MoonShine\Resources\TrainersResource;
 use MoonShine\Providers\MoonShineApplicationServiceProvider;
 use MoonShine\Menu\MenuGroup;
 use MoonShine\Menu\MenuItem;
@@ -96,10 +98,20 @@ class MoonShineServiceProvider extends MoonShineApplicationServiceProvider
                     new PhygitalHockeyResource()
                 ),
             ]),
-            MenuItem::make(
-                static fn() => __('Participants'),
-                new ParticipantResource()
-            ),
+            MenuGroup::make(static fn() => __('Participants'), [
+                MenuItem::make(
+                    static fn() => __('Players'),
+                    new PlayersResource()
+                ),
+                MenuItem::make(
+                    static fn() => __('Trainers'),
+                    new TrainersResource()
+                ),
+                MenuItem::make(
+                    static fn() => __('Arbiters'),
+                    new ArbitersResource()
+                ),
+            ]),
             MenuItem::make(
                 static fn() => __('Our leaders'),
                 new OurHeroResource()
