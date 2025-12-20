@@ -74,10 +74,11 @@ class ArbitersResource extends ModelResource
     public function rules(Model $item): array
     {
         return [
-            'surname' => ['required','min:3','max:191'],
-            'name'    => ['required','min:3','max:191'],
-            'number'  => ['integer','nullable','min:1','max:999'],
-            'born'    => ['required','date'],
+            'surname'             => ['required','min:3','max:191'],
+            'name'                => ['required','min:3','max:191'],
+            'number'              => ['integer','nullable','min:1','max:999'],
+            'born'                => ['required','date'],
+            'participant_type_id' => ['required','integer','size:7'],
         ];
     }
 

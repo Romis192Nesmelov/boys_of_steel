@@ -82,9 +82,10 @@ class TrainersResource extends ModelResource
     public function rules(Model $item): array
     {
         return [
-            'surname' => ['required','min:3','max:191'],
-            'name'    => ['required','min:3','max:191'],
-            'born'    => ['required','date'],
+            'surname'             => ['required','min:3','max:191'],
+            'name'                => ['required','min:3','max:191'],
+            'born'                => ['required','date'],
+            'participant_type_id' => ['required','integer','size:5'],
         ];
     }
 
