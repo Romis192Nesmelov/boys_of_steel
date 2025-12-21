@@ -7,6 +7,7 @@ namespace App\MoonShine\Resources;
 use Illuminate\Database\Eloquent\Model;
 use App\Models\ParticipantType;
 
+use MoonShine\ActionButtons\ActionButton;
 use MoonShine\Fields\Text;
 use MoonShine\Resources\ModelResource;
 use MoonShine\Decorations\Block;
@@ -20,6 +21,21 @@ use MoonShine\Components\MoonShineComponent;
 class ParticipantTypeResource extends ModelResource
 {
     protected string $model = ParticipantType::class;
+
+    protected function modifyCreateButton(ActionButton $button): ActionButton
+    {
+        return $button->emptyHidden();
+    }
+
+    protected function modifyDeleteButton(ActionButton $button): ActionButton
+    {
+        return $button->emptyHidden();
+    }
+
+    protected function modifyMassDeleteButton(ActionButton $button): ActionButton
+    {
+        return $button->emptyHidden();
+    }
 
     protected string $sortDirection = 'asc';
 

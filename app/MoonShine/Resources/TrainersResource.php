@@ -39,8 +39,7 @@ class TrainersResource extends ModelResource
 
     public function query(): Builder
     {
-        return parent::query()
-            ->where('participant_type_id', 5);
+        return parent::query()->where('participant_type_id', 5);
     }
 
     /**

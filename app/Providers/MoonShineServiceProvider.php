@@ -10,6 +10,7 @@ use App\MoonShine\Resources\ContentResource;
 use App\MoonShine\Resources\GalleryResource;
 use App\MoonShine\Resources\GameResource;
 use App\MoonShine\Resources\NewsResource;
+use App\MoonShine\Resources\ParticipantTypeResource;
 use App\MoonShine\Resources\PlayersResource;
 use App\MoonShine\Resources\OurHeroResource;
 use App\MoonShine\Resources\PhygitalHockeyResource;
@@ -99,6 +100,10 @@ class MoonShineServiceProvider extends MoonShineApplicationServiceProvider
                 ),
             ]),
             MenuGroup::make(static fn() => __('Participants'), [
+                MenuItem::make(
+                    static fn() => __('Participants types'),
+                    new ParticipantTypeResource()
+                ),
                 MenuItem::make(
                     static fn() => __('Players'),
                     new PlayersResource()

@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace App\MoonShine\Resources;
 
+use Illuminate\Contracts\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 use App\Models\Content;
 
@@ -31,11 +32,16 @@ class ContentResource extends ModelResource
     protected string $column = 'head';
 
     protected function modifyCreateButton(ActionButton $button): ActionButton
+{
+    return $button->emptyHidden();
+}
+
+    protected function modifyDeleteButton(ActionButton $button): ActionButton
     {
         return $button->emptyHidden();
     }
 
-    protected function modifyDeleteButton(ActionButton $button): ActionButton
+    protected function modifyMassDeleteButton(ActionButton $button): ActionButton
     {
         return $button->emptyHidden();
     }
@@ -43,6 +49,11 @@ class ContentResource extends ModelResource
     public function title(): string
     {
         return __('Content');
+    }
+
+    public function query(): Builder
+    {
+        return parent::query()->whereIn('id', [1,5,6,7]);
     }
 
     /**

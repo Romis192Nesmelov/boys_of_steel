@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace App\MoonShine\Pages;
 
 use App\Models\Participant;
+use App\Models\ParticipantType;
 use App\Models\Slide;
 use App\Models\City;
 use App\Models\Content;
@@ -21,6 +22,7 @@ use App\MoonShine\Resources\ContentResource;
 use App\MoonShine\Resources\GameResource;
 use App\MoonShine\Resources\NewsResource;
 use App\MoonShine\Resources\OurHeroResource;
+use App\MoonShine\Resources\ParticipantTypeResource;
 use App\MoonShine\Resources\PlayersResource;
 use App\MoonShine\Resources\PhygitalHockeyResource;
 use App\MoonShine\Resources\SledgeHockeyResource;
@@ -101,6 +103,11 @@ class Dashboard extends Page
                     ValueMetric::make(fn() => (string)Link::make(app(PhygitalHockeyResource::class)->indexPageUrl(),__('Hockey phygital')))
                         ->value(fn() => PhygitalHockey::count())
                         ->icon('heroicons.power'),
+                ])->columnSpan(2),
+                Column::make([
+                    ValueMetric::make(fn() => (string)Link::make(app(ParticipantTypeResource::class)->indexPageUrl(),__('Participants types')))
+                        ->value(fn() => ParticipantType::count())
+                        ->icon('heroicons.sparkles'),
                 ])->columnSpan(2),
                 Column::make([
                     ValueMetric::make(fn() => (string)Link::make(app(PlayersResource::class)->indexPageUrl(),__('Players')))

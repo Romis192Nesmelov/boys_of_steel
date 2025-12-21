@@ -36,8 +36,7 @@ class ArbitersResource extends ModelResource
 
     public function query(): Builder
     {
-        return parent::query()
-            ->where('participant_type_id', 7);
+        return parent::query()->where('participant_type_id', 7);
     }
 
     /**

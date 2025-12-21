@@ -39,8 +39,7 @@ class PlayersResource extends ModelResource
 
     public function query(): Builder
     {
-        return parent::query()
-            ->where('participant_type_id', 2);
+        return parent::query()->where('participant_type_id', 2);
     }
 
     /**
