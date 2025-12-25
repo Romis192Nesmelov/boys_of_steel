@@ -20,7 +20,7 @@ class ScheduleController extends BaseController
 //            'content' => Content::query()->where('id',2)->first(),
             'games' => Game::query()
                 ->with('teams')
-                ->where('date','<', Carbon::now())
+                ->where('date','>', Carbon::now())
                 ->orderBy('date','desc')
                 ->limit(6)
                 ->paginate(10),
