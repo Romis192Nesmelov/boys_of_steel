@@ -5,7 +5,7 @@
         @include('partials.head1',['head' => $breadcrumbs[0]['name']])
 
         <div class="max-w-7xl mx-auto py-3">
-            <div class="flex flex-col lg:flex-row justify-center px-6">
+            <div class="grid grid-cols-4 gap-2">
                 @each('partials.docs.doc',$docs,'doc')
             </div>
         </div>
