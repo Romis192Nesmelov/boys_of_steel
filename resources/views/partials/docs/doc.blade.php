@@ -1,4 +1,4 @@
-<div class="flex flex-col items-center justify-start px-2">
+<div class="flex flex-col items-center justify-start px-2 py-4">
     <h2 class="mb-3 text-md lg:text-md font-semibold text-center text-white">{{ $doc->name }}</h2>
     <img class="w-30 xs:w-full mr-0 border-2 border-gray-100 border-solid mb-3" src="{{ asset('storage/'.$doc->image) }}" />
     <a href="{{ asset('storage/'.$doc->doc) }}" target="_blank">
