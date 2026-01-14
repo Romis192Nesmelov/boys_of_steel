@@ -14,10 +14,10 @@ class ScheduleController extends BaseController
      */
     public function futureGames(): View
     {
-        return view('games.games_future', [
+        return view('games.games', [
             'breadcrumbs' => [['href' => 'games.future', 'name' => __('Games future')]],
             'nav_links' => $this->mainMenu,
-//            'content' => Content::query()->where('id',2)->first(),
+            'head' => __('Games future'),
             'games' => Game::query()
                 ->with('teams')
                 ->where('date','>', Carbon::now())
@@ -29,9 +29,10 @@ class ScheduleController extends BaseController
 
     public function pastGames(): View
     {
-        return view('games.games_past', [
+        return view('games.games', [
             'breadcrumbs' => [['href' => 'games.past', 'name' => __('Games past')]],
             'nav_links' => $this->mainMenu,
+            'head' => __('Results of the games'),
             'games' => Game::query()
                 ->with('teams')
                 ->where('date','<', Carbon::now())

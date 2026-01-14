@@ -25,7 +25,7 @@ use App\Models\Content;
 
 //Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('/',HomeController::class)->name('home');
-    if (Content::query()->where('id',4)->pluck('active')[0]) Route::get('/about_us', AboutUsController::class)->name('about_us');
+    Route::get('/about_us', AboutUsController::class)->name('about_us');
     Route::get('/news/{slug?}', NewsController::class)->name('news');
     Route::get('/games/future', [ScheduleController::class, 'futureGames'])->name('games.future');
     Route::get('/games/past', [ScheduleController::class, 'pastGames'])->name('games.past');
@@ -35,7 +35,8 @@ use App\Models\Content;
     Route::get('/players', [ParticipantsController::class, 'players'])->name('players');
     Route::get('/trainers', [ParticipantsController::class, 'trainers'])->name('trainers');
     Route::get('/arbiters', [ParticipantsController::class, 'arbiters'])->name('arbiters');
-    Route::get('/our_leaders', OurLeadersController::class)->name('our_leaders');
+    Route::get('/leadership', [OurLeadersController::class, 'leadership'])->name('leadership');
+    Route::get('/our_leaders', [OurLeadersController::class, 'ourLeaders'])->name('our_leaders');
     Route::get('/documents', DocumentsController::class)->name('documents');
 //});
 

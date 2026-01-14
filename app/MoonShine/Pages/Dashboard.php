@@ -20,6 +20,7 @@ use App\MoonShine\Resources\ArbitersResource;
 use App\MoonShine\Resources\CityResource;
 use App\MoonShine\Resources\ContentResource;
 use App\MoonShine\Resources\GameResource;
+use App\MoonShine\Resources\LeadershipResource;
 use App\MoonShine\Resources\NewsResource;
 use App\MoonShine\Resources\OurHeroResource;
 use App\MoonShine\Resources\ParticipantTypeResource;
@@ -123,6 +124,11 @@ class Dashboard extends Page
                     ValueMetric::make(fn() => (string)Link::make(app(ArbitersResource::class)->indexPageUrl(),__('Trainers')))
                         ->value(fn() => Participant::where('participant_type_id',7)->count())
                         ->icon('heroicons.hand-thumb-up'),
+                ])->columnSpan(2),
+                Column::make([
+                    ValueMetric::make(fn() => (string)Link::make(app(LeadershipResource::class)->indexPageUrl(),__('Leadership')))
+                        ->value(fn() => 1)
+                        ->icon('heroicons.user-circle'),
                 ])->columnSpan(2),
                 Column::make([
                     ValueMetric::make(fn() => (string)Link::make(app(OurHeroResource::class)->indexPageUrl(),__('Our leaders')))

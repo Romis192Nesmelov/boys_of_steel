@@ -16,6 +16,7 @@ return new class extends Migration
             $table->string('head',191);
             $table->string('image')->nullable();
             $table->longText('text');
+            $table->tinyInteger('active');
             $table->timestamps();
         });
     }

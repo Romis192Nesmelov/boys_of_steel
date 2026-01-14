@@ -9,6 +9,7 @@ use App\MoonShine\Resources\CityResource;
 use App\MoonShine\Resources\ContentResource;
 use App\MoonShine\Resources\GalleryResource;
 use App\MoonShine\Resources\GameResource;
+use App\MoonShine\Resources\LeadershipResource;
 use App\MoonShine\Resources\NewsResource;
 use App\MoonShine\Resources\ParticipantTypeResource;
 use App\MoonShine\Resources\PlayersResource;
@@ -117,10 +118,16 @@ class MoonShineServiceProvider extends MoonShineApplicationServiceProvider
                     new ArbitersResource()
                 ),
             ]),
-            MenuItem::make(
-                static fn() => __('Our leaders'),
-                new OurHeroResource()
-            ),
+            MenuGroup::make(static fn() => __('Our leaders'), [
+                MenuItem::make(
+                    static fn() => __('Leadership'),
+                    new LeadershipResource()
+                ),
+                MenuItem::make(
+                    static fn() => __('Our leaders'),
+                    new OurHeroResource()
+                ),
+            ]),
             MenuItem::make(
                 static fn() => __('Content'),
                 new ContentResource()
