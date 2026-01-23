@@ -13,7 +13,7 @@ use App\MoonShine\Resources\LeadershipResource;
 use App\MoonShine\Resources\NewsResource;
 use App\MoonShine\Resources\ParticipantTypeResource;
 use App\MoonShine\Resources\PlayersResource;
-use App\MoonShine\Resources\OurHeroResource;
+use App\MoonShine\Resources\OurSupportResource;
 use App\MoonShine\Resources\PhygitalHockeyResource;
 use App\MoonShine\Resources\SledgeHockeyResource;
 use App\MoonShine\Resources\SlidesResource;
@@ -118,14 +118,14 @@ class MoonShineServiceProvider extends MoonShineApplicationServiceProvider
                     new ArbitersResource()
                 ),
             ]),
-            MenuGroup::make(static fn() => __('Our leaders'), [
+            MenuGroup::make(static fn() => __('Our support'), [
                 MenuItem::make(
                     static fn() => __('Leadership'),
                     new LeadershipResource()
                 ),
                 MenuItem::make(
-                    static fn() => __('Our leaders'),
-                    new OurHeroResource()
+                    static fn() => __('Our support'),
+                    new OurSupportResource()
                 ),
             ]),
             MenuItem::make(

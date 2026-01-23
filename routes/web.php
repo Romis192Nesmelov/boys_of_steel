@@ -36,7 +36,7 @@ use App\Models\Content;
     Route::get('/trainers', [ParticipantsController::class, 'trainers'])->name('trainers');
     Route::get('/arbiters', [ParticipantsController::class, 'arbiters'])->name('arbiters');
     Route::get('/leadership', [OurLeadersController::class, 'leadership'])->name('leadership');
-    Route::get('/our_leaders', [OurLeadersController::class, 'ourLeaders'])->name('our_leaders');
+    Route::get('/our_support', [OurLeadersController::class, 'ourSupport'])->name('our_support');
     Route::get('/documents', DocumentsController::class)->name('documents');
 //});
 

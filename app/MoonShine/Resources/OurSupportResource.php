@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace App\MoonShine\Resources;
 
 use Illuminate\Database\Eloquent\Model;
-use App\Models\OurHero;
+use App\Models\OurSupport;
 
 use MoonShine\Decorations\Column;
 use MoonShine\Decorations\Divider;
@@ -18,11 +18,11 @@ use MoonShine\Fields\Field;
 use MoonShine\Components\MoonShineComponent;
 
 /**
- * @extends ModelResource<OurHero>
+ * @extends ModelResource<OurSupport>
  */
-class OurHeroResource extends ModelResource
+class OurSupportResource extends ModelResource
 {
-    protected string $model = OurHero::class;
+    protected string $model = OurSupport::class;
 
     protected string $column = 'head';
 
@@ -60,7 +60,7 @@ class OurHeroResource extends ModelResource
     }
 
     /**
-     * @param OurHero $item
+     * @param OurSupport $item
      *
      * @return array<string, string[]|string>
      * @see https://laravel.com/docs/validation#available-validation-rules

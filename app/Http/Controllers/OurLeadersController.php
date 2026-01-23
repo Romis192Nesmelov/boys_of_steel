@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Content;
-use App\Models\OurHero;
+use App\Models\OurSupport;
 use Illuminate\View\View;
 
 class OurLeadersController extends BaseController
@@ -12,20 +12,20 @@ class OurLeadersController extends BaseController
     {
         $content = Content::query()->where('id',2)->first();
         return view('content', [
-            'breadcrumbs' => [['href' => 'our_leaders', 'name' => __('Our leaders')]],
+            'breadcrumbs' => [['href' => 'leadership', 'name' => __('Leadership')]],
             'nav_links' => $this->mainMenu,
             'content' => $content
         ]);
     }
 
-    public function ourLeaders(): View
+    public function ourSupport(): View
     {
         $content = Content::query()->where('id',7)->first();
         return view('content', [
-            'breadcrumbs' => [['href' => 'our_leaders', 'name' => __('Leadership')]],
+            'breadcrumbs' => [['href' => 'our_support', 'name' => __('Our support')]],
             'nav_links' => $this->mainMenu,
             'content' => $content,
-            'items' => OurHero::query()->orderBy('id','desc')->paginate(10),
+            'items' => OurSupport::query()->orderBy('id','desc')->paginate(10),
         ]);
     }
 }

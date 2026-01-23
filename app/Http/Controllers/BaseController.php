@@ -14,7 +14,7 @@ class BaseController extends Controller
             'teams'                         => __('Teams'),
             __('Hockey')                => ['hockey.sledge' => __('Hockey sledge'), 'hockey.phygital' => __('Hockey phygital')],
             __('Participants')          => ['players' => __('Players'), 'trainers' => __('Trainers'), 'arbiters' => __('Arbiters')],
-            __('Our leaders')           => ['leadership' => __('Leadership'), 'our_leaders' => __('Our leaders')],
+            __('Our support')           => ['leadership' => __('Leadership'), 'our_support' => __('Our support')],
             'documents'                     => __('Documents')
         ];
     }

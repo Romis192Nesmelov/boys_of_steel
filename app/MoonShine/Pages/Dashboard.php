@@ -11,7 +11,7 @@ use App\Models\City;
 use App\Models\Content;
 use App\Models\Game;
 use App\Models\News;
-use App\Models\OurHero;
+use App\Models\OurSupport;
 use App\Models\PhygitalHockey;
 use App\Models\SledgeHockey;
 use App\Models\Team;
@@ -22,7 +22,7 @@ use App\MoonShine\Resources\ContentResource;
 use App\MoonShine\Resources\GameResource;
 use App\MoonShine\Resources\LeadershipResource;
 use App\MoonShine\Resources\NewsResource;
-use App\MoonShine\Resources\OurHeroResource;
+use App\MoonShine\Resources\OurSupportResource;
 use App\MoonShine\Resources\ParticipantTypeResource;
 use App\MoonShine\Resources\PlayersResource;
 use App\MoonShine\Resources\PhygitalHockeyResource;
@@ -131,8 +131,8 @@ class Dashboard extends Page
                         ->icon('heroicons.user-circle'),
                 ])->columnSpan(2),
                 Column::make([
-                    ValueMetric::make(fn() => (string)Link::make(app(OurHeroResource::class)->indexPageUrl(),__('Our leaders')))
-                        ->value(fn() => OurHero::count())
+                    ValueMetric::make(fn() => (string)Link::make(app(OurSupportResource::class)->indexPageUrl(),__('Our support')))
+                        ->value(fn() => OurSupport::count())
                         ->icon('heroicons.users'),
                 ])->columnSpan(2),
                 Column::make([
