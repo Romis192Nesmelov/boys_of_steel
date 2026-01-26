@@ -4,6 +4,7 @@
     </div>
     <div class="flex items-center">
         @foreach([
+            'obdl-logo.svg' => 'https://obdl.ru/',
             'vhl-logo.svg' => 'https://www.vhlru.ru/',
             'mhl-logo.png' => 'https://mhl.khl.ru/',
             'lhl-logo.png' => 'https://lhl-77.ru/',
