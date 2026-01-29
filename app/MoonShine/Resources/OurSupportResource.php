@@ -83,7 +83,9 @@ class OurSupportResource extends ModelResource
     {
         return [
             'image' =>      ['required_without:id','mimes:jpg,png','max:2000'],
-            'text' =>       ['required','min:5','max:66000']
+            'text' =>       ['required','min:5','max:66000'],
+            'sort' =>       ['required','min:1','max:999'],
+            'active' =>     ['nullable','max:1'],
         ];
     }
 
