@@ -3,7 +3,7 @@
 namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 
-class OurSupport extends Model
+class Leadership extends Model
 {
     protected $fillable = [
         'image',

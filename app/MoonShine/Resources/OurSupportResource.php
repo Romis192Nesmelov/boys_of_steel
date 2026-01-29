@@ -4,13 +4,16 @@ declare(strict_types=1);
 
 namespace App\MoonShine\Resources;
 
+use Illuminate\Contracts\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 use App\Models\OurSupport;
 
 use MoonShine\Decorations\Column;
 use MoonShine\Decorations\Divider;
 use MoonShine\Decorations\Grid;
+use MoonShine\Fields\Checkbox;
 use MoonShine\Fields\Image;
+use MoonShine\Fields\Number;
 use MoonShine\Fields\TinyMce;
 use MoonShine\Resources\ModelResource;
 use MoonShine\Fields\ID;
@@ -30,7 +33,12 @@ class OurSupportResource extends ModelResource
 
     public function title(): string
     {
-        return __('Our leaders');
+        return __('Our support');
+    }
+
+    public function query(): Builder
+    {
+        return parent::query()->orderBy('sort');
     }
 
     /**
@@ -46,7 +54,10 @@ class OurSupportResource extends ModelResource
                         ->nullable()
                         ->disk('public')
                         ->dir('images/hockey'),
-                ]),
+                ])->columnSpan(6),
+                Column::make([
+                    Number::make(__('Sort'),'sort')->default(1),
+                ])->columnSpan(6),
                 Column::make([
                     Divider::make(),
                     TinyMce::make(__('Text'),'text')
@@ -54,6 +65,9 @@ class OurSupportResource extends ModelResource
                         ->customAttributes([
                             'rows' => 10,
                         ])->hideOnIndex(),
+                    Checkbox::make(__('Active'), 'active')
+                        ->nullable()
+                        ->updateOnPreview()
                 ]),
             ])
         ];

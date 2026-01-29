@@ -53,7 +53,7 @@ class ContentResource extends ModelResource
 
     public function query(): Builder
     {
-        return parent::query()->whereIn('id', [1,5,6,7]);
+        return parent::query()->whereIn('id', [1,2,5,6,7]);
     }
 
     /**

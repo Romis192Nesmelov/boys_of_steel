@@ -4,47 +4,34 @@ declare(strict_types=1);
 
 namespace App\MoonShine\Resources;
 
+use App\Models\Leadership;
+use Cassandra\Tinyint;
 use Illuminate\Contracts\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
-use App\Models\Content;
+use App\Models\OurSupport;
 
-use MoonShine\ActionButtons\ActionButton;
 use MoonShine\Decorations\Column;
 use MoonShine\Decorations\Divider;
 use MoonShine\Decorations\Grid;
+use MoonShine\Fields\Checkbox;
 use MoonShine\Fields\Image;
-use MoonShine\Fields\Text;
+use MoonShine\Fields\Number;
 use MoonShine\Fields\TinyMce;
 use MoonShine\Resources\ModelResource;
-use MoonShine\Decorations\Block;
 use MoonShine\Fields\ID;
 use MoonShine\Fields\Field;
-use MoonShine\Fields\Checkbox;
 use MoonShine\Components\MoonShineComponent;
 
 /**
- * @extends ModelResource<Content>
+ * @extends ModelResource<OurSupport>
  */
 class LeadershipResource extends ModelResource
 {
-    protected string $model = Content::class;
+    protected string $model = Leadership::class;
 
     protected string $column = 'head';
 
-    protected function modifyCreateButton(ActionButton $button): ActionButton
-{
-    return $button->emptyHidden();
-}
-
-    protected function modifyDeleteButton(ActionButton $button): ActionButton
-    {
-        return $button->emptyHidden();
-    }
-
-    protected function modifyMassDeleteButton(ActionButton $button): ActionButton
-    {
-        return $button->emptyHidden();
-    }
+    protected int $itemsPerPage = 10;
 
     public function title(): string
     {
@@ -53,7 +40,7 @@ class LeadershipResource extends ModelResource
 
     public function query(): Builder
     {
-        return parent::query()->where('id', 2);
+        return parent::query()->orderBy('sort');
     }
 
     /**
@@ -62,31 +49,36 @@ class LeadershipResource extends ModelResource
     public function fields(): array
     {
         return [
+            ID::make()->sortable(),
             Grid::make([
                 Column::make([
                     Image::make(__('Picture'),'image')
                         ->nullable()
                         ->disk('public')
-                        ->dir('images/content')
-                ])->columnSpan(2),
+                        ->dir('images/leadership'),
+
+                ])->columnSpan(6),
                 Column::make([
-                    Text::make(__('Head'),'head', fn($item) => strip_tags(str_replace('<br>',' ',$item->head)))
+                    Number::make(__('Sort'),'sort')->default(1),
+                ])->columnSpan(6),
+                Column::make([
+                    Divider::make(),
+                    TinyMce::make(__('Text'),'text')
                         ->required()
-                ])->columnSpan(10)
-            ]),
-            Block::make([
-                Divider::make(),
-                TinyMce::make(__('Text'),'text')
-                    ->required()
-                    ->customAttributes([
-                        'rows' => 50,
-                    ])->hideOnIndex()
-            ]),
+                        ->customAttributes([
+                            'rows' => 10,
+                        ])->hideOnIndex(),
+                    Number::make(__('Sort'),'sort'),
+                    Checkbox::make(__('Active'), 'active')
+                        ->nullable()
+                        ->updateOnPreview()
+                ]),
+            ])
         ];
     }
 
     /**
-     * @param Content $item
+     * @param OurSupport $item
      *
      * @return array<string, string[]|string>
      * @see https://laravel.com/docs/validation#available-validation-rules
@@ -94,7 +86,6 @@ class LeadershipResource extends ModelResource
     public function rules(Model $item): array
     {
         return [
-            'head' =>       ['required','min:5','max:191'],
             'image' =>      ['required_without:id','mimes:jpg,png','max:2000'],
             'text' =>       ['required','min:5','max:66000']
         ];
@@ -102,6 +93,6 @@ class LeadershipResource extends ModelResource
 
     public function search(): array
     {
-        return ['head','text'];
+        return ['id', 'text'];
     }
 }
