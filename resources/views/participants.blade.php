@@ -28,8 +28,10 @@
                                 <td class="text-center">
                                     @if ($item->image)
                                         <a href="{{ asset('storage/'.$item->image) }}" class="fancybox">
-                                            <img class="hidden md:block w-full" src="{{ $item->image ? asset('storage/'.$item->image) : '' }}" alt="{{ $item->name }}"/>
+                                            <img class="hidden md:block w-full" src="{{ asset('storage/'.$item->image) }}" alt="{{ $item->name }}"/>
                                         </a>
+                                    @else
+                                        <img class="hidden md:block w-full" src="{{ asset('storage/images/def_avatar.svg') }}" alt="{{ $item->name }}"/>
                                     @endif
                                 </td>
                                 <td class="text-left">{{ $item->surname }}</td>
