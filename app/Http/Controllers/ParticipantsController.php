@@ -31,7 +31,7 @@ class ParticipantsController extends BaseController
             'breadcrumbs' => [['href' => $route, 'name' => __(ucfirst($route))]],
             'nav_links' => $this->mainMenu,
             'typeId' => $typeId,
-            'items' => Participant::query()->where('participant_type_id',$typeId)->with('team')->get()
+            'items' => Participant::query()->where('participant_type_id',$typeId)->where('active',1)->with('team')->get()
         ]);
     }
 }

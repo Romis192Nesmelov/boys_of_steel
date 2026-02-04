@@ -11,12 +11,15 @@ class Participant extends Model
     use HasFactory;
 
     protected $fillable = [
+        'image',
         'surname',
         'name',
         'number',
         'born',
+        'text',
         'participant_type_id',
         'team_id',
+        'active'
     ];
 
     public function participantType(): BelongsTo

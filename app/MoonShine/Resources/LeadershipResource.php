@@ -70,6 +70,7 @@ class LeadershipResource extends ModelResource
                         ])->hideOnIndex(),
                     Checkbox::make(__('Active'), 'active')
                         ->nullable()
+                        ->default(1)
                         ->updateOnPreview()
                 ]),
             ])

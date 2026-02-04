@@ -9,12 +9,14 @@
                 <table id="participants">
                     <thead>
                         <tr>
+                            <th class="text-left w-1/8">{{ __('Photo') }}</th>
                             <th class="text-left w-1/5">{{ __('Surname') }}</th>
-                            <th class="w-2/6">{{ __('Name') }}</th>
+                            <th class="w-1/5">{{ __('Name') }}</th>
                             @if ($typeId == 2 || $typeId == 7)
                                 <th class="w-2 text-center">{{ __('Number') }}</th>
                             @endif
                             <th class="text-center w-1/6">{{ __('Born') }}</th>
+                            <th class="text-center w-2/3">{{ __('Description') }}</th>
                             @if ($typeId == 2)
                                 <th class="w-2/3">{{ __('Team') }}</th>
                             @endif
@@ -23,15 +25,25 @@
                     <tbody>
                         @foreach($items as $item)
                             <tr>
+                                <td class="text-center">
+                                    @if ($item->image)
+                                        <a href="{{ asset('storage/'.$item->image) }}" class="fancybox">
+                                            <img class="hidden md:block w-full" src="{{ $item->image ? asset('storage/'.$item->image) : '' }}" alt="{{ $item->name }}"/>
+                                        </a>
+                                    @endif
+                                </td>
                                 <td class="text-left">{{ $item->surname }}</td>
                                 <td class="text-left">{{ $item->name }}</td>
                                 @if ($typeId == 2 || $typeId == 7)
                                     <td class="text-center">{{ $item->number }}1</td>
                                 @endif
                                 <td class="text-center">{{ carbonDate($item->born) }}</td>
-                                @if ($typeId == 2)
+                                <td class="text-left">{{ $item->description }}</td>
+                                @if ($typeId != 7)
                                     <td class="w-full">
-                                        <nobr><img class="hidden md:block w-6 float-left mr-1" src="{{ getLogo($item->team) }}" alt="{{ $item->name }}"/>{{ $item->name }}</nobr>
+                                        @if ($item->team)
+                                            <nobr><img class="hidden md:block w-6 float-left mr-1" src="{{ getLogo($item->team) }}" alt="{{ $item->name }}"/>{{ $item->name }}</nobr>
+                                        @endif
                                     </td>
                                 @endif
                             </tr>

@@ -8,12 +8,15 @@ use Illuminate\Database\Eloquent\Model;
 use App\Models\Participant;
 use Illuminate\Contracts\Database\Eloquent\Builder;
 use MoonShine\Decorations\Column;
+use MoonShine\Decorations\Divider;
 use MoonShine\Decorations\Grid;
+use MoonShine\Fields\Checkbox;
 use MoonShine\Fields\Date;
 use MoonShine\Fields\Hidden;
-use MoonShine\Fields\Number;
+use MoonShine\Fields\Image;
 use MoonShine\Fields\Relationships\BelongsTo;
 use MoonShine\Fields\Text;
+use MoonShine\Fields\Textarea;
 use MoonShine\Resources\ModelResource;
 use MoonShine\Fields\ID;
 use MoonShine\Fields\Field;
@@ -52,6 +55,13 @@ class TrainersResource extends ModelResource
             Hidden::make('participant_type_id')->setValue(5)->hideOnIndex(),
             Grid::make([
                 Column::make([
+                    Image::make(__('Photo'),'image')
+                        ->nullable()
+                        ->disk('public')
+                        ->dir('images/participants'),
+
+                ])->columnSpan(2),
+                Column::make([
                     Text::make(__('Surname'),'surname')
                         ->required(),
                     Text::make(__('Name'),'name')
@@ -61,13 +71,25 @@ class TrainersResource extends ModelResource
                         'team',
                         fn($item) => $item->name,
                         new TeamResource()
-                    )
-                ])->columnSpan(10),
+                    )->nullable()
+                ])->columnSpan(8),
                 Column::make([
                     Date::make(__('Born'),'born')
                         ->required()
                         ->format('d.m.Y')
                 ])->columnSpan(2),
+                Column::make([
+                    Divider::make(),
+                    Textarea::make(__('Description'),'description')
+                        ->nullable()
+                        ->customAttributes([
+                            'rows' => 2,
+                        ])->hideOnIndex(),
+                    Checkbox::make(__('Active'), 'active')
+                        ->nullable()
+                        ->default(1)
+                        ->updateOnPreview()
+                ]),
             ])
         ];
     }
@@ -81,15 +103,18 @@ class TrainersResource extends ModelResource
     public function rules(Model $item): array
     {
         return [
+            'image'               => ['nullable','mimes:jpg,png','max:2000'],
             'surname'             => ['required','min:3','max:191'],
             'name'                => ['required','min:3','max:191'],
             'born'                => ['required','date'],
-            'participant_type_id' => ['required','integer','size:5'],
+            'description'         => ['nullable','min:3','max:1000'],
+            'participant_type_id' => ['nullable','integer','size:5'],
+            'active'              => ['nullable','max:1'],
         ];
     }
 
     public function search(): array
     {
-        return ['id', 'surname', 'name', 'born'];
+        return ['id', 'surname', 'name', 'born', 'text'];
     }
 }
