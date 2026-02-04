@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace App\MoonShine\Pages;
 
+use App\Models\Leadership;
 use App\Models\Participant;
 use App\Models\ParticipantType;
 use App\Models\Slide;
@@ -127,7 +128,7 @@ class Dashboard extends Page
                 ])->columnSpan(2),
                 Column::make([
                     ValueMetric::make(fn() => (string)Link::make(app(LeadershipResource::class)->indexPageUrl(),__('Leadership')))
-                        ->value(fn() => 1)
+                        ->value(fn() => Leadership::count())
                         ->icon('heroicons.user-circle'),
                 ])->columnSpan(2),
                 Column::make([
