@@ -49,7 +49,7 @@ class LeadershipResource extends ModelResource
     public function fields(): array
     {
         return [
-            ID::make()->sortable(),
+            ID::make(),
             Grid::make([
                 Column::make([
                     Image::make(__('Picture'),'image')
@@ -59,7 +59,7 @@ class LeadershipResource extends ModelResource
 
                 ])->columnSpan(6),
                 Column::make([
-                    Number::make(__('Sort'),'sort')->default(1),
+                    Number::make(__('Sort'),'sort')->default(1)->sortable(),
                 ])->columnSpan(6),
                 Column::make([
                     Divider::make(),
@@ -68,7 +68,6 @@ class LeadershipResource extends ModelResource
                         ->customAttributes([
                             'rows' => 10,
                         ])->hideOnIndex(),
-                    Number::make(__('Sort'),'sort'),
                     Checkbox::make(__('Active'), 'active')
                         ->nullable()
                         ->updateOnPreview()

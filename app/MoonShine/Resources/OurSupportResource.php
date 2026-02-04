@@ -56,7 +56,7 @@ class OurSupportResource extends ModelResource
                         ->dir('images/hockey'),
                 ])->columnSpan(6),
                 Column::make([
-                    Number::make(__('Sort'),'sort')->default(1),
+                    Number::make(__('Sort'),'sort')->default(1)->sortable(),
                 ])->columnSpan(6),
                 Column::make([
                     Divider::make(),
